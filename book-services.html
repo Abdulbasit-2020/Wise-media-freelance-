@@ -574,7 +574,188 @@
 
     </section>
 
+<!-- OTHER AUTHOR SERVICES -->
+<section class="other-author-section" id="other-author-services">
 
+    <div class="other-author-heading">
+        <span class="section-label">MORE FOR AUTHORS</span>
+
+        <h2>Other Author Services</h2>
+
+        <p>
+            Explore additional support for your writing, publishing
+            and author journey. New services can be added as WMF expands.
+        </p>
+    </div>
+
+    <button
+        class="other-author-toggle"
+        id="otherAuthorToggle"
+        aria-expanded="false"
+        aria-controls="otherAuthorContent"
+    >
+        <span>Explore Other Author Services</span>
+        <span class="toggle-icon" id="otherAuthorIcon">+</span>
+    </button>
+
+    <div
+        class="other-author-content"
+        id="otherAuthorContent"
+        hidden
+    >
+
+        <div
+            class="other-author-grid"
+            id="otherAuthorGrid"
+        >
+            <!-- Additional services will be displayed here by JavaScript. -->
+        </div>
+
+        <div class="other-author-empty" id="otherAuthorEmpty">
+            <h3>More Services Coming Soon</h3>
+
+            <p>
+                WMF is preparing additional services to support authors.
+                Contact us if you have a project that requires a
+                customised combination of services.
+            </p>
+
+            <a href="contact.html" class="gold-button">
+                REQUEST A CUSTOM PACKAGE
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+.other-author-section {
+    padding: 85px 7%;
+    background: #080808;
+    color: #ffffff;
+}
+
+.other-author-heading {
+    max-width: 750px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.other-author-heading .section-label {
+    color: #D6B46A;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.other-author-heading h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    margin: 15px 0;
+}
+
+.other-author-heading p {
+    color: #c4c4c4;
+    line-height: 1.8;
+}
+
+.other-author-toggle {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 22px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0B1020;
+    color: #ffffff;
+    border: 1px solid #D6B46A;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.toggle-icon {
+    color: #D6B46A;
+    font-size: 26px;
+}
+
+.other-author-content {
+    max-width: 900px;
+    margin: 25px auto 0;
+}
+
+.other-author-content[hidden] {
+    display: none;
+}
+
+.other-author-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.other-author-card {
+    padding: 25px;
+    background: #111827;
+    border: 1px solid rgba(214, 180, 106, 0.35);
+    border-radius: 8px;
+}
+
+.other-author-card h3 {
+    color: #D6B46A;
+    margin-bottom: 12px;
+}
+
+.other-author-card p {
+    color: #d0d0d0;
+    line-height: 1.7;
+}
+
+.other-author-empty {
+    padding: 40px 20px;
+    text-align: center;
+    background: #111827;
+    border-radius: 8px;
+}
+
+.other-author-empty h3 {
+    color: #D6B46A;
+    margin-bottom: 12px;
+}
+
+.other-author-empty p {
+    color: #cccccc;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.gold-button {
+    display: inline-block;
+    padding: 14px 22px;
+    background: #D6B46A;
+    color: #080808;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.gold-button:hover {
+    background: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .other-author-section {
+        padding: 60px 5%;
+    }
+
+    .other-author-toggle {
+        padding: 18px;
+        font-size: 14px;
+    }
+}
+</style>
     <!-- FOOTER -->
 
     <footer class="footer">
