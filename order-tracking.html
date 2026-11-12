@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Tracking | Wise Media Freelance</title>
+
+    <meta name="description"
+        content="Track your Wise Media Freelance project orders and check project progress.">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        .tracking-hero {
+            background: linear-gradient(135deg, #0B1020, #080808);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 100px 20px 75px;
+        }
+
+        .tracking-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 15px;
+        }
+
+        .tracking-hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #D1D5DB;
+            line-height: 1.8;
+        }
+
+        .tracking-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 65px 20px;
+        }
+
+        .tracking-card {
+            background: #FFFFFF;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+            border: 1px solid #EEEEEE;
+        }
+
+        .tracking-card h2 {
+            color: #0B1020;
+            margin-bottom: 12px;
+            font-size: 1.7rem;
+        }
+
+        .tracking-card > p {
+            color: #666666;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .tracking-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .tracking-form label {
+            color: #0B1020;
+            font-weight: 600;
+        }
+
+        .tracking-form input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .tracking-form input:focus {
+            border-color: #D6B46A;
+            box-shadow: 0 0 0 3px rgba(214, 180, 106, 0.15);
+        }
+
+        .tracking-form button {
+            background: #0B1020;
+            color: #FFFFFF;
+            border: none;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 8px;
+        }
+
+        .tracking-form button:hover {
+            background: #D6B46A;
+            color: #080808;
+        }
+
+        .tracking-message {
+            display: none;
+            padding: 17px;
+            margin-top: 20px;
+            border-radius: 6px;
+            line-height: 1.7;
+        }
+
+        .tracking-message.info {
+            display: block;
+            background: #FFF8E8;
+            border-left: 4px solid #D6B46A;
+            color: #664D16;
+        }
+
+        .tracking-message.error {
+            display: block;
+            background: #FEECEC;
+            border-left: 4px solid #DC2626;
+            color: #991B1B;
+        }
+
+        .tracking-notice {
+            background: #F3F4F6;
+            padding: 25px;
+            border-radius: 9px;
+            margin-top: 30px;
+        }
+
+        .tracking-notice h3 {
+            color: #0B1020;
+            margin-bottom: 12px;
+        }
+
+        .tracking-notice p {
+            color: #555555;
+            line-height: 1.8;
+        }
+
+        .tracking-steps {
+            margin-top: 65px;
+        }
+
+        .tracking-steps > h2 {
+            text-align: center;
+            color: #0B1020;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .step-card {
+            background: #F3F4F6;
+            padding: 25px 20px;
+            border-radius: 9px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            background: #D6B46A;
+            color: #080808;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .step-card h3 {
+            color: #0B1020;
+            margin-bottom: 10px;
+        }
+
+        .step-card p {
+            color: #666666;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .tracking-support {
+            margin-top: 55px;
+            background: #0B1020;
+            color: #FFFFFF;
+            padding: 40px 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .tracking-support h2 {
+            margin-bottom: 12px;
+        }
+
+        .tracking-support p {
+            color: #D1D5DB;
+            line-height: 1.8;
+            margin-bottom: 22px;
+        }
+
+        .tracking-support a {
+            display: inline-block;
+            background: #D6B46A;
+            color: #080808;
+            padding: 13px 28px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .tracking-support a:hover {
+            background: #FFFFFF;
+        }
+
+        @media (max-width: 700px) {
+            .step-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tracking-card {
+                padding: 25px 20px;
+            }
+
+            .tracking-hero {
+                padding: 75px 18px 55px;
+            }
+
+            .tracking-container {
+                padding: 45px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a href="index.html" class="logo">
+            WISE MEDIA <span class="gold-text">FREELANCE</span>
+        </a>
+
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="Open navigation"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="navigation" id="mainNavigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="book-services.html">Book Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="tracking-hero">
+
+        <h1>Track Your Order</h1>
+
+        <p>
+            Stay informed about your project.
+            Your order tracking information will eventually
+            be available through this page.
+        </p>
+
+    </section>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="tracking-container">
+
+        <!-- TRACKING FORM -->
+        <section class="tracking-card">
+
+            <h2>Check Your Project Status</h2>
+
+            <p>
+                Enter the order reference provided by
+                Wise Media Freelance to check your project.
+            </p>
+
+            <form id="trackingForm" class="tracking-form">
+
+                <label for="orderReference">
+                    Order Reference
+                </label>
+
+                <input
+                    type="text"
+                    id="orderReference"
+                    name="orderReference"
+                    placeholder="Enter your order reference"
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit">
+                    Track Order
+                </button>
+
+            </form>
+
+
+            <!-- STATUS MESSAGE -->
+            <div
+                id="trackingMessage"
+                class="tracking-message"
+                role="status"
+                aria-live="polite">
+            </div>
+
+
+            <!-- NOTICE -->
+            <div class="tracking-notice">
+
+                <h3>Tracking System Notice</h3>
+
+                <p>
+                    The live order tracking system is currently
+                    being prepared. Order references cannot yet
+                    be checked through this page.
+                </p>
+
+                <p>
+                    Please contact WMF through the Contact page
+                    if you need an update about an existing order.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- HOW TRACKING WILL WORK -->
+        <section class="tracking-steps">
+
+            <h2>How Order Tracking Will Work</h2>
+
+            <div class="step-grid">
+
+                <div class="step-card">
+
+                    <div class="step-number">1</div>
+
+                    <h3>Place Your Order</h3>
+
+                    <p>
+                        Select your preferred service,
+                        approve the project details and
+                        complete the required payment.
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <div class="step-number">2</div>
+
+                    <h3>Receive Your Reference</h3>
+
+                    <p>
+                        After your order is confirmed,
+                        you will receive an order reference
+                        for future enquiries and tracking.
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <div class="step-number">3</div>
+
+                    <h3>Monitor Progress</h3>
+
+                    <p>
+                        Once live tracking is available,
+                        you will be able to check your
+                        project's recorded progress.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUPPORT -->
+        <section class="tracking-support">
+
+            <h2>Need an Order Update?</h2>
+
+            <p>
+                If you already have an order with WMF and
+                need information about its progress,
+                send a written enquiry through our Contact page.
+            </p>
+
+            <a href="contact.html">
+                Contact WMF Support
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-column">
+
+            <h3>WISE MEDIA FREELANCE</h3>
+
+            <p>
+                Creative and professional services designed
+                to support authors and businesses.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="book-services.html">Book Services</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Information</h3>
+
+            <a href="faq.html">FAQs</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="refund-policy.html">Refund Policy</a>
+            <a href="support-policy.html">Support Policy</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Client Support</h3>
+
+            <a href="order-tracking.html">Track Order</a>
+            <a href="contact.html">Contact Support</a>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; <span id="currentYear"></span>
+                Wise Media Freelance. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT CONNECTION -->
+    <script type="module" src="assets/css/js/order-tracking.js"></script>
+
+</body>
+
+</html>
