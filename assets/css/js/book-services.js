@@ -354,3 +354,86 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+// ========================================
+// OTHER AUTHOR SERVICES
+// ========================================
+
+(function () {
+    const toggleButton = document.getElementById("otherAuthorToggle");
+    const content = document.getElementById("otherAuthorContent");
+    const icon = document.getElementById("otherAuthorIcon");
+    const serviceGrid = document.getElementById("otherAuthorGrid");
+    const emptyMessage = document.getElementById("otherAuthorEmpty");
+
+    if (!toggleButton || !content) return;
+
+    // Expand and collapse the section
+    toggleButton.addEventListener("click", function () {
+        const isExpanded =
+            toggleButton.getAttribute("aria-expanded") === "true";
+
+        toggleButton.setAttribute("aria-expanded", String(!isExpanded));
+
+        content.hidden = isExpanded;
+
+        if (icon) {
+            icon.textContent = isExpanded ? "+" : "−";
+        }
+    });
+
+    /*
+       Future Firebase integration:
+       Additional author services will be loaded from the
+       Firestore collection named "otherAuthorServices".
+
+       Each service can contain:
+       - title
+       - description
+       - active
+       - displayOrder
+
+       Prices and package details will be managed by WMF.
+    */
+
+    const otherAuthorServices = [];
+
+    function displayOtherAuthorServices(services) {
+        if (!serviceGrid || !emptyMessage) return;
+
+        const activeServices = services
+            .filter(service => service.active === true)
+            .sort((a, b) => {
+                return (a.displayOrder || 0) -
+                       (b.displayOrder || 0);
+            });
+
+        serviceGrid.innerHTML = "";
+
+        if (activeServices.length === 0) {
+            emptyMessage.hidden = false;
+            return;
+        }
+
+        emptyMessage.hidden = true;
+
+        activeServices.forEach(service => {
+            const card = document.createElement("article");
+
+            card.className = "other-author-card";
+
+            const title = document.createElement("h3");
+            title.textContent = service.title || "Author Service";
+
+            const description = document.createElement("p");
+            description.textContent = service.description || "";
+
+            card.appendChild(title);
+            card.appendChild(description);
+
+            serviceGrid.appendChild(card);
+        });
+    }
+
+    displayOtherAuthorServices(otherAuthorServices);
+})();
