@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Present your story professionally with book cover concepts, interior layout and formatting support from Wise Media Freelance.">
+
+    <title>Book Cover & Interior Design | Wise Media Freelance</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        :root {
+            --wmf-navy: #0B1020;
+            --wmf-black: #080808;
+            --wmf-gold: #D6B46A;
+            --wmf-white: #FFFFFF;
+            --wmf-gray: #A8A8A8;
+            --wmf-light: #F5F5F5;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--wmf-black);
+            color: var(--wmf-white);
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .gold-text {
+            color: var(--wmf-gold);
+        }
+
+        .design-hero {
+            min-height: 540px;
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(8, 8, 8, 0.98),
+                    rgba(11, 16, 32, 0.86)
+                ),
+                radial-gradient(
+                    circle at 80% 40%,
+                    #66502b,
+                    #0B1020 55%
+                );
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .eyebrow {
+            color: var(--wmf-gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .design-hero h1 {
+            font-size: clamp(36px, 6vw, 62px);
+            line-height: 1.15;
+            margin: 20px 0;
+        }
+
+        .design-hero p {
+            color: #D0D0D0;
+            font-size: 17px;
+            max-width: 650px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .wmf-button {
+            display: inline-block;
+            padding: 14px 25px;
+            background: var(--wmf-gold);
+            color: var(--wmf-black);
+            font-weight: bold;
+            border: 1px solid var(--wmf-gold);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .wmf-button:hover {
+            background: transparent;
+            color: var(--wmf-gold);
+        }
+
+        .wmf-button.outline {
+            background: transparent;
+            color: var(--wmf-gold);
+        }
+
+        .wmf-button.outline:hover {
+            background: var(--wmf-gold);
+            color: var(--wmf-black);
+        }
+
+        .design-section {
+            padding: 80px 8%;
+        }
+
+        .section-heading {
+            max-width: 750px;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            margin: 10px 0;
+        }
+
+        .section-heading p {
+            color: var(--wmf-gray);
+        }
+
+        .gold-line {
+            width: 65px;
+            height: 3px;
+            background: var(--wmf-gold);
+            margin: 15px 0;
+        }
+
+        .intro-section {
+            background: var(--wmf-white);
+            color: var(--wmf-black);
+        }
+
+        .intro-section p {
+            color: #555;
+            max-width: 900px;
+        }
+
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .design-card {
+            padding: 30px;
+            background: #111827;
+            border: 1px solid #303746;
+            border-radius: 8px;
+        }
+
+        .design-card h3 {
+            color: var(--wmf-gold);
+            margin-top: 0;
+        }
+
+        .design-card p,
+        .design-card li {
+            color: #C4C4C4;
+        }
+
+        .design-card ul {
+            padding-left: 20px;
+        }
+
+        .design-card li {
+            margin-bottom: 9px;
+        }
+
+        .included-section {
+            background: #101626;
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .included-box {
+            padding: 30px;
+            border-radius: 8px;
+            background: #080D18;
+            border: 1px solid #303746;
+        }
+
+        .included-box h3 {
+            color: var(--wmf-gold);
+        }
+
+        .included-box ul {
+            padding-left: 20px;
+            color: #C5C5C5;
+        }
+
+        .included-box li {
+            margin-bottom: 12px;
+        }
+
+        .package-section {
+            background: var(--wmf-black);
+        }
+
+        .package-card {
+            padding: 32px;
+            background: #111827;
+            border: 1px solid #343B4B;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package-card.featured {
+            border: 1px solid var(--wmf-gold);
+        }
+
+        .package-card h3 {
+            color: var(--wmf-gold);
+            font-size: 23px;
+        }
+
+        .package-price {
+            font-size: 25px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .package-card ul {
+            padding-left: 20px;
+            color: #C4C4C4;
+            flex: 1;
+        }
+
+        .package-card li {
+            margin-bottom: 12px;
+        }
+
+        .package-note {
+            color: var(--wmf-gray);
+            font-size: 13px;
+            margin-top: 25px;
+        }
+
+        .requirements-section {
+            background: #101626;
+        }
+
+        .process-number {
+            font-size: 34px;
+            color: var(--wmf-gold);
+            font-weight: bold;
+        }
+
+        .faq-section {
+            background: #080808;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #343434;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            width: 100%;
+            border: none;
+            background: none;
+            color: var(--wmf-white);
+            font-size: 17px;
+            font-weight: bold;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .faq-question span {
+            color: var(--wmf-gold);
+            font-size: 22px;
+        }
+
+        .faq-answer {
+            display: none;
+            color: #BDBDBD;
+            padding-top: 12px;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        .final-cta {
+            text-align: center;
+            padding: 90px 8%;
+            background: linear-gradient(120deg, #101626, #252013);
+        }
+
+        .final-cta h2 {
+            font-size: clamp(28px, 4vw, 42px);
+        }
+
+        .final-cta p {
+            color: #D0D0D0;
+            max-width: 650px;
+            margin: 15px auto 30px;
+        }
+
+        .notice {
+            padding: 18px;
+            background: #282317;
+            border-left: 4px solid var(--wmf-gold);
+            color: #E7D9B9;
+            margin-top: 25px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 900px) {
+            .design-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .design-hero {
+                padding: 75px 6%;
+                min-height: 500px;
+            }
+
+            .design-section {
+                padding: 60px 6%;
+            }
+
+            .design-grid,
+            .included-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .wmf-button {
+                text-align: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a href="index.html" class="logo">
+            WISE MEDIA <span class="gold-text">FREELANCE</span>
+        </a>
+
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="Open navigation"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <nav class="navigation" id="mainNavigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="book-services.html">Book Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="design-hero">
+
+        <div class="hero-content">
+
+            <span class="eyebrow">WMF Book Design Services</span>
+
+            <h1>
+                Give Your Book a
+                <span class="gold-text">Professional Look</span>
+            </h1>
+
+            <p>
+                Present your story professionally with book cover
+                concepts, interior layout and formatting support.
+                Create a reading experience that reflects the quality
+                of your work.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="order.html?service=book-cover-interior-design"
+                    class="wmf-button"
+                >
+                    ORDER BOOK DESIGN
+                </a>
+
+                <a
+                    href="contact.html?service=book-cover-interior-design"
+                    class="wmf-button outline"
+                >
+                    ASK A QUESTION
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="design-section intro-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">About This Service</span>
+
+            <h2>Design That Gives Your Story Its Identity</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <p>
+            Your book deserves a presentation that communicates its
+            message and appeals to its intended readers. WMF's Book
+            Cover & Interior Design service supports authors who need
+            professional visual presentation and organized interior
+            formatting.
+        </p>
+
+        <p>
+            Whether you are preparing a new manuscript or refreshing
+            an existing book, the design scope will be agreed before
+            production begins.
+        </p>
+
+    </section>
+
+
+    <!-- WHAT'S INCLUDED -->
+    <section class="design-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Service Details</span>
+
+            <h2>What This Service Covers</h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                The exact deliverables depend on the package approved
+                for your project.
+            </p>
+
+        </div>
+
+        <div class="design-grid">
+
+            <div class="design-card">
+                <h3>Book Cover Concepts</h3>
+                <p>
+                    Visual cover design concepts developed around
+                    your book's subject, genre and creative direction.
+                </p>
+            </div>
+
+            <div class="design-card">
+                <h3>Interior Layout</h3>
+                <p>
+                    Organizing the inside pages to create a clean,
+                    consistent and readable presentation.
+                </p>
+            </div>
+
+            <div class="design-card">
+                <h3>Book Formatting</h3>
+                <p>
+                    Formatting support based on the agreed book
+                    specifications and intended publishing format.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INCLUDED AND NOT INCLUDED -->
+    <section class="design-section included-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Project Scope</span>
+
+            <h2>What's Included and What's Not</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <div class="included-grid">
+
+            <div class="included-box">
+
+                <h3>Potential Deliverables</h3>
+
+                <ul>
+                    <li>Book cover concept and design work, where selected.</li>
+                    <li>Interior page layout and formatting support.</li>
+                    <li>Design alignment with the agreed book specifications.</li>
+                    <li>Final files in the formats agreed for the project.</li>
+                    <li>Revisions according to the confirmed package.</li>
+                </ul>
+
+            </div>
+
+            <div class="included-box">
+
+                <h3>Not Automatically Included</h3>
+
+                <ul>
+                    <li>Manuscript proofreading or editing.</li>
+                    <li>Book publishing or distribution fees.</li>
+                    <li>ISBN purchase or third-party platform fees.</li>
+                    <li>Printing and physical book production.</li>
+                    <li>Additional design work outside the agreed scope.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="notice">
+            These are scope guidelines, not a promise that every
+            item is included in every package. WMF must confirm the
+            exact deliverables before payment.
+        </div>
+
+    </section>
+
+
+    <!-- PACKAGES -->
+    <section class="design-section package-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Available Packages</span>
+
+            <h2>Choose Your Book Design Package</h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                Package scope, pricing and delivery terms will be
+                confirmed by WMF before checkout.
+            </p>
+
+        </div>
+
+        <div class="design-grid" id="designPackages">
+
+            <!-- JavaScript creates package cards here -->
+
+        </div>
+
+        <p class="package-note">
+            Package names and inclusions below are provisional
+            placeholders. Final packages, prices, currency,
+            delivery estimates and revision allowances must be
+            approved by WMF.
+        </p>
+
+    </section>
+
+
+    <!-- CLIENT REQUIREMENTS -->
+    <section class="design-section requirements-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Before We Begin</span>
+
+            <h2>What We Need From You</h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                Providing the right information helps WMF understand
+                your expectations and prepare the project correctly.
+            </p>
+
+        </div>
+
+        <div class="design-grid">
+
+            <div class="design-card">
+                <h3>Manuscript</h3>
+                <p>
+                    Your final or approved manuscript, preferably
+                    in an editable document format.
+                </p>
+            </div>
+
+            <div class="design-card">
+                <h3>Book Information</h3>
+                <p>
+                    Book title, author name, genre, subtitle and
+                    any other text that must appear on the cover.
+                </p>
+            </div>
+
+            <div class="design-card">
+                <h3>Creative Direction</h3>
+                <p>
+                    Your preferred style, reference designs,
+                    colour preferences and intended audience.
+                </p>
+            </div>
+
+            <div class="design-card">
+                <h3>Book Specifications</h3>
+                <p>
+                    Intended trim size, page count, publishing
+                    format and any available platform requirements.
+                </p>
+            </div>
+
+            <div class="design-card">
+                <h3>Images and Assets</h3>
+                <p>
+                    Any approved photographs, illustrations,
+                    logos or other assets you want considered.
+                </p>
+            </div>
+
+            <div class="design-card">
+                <h3>Special Instructions</h3>
+                <p>
+                    Any specific design requirements or
+                    instructions that WMF should consider.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+    <section class="design-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Our Workflow</span>
+
+            <h2>How the Book Design Process Works</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <div class="design-grid">
+
+            <div class="design-card">
+                <div class="process-number">01</div>
+                <h3>Place Your Request</h3>
+                <p>
+                    Submit your book design requirements and
+                    relevant project information.
+                </p>
+            </div>
+
+            <div class="design-card">
+                <div class="process-number">02</div>
+                <h3>Scope and Confirmation</h3>
+                <p>
+                    WMF reviews your requirements and confirms
+                    the deliverables, price and estimated schedule.
+                </p>
+            </div>
+
+            <div class="design-card">
+                <div class="process-number">03</div>
+                <h3>Payment</h3>
+                <p>
+                    Work begins after the agreed scope is approved
+                    and the required payment is verified.
+                </p>
+            </div>
+
+            <div class="design-card">
+                <div class="process-number">04</div>
+                <h3>Design Production</h3>
+                <p>
+                    WMF works on the agreed cover concepts,
+                    interior layout and formatting.
+                </p>
+            </div>
+
+            <div class="design-card">
+                <div class="process-number">05</div>
+                <h3>Review and Revisions</h3>
+                <p>
+                    You review the work and request revisions
+                    within the confirmed package allowance.
+                </p>
+            </div>
+
+            <div class="design-card">
+                <div class="process-number">06</div>
+                <h3>Final Delivery</h3>
+                <p>
+                    Approved final files are delivered in the
+                    agreed formats.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="design-section faq-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Questions and Answers</span>
+
+            <h2>Book Design FAQs</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <div id="designFaqs">
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Can I order only a book cover?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Yes, you can request cover-only design.
+                    The exact scope and price must be confirmed
+                    with WMF before checkout.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Can I request both cover and interior design?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Yes. You can request both services together.
+                    WMF will confirm the combined scope, deliverables
+                    and price.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    What file formats will I receive?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    The final file formats will be agreed according
+                    to your selected package and publishing
+                    requirements before work begins.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Can you format my manuscript for publishing?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Interior formatting support is available within
+                    the agreed scope. Your intended publishing
+                    platform and book specifications should be
+                    provided before production.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    How long does the design process take?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Delivery time depends on the manuscript,
+                    design requirements and selected package.
+                    WMF will confirm the estimated delivery
+                    schedule before payment.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    How many revisions are allowed?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    The revision allowance will be stated in
+                    your confirmed package before you place
+                    your order.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+
+        <span class="eyebrow">Start Your Design Project</span>
+
+        <h2>
+            Ready to Give Your Book a
+            <span class="gold-text">Professional Look?</span>
+        </h2>
+
+        <p>
+            Share your book details with WMF, confirm your design
+            requirements and take the next step toward presenting
+            your story professionally.
+        </p>
+
+        <a
+            href="order.html?service=book-cover-interior-design"
+            class="wmf-button"
+        >
+            ORDER BOOK DESIGN
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-column">
+
+            <h3>
+                WISE MEDIA <span class="gold-text">FREELANCE</span>
+            </h3>
+
+            <p>
+                Creative Solutions. Digital Excellence.
+                Measurable Growth.
+            </p>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="book-services.html">Book Services</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Book Services</h3>
+
+            <a href="book-trailer-details.html">Book Trailer</a>
+            <a href="animated-series-details.html">Animated Series</a>
+            <a href="proofreading-details.html">Proofreading</a>
+            <a href="publishing-details.html">Publishing Package</a>
+            <a href="book-design-details.html">Book Design</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Support</h3>
+
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT CONNECTION -->
+    <script type="module" src="assets/css/js/book-design-details.js"></script>
+
+</body>
+</html>
