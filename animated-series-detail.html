@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Animated Book Series | Wise Media Freelance</title>
+
+    <meta name="description"
+        content="Explore animated book series production services by Wise Media Freelance. Transform written stories into engaging animated content.">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        :root {
+            --wmf-navy: #0B1020;
+            --wmf-black: #080808;
+            --wmf-gold: #D6B46A;
+            --wmf-white: #FFFFFF;
+            --wmf-gray: #B8BBC5;
+            --wmf-card: #111827;
+        }
+
+        body {
+            margin: 0;
+            background: var(--wmf-black);
+            color: var(--wmf-white);
+            font-family: Arial, sans-serif;
+        }
+
+        .gold-text {
+            color: var(--wmf-gold);
+        }
+
+        .animated-hero {
+            min-height: 440px;
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg, rgba(8,8,8,.96), rgba(11,16,32,.80)),
+                var(--wmf-navy);
+        }
+
+        .hero-content {
+            max-width: 780px;
+        }
+
+        .eyebrow {
+            color: var(--wmf-gold);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .animated-hero h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.1;
+            margin: 20px 0;
+        }
+
+        .animated-hero p {
+            color: var(--wmf-gray);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .gold-button {
+            display: inline-block;
+            background: var(--wmf-gold);
+            color: var(--wmf-black);
+            padding: 15px 27px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 12px 10px 0 0;
+            transition: .3s;
+        }
+
+        .gold-button:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .outline-button {
+            display: inline-block;
+            border: 1px solid var(--wmf-gold);
+            color: var(--wmf-gold);
+            padding: 14px 26px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 12px;
+        }
+
+        .section {
+            padding: 75px 8%;
+        }
+
+        .section-heading {
+            max-width: 750px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            font-size: 35px;
+            margin: 15px 0;
+        }
+
+        .section-heading p {
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .detail-card {
+            background: var(--wmf-card);
+            padding: 30px;
+            border: 1px solid rgba(214,180,106,.18);
+            border-radius: 8px;
+        }
+
+        .detail-card h3 {
+            color: var(--wmf-gold);
+            margin-top: 0;
+        }
+
+        .detail-card p,
+        .detail-card li {
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .detail-card ul {
+            padding-left: 20px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .feature-card {
+            background: var(--wmf-card);
+            padding: 27px;
+            border-radius: 8px;
+            border-bottom: 2px solid var(--wmf-gold);
+        }
+
+        .feature-card h3 {
+            color: var(--wmf-gold);
+        }
+
+        .feature-card p {
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .package-card {
+            background: var(--wmf-card);
+            border: 1px solid rgba(214,180,106,.25);
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        .package-card h3 {
+            color: var(--wmf-gold);
+            font-size: 23px;
+        }
+
+        .package-price {
+            color: var(--wmf-gold);
+            font-size: 23px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .package-card p,
+        .package-card li {
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .package-card ul {
+            padding-left: 20px;
+        }
+
+        .notice {
+            background: rgba(214,180,106,.08);
+            border-left: 3px solid var(--wmf-gold);
+            padding: 18px;
+            margin-top: 25px;
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .process-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 22px;
+            padding: 23px 0;
+            border-bottom: 1px solid rgba(255,255,255,.12);
+        }
+
+        .step-number {
+            min-width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--wmf-gold);
+            color: var(--wmf-black);
+            font-weight: bold;
+        }
+
+        .process-step h3 {
+            color: var(--wmf-gold);
+            margin-top: 0;
+        }
+
+        .process-step p {
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .faq-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .faq-item {
+            background: var(--wmf-card);
+            margin-bottom: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px;
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 20px 20px;
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            color: var(--wmf-gold);
+            transition: .3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .cta-section {
+            background: var(--wmf-navy);
+            text-align: center;
+            padding: 80px 8%;
+        }
+
+        .cta-section h2 {
+            font-size: 35px;
+        }
+
+        .cta-section p {
+            max-width: 680px;
+            margin: 15px auto 25px;
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        @media(max-width: 850px) {
+            .feature-grid,
+            .package-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 600px) {
+            .intro-grid,
+            .feature-grid,
+            .package-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .animated-hero {
+                padding: 75px 6%;
+            }
+
+            .section {
+                padding: 60px 6%;
+            }
+
+            .section-heading h2,
+            .cta-section h2 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a href="index.html" class="logo">
+            WISE MEDIA <span class="gold-text">FREELANCE</span>
+        </a>
+
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="Open navigation"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="navigation" id="mainNavigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="book-services.html">Book Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="animated-hero">
+
+        <div class="hero-content">
+
+            <span class="eyebrow">WMF Book Services</span>
+
+            <h1>
+                Turn Your Story Into an
+                <span class="gold-text">Animated Experience</span>
+            </h1>
+
+            <p>
+                Transform written stories into engaging animated
+                presentations. WMF's Animated Book Series service
+                provides a visual storytelling option for authors
+                looking to present their books in a different format.
+            </p>
+
+            <a href="order.html?service=animated-book-series"
+                class="gold-button">
+                Order This Service
+            </a>
+
+            <a href="contact.html?service=animated-book-series"
+                class="outline-button">
+                Discuss Your Project
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">About the Service</span>
+
+            <h2>
+                Your Story Deserves a
+                <span class="gold-text">Visual Experience</span>
+            </h2>
+
+            <p>
+                Animated book content uses movement, visual storytelling
+                and other creative elements to present a story in an
+                engaging way.
+            </p>
+
+        </div>
+
+        <div class="intro-grid">
+
+            <div class="detail-card">
+
+                <h3>What Is an Animated Book Series?</h3>
+
+                <p>
+                    It is a visual storytelling project that adapts
+                    selected book content into animated scenes or
+                    episodes. The format and production scope depend
+                    on the author's goals and the agreed project brief.
+                </p>
+
+            </div>
+
+            <div class="detail-card">
+
+                <h3>Who Is It For?</h3>
+
+                <p>
+                    Authors, writers and publishers who want to explore
+                    animated storytelling as an additional way to
+                    present their written content.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="section" style="background:var(--wmf-navy);">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Creative Possibilities</span>
+
+            <h2>
+                Animated Series
+                <span class="gold-text">Features</span>
+            </h2>
+
+            <p>
+                Depending on the agreed project scope, an animated
+                book series may include the following creative elements.
+            </p>
+
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>Story Adaptation</h3>
+                <p>
+                    Selected book content can be adapted into a
+                    suitable visual storytelling format.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Character Presentation</h3>
+                <p>
+                    Characters may be represented visually according
+                    to the agreed creative direction.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Animated Scenes</h3>
+                <p>
+                    Scenes can be arranged to communicate important
+                    moments and ideas from the story.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Text and Dialogue</h3>
+                <p>
+                    Selected dialogue, narration or text may be
+                    incorporated where required.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Audio Elements</h3>
+                <p>
+                    Audio and sound elements may be included where
+                    part of the agreed package.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Final Video Delivery</h3>
+                <p>
+                    Completed animated content will be delivered
+                    according to the agreed project specifications.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECT TYPES -->
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Project Options</span>
+
+            <h2>
+                Different Ways to Present
+                <span class="gold-text">Your Story</span>
+            </h2>
+
+        </div>
+
+        <div class="intro-grid">
+
+            <div class="detail-card">
+                <h3>Single Animated Story</h3>
+                <p>
+                    A standalone animated presentation based on
+                    an agreed section or concept from a book.
+                </p>
+            </div>
+
+            <div class="detail-card">
+                <h3>Multi-Episode Series</h3>
+                <p>
+                    A project structured into multiple episodes.
+                    The number of episodes and production details
+                    must be agreed before work begins.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PACKAGES -->
+    <section class="section" style="background:var(--wmf-navy);">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Service Packages</span>
+
+            <h2>
+                Explore Your
+                <span class="gold-text">Options</span>
+            </h2>
+
+            <p>
+                Package availability, deliverables and prices will
+                be confirmed by WMF according to your project needs.
+            </p>
+
+        </div>
+
+        <div class="package-grid" id="packageContainer">
+
+            <!-- JavaScript displays the packages here. -->
+
+        </div>
+
+        <div class="notice">
+            <strong>Important:</strong>
+            Package names and descriptions below are temporary
+            placeholders. Confirm the actual WMF package structure,
+            prices, delivery periods and revision terms before publishing.
+        </div>
+
+    </section>
+
+
+    <!-- CLIENT REQUIREMENTS -->
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Project Preparation</span>
+
+            <h2>
+                What We May Need
+                <span class="gold-text">From You</span>
+            </h2>
+
+        </div>
+
+        <div class="intro-grid">
+
+            <div class="detail-card">
+
+                <h3>Book Materials</h3>
+
+                <ul>
+                    <li>Book title and author name</li>
+                    <li>Book manuscript or selected chapters</li>
+                    <li>Story synopsis</li>
+                    <li>Book cover or character references, if available</li>
+                </ul>
+
+            </div>
+
+            <div class="detail-card">
+
+                <h3>Creative Information</h3>
+
+                <ul>
+                    <li>Preferred animation style</li>
+                    <li>Target audience</li>
+                    <li>Desired number of episodes, if known</li>
+                    <li>Visual references or examples</li>
+                    <li>Special project instructions</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+    <section class="section" style="background:var(--wmf-navy);">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Our Workflow</span>
+
+            <h2>
+                How the
+                <span class="gold-text">Process Works</span>
+            </h2>
+
+        </div>
+
+        <div class="process-container">
+
+            <div class="process-step">
+
+                <div class="step-number">01</div>
+
+                <div>
+                    <h3>Submit Your Project</h3>
+                    <p>
+                        Send your book details and explain what you
+                        want to achieve with the animated series.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="process-step">
+
+                <div class="step-number">02</div>
+
+                <div>
+                    <h3>Project Assessment</h3>
+                    <p>
+                        WMF reviews the project requirements and
+                        discusses the proposed production scope.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="process-step">
+
+                <div class="step-number">03</div>
+
+                <div>
+                    <h3>Creative Planning</h3>
+                    <p>
+                        The creative direction, project structure
+                        and agreed deliverables are established.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="process-step">
+
+                <div class="step-number">04</div>
+
+                <div>
+                    <h3>Production</h3>
+                    <p>
+                        The animation work proceeds according to
+                        the approved project requirements.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="process-step">
+
+                <div class="step-number">05</div>
+
+                <div>
+                    <h3>Review and Delivery</h3>
+                    <p>
+                        The completed work is reviewed and delivered
+                        according to the agreed terms.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Frequently Asked Questions</span>
+
+            <h2>
+                Questions About
+                <span class="gold-text">Animated Book Series</span>
+            </h2>
+
+        </div>
+
+        <div class="faq-container" id="faqContainer">
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    What is an animated book series?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    It is an animated visual presentation based
+                    on a book or selected parts of a written story.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Do I need to provide my manuscript?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Relevant story material will be needed to
+                    understand the content being adapted. WMF
+                    will confirm exactly what is required.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Can my book be turned into multiple episodes?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    A multi-episode project can be discussed.
+                    The episode count, scope and production
+                    requirements must be agreed in advance.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    How much does the service cost?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Pricing depends on the project's scope and
+                    selected package. Contact WMF for a confirmed
+                    quotation.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    How long will production take?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    The production schedule will be discussed and
+                    confirmed after WMF assesses the project.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Can I request a particular animation style?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    You can share your preferred animation style
+                    and visual references. WMF can then discuss
+                    what is suitable for the project.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CALL TO ACTION -->
+    <section class="cta-section">
+
+        <span class="eyebrow">Let's Create Something</span>
+
+        <h2>
+            Bring Your Book to Life
+            <span class="gold-text">Through Animation</span>
+        </h2>
+
+        <p>
+            Share your story and your creative vision with WMF.
+            Start a discussion about your animated book project
+            and its production requirements.
+        </p>
+
+        <a href="order.html?service=animated-book-series"
+            class="gold-button">
+            Start Your Order
+        </a>
+
+        <a href="contact.html?service=animated-book-series"
+            class="outline-button">
+            Contact WMF
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-column">
+            <h3>WISE MEDIA FREELANCE</h3>
+
+            <p>
+                Creative digital solutions and publishing support
+                for authors, businesses and brands.
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="book-services.html">Book Services</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Book Services</h3>
+
+            <a href="book-trailer-details.html">Book Trailer</a>
+            <a href="animated-series-details.html">Animated Book Series</a>
+            <a href="proofreading-details.html">Proofreading</a>
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT CONNECTION -->
+    <script type="module" src="assets/css/js/animated-series-details.js"></script>
+
+</body>
+</html>
