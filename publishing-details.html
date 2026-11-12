@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Publishing Full Package | Wise Media Freelance</title>
+
+    <meta name="description"
+        content="Explore book publishing support from Wise Media Freelance. Get assistance preparing your manuscript for publication.">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        :root {
+            --wmf-navy: #0B1020;
+            --wmf-black: #080808;
+            --wmf-gold: #D6B46A;
+            --wmf-white: #FFFFFF;
+            --wmf-gray: #B8BBC5;
+            --wmf-card: #111827;
+        }
+
+        body {
+            margin: 0;
+            background: var(--wmf-black);
+            color: var(--wmf-white);
+            font-family: Arial, sans-serif;
+        }
+
+        .gold-text {
+            color: var(--wmf-gold);
+        }
+
+        .eyebrow {
+            color: var(--wmf-gold);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .publishing-hero {
+            min-height: 440px;
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg, rgba(8,8,8,.96), rgba(11,16,32,.82)),
+                var(--wmf-navy);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .publishing-hero h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.1;
+            margin: 20px 0;
+        }
+
+        .publishing-hero p {
+            color: var(--wmf-gray);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .gold-button {
+            display: inline-block;
+            background: var(--wmf-gold);
+            color: var(--wmf-black);
+            padding: 15px 27px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 12px 10px 0 0;
+            transition: .3s;
+        }
+
+        .gold-button:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .outline-button {
+            display: inline-block;
+            border: 1px solid var(--wmf-gold);
+            color: var(--wmf-gold);
+            padding: 14px 26px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 12px;
+        }
+
+        .section {
+            padding: 75px 8%;
+        }
+
+        .section-heading {
+            max-width: 750px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            font-size: 35px;
+            margin: 15px 0;
+        }
+
+        .section-heading p {
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .detail-card {
+            background: var(--wmf-card);
+            padding: 30px;
+            border: 1px solid rgba(214,180,106,.18);
+            border-radius: 8px;
+        }
+
+        .detail-card h3 {
+            color: var(--wmf-gold);
+            margin-top: 0;
+        }
+
+        .detail-card p,
+        .detail-card li {
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .detail-card ul {
+            padding-left: 20px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .feature-card {
+            background: var(--wmf-card);
+            padding: 27px;
+            border-radius: 8px;
+            border-bottom: 2px solid var(--wmf-gold);
+        }
+
+        .feature-card h3 {
+            color: var(--wmf-gold);
+        }
+
+        .feature-card p {
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .package-card {
+            background: var(--wmf-card);
+            border: 1px solid rgba(214,180,106,.25);
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        .package-card h3 {
+            color: var(--wmf-gold);
+            font-size: 23px;
+        }
+
+        .package-price {
+            color: var(--wmf-gold);
+            font-size: 22px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .package-card p,
+        .package-card li {
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .package-card ul {
+            padding-left: 20px;
+        }
+
+        .notice {
+            background: rgba(214,180,106,.08);
+            border-left: 3px solid var(--wmf-gold);
+            padding: 18px;
+            margin-top: 25px;
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .process-container,
+        .faq-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 22px;
+            padding: 23px 0;
+            border-bottom: 1px solid rgba(255,255,255,.12);
+        }
+
+        .step-number {
+            min-width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--wmf-gold);
+            color: var(--wmf-black);
+            font-weight: bold;
+        }
+
+        .process-step h3 {
+            color: var(--wmf-gold);
+            margin-top: 0;
+        }
+
+        .process-step p {
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .faq-item {
+            background: var(--wmf-card);
+            margin-bottom: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px;
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 20px 20px;
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            color: var(--wmf-gold);
+            transition: .3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .cta-section {
+            background: var(--wmf-navy);
+            text-align: center;
+            padding: 80px 8%;
+        }
+
+        .cta-section h2 {
+            font-size: 35px;
+        }
+
+        .cta-section p {
+            max-width: 680px;
+            margin: 15px auto 25px;
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        @media(max-width: 850px) {
+            .feature-grid,
+            .package-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 600px) {
+            .intro-grid,
+            .feature-grid,
+            .package-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .publishing-hero {
+                padding: 75px 6%;
+            }
+
+            .section {
+                padding: 60px 6%;
+            }
+
+            .section-heading h2,
+            .cta-section h2 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a href="index.html" class="logo">
+            WISE MEDIA <span class="gold-text">FREELANCE</span>
+        </a>
+
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="Open navigation"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="navigation" id="mainNavigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="book-services.html">Book Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="publishing-hero">
+
+        <div class="hero-content">
+
+            <span class="eyebrow">WMF Book Services</span>
+
+            <h1>
+                Take Your Manuscript
+                <span class="gold-text">Towards Publication</span>
+            </h1>
+
+            <p>
+                Turn your completed manuscript into a publication-ready
+                project with publishing support from Wise Media Freelance.
+                Explore the services that may be included in your
+                publishing journey.
+            </p>
+
+            <a href="order.html?service=publishing-full-package"
+                class="gold-button">
+                Request Publishing Service
+            </a>
+
+            <a href="contact.html?service=publishing-full-package"
+                class="outline-button">
+                Discuss Your Book
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">About the Service</span>
+
+            <h2>
+                From Manuscript to
+                <span class="gold-text">Publication Preparation</span>
+            </h2>
+
+            <p>
+                Publishing involves several stages. The exact services
+                required depend on the manuscript, publishing goals
+                and selected project scope.
+            </p>
+
+        </div>
+
+        <div class="intro-grid">
+
+            <div class="detail-card">
+                <h3>For New Authors</h3>
+                <p>
+                    Support for writers preparing to publish their
+                    first book and seeking guidance through the
+                    preparation process.
+                </p>
+            </div>
+
+            <div class="detail-card">
+                <h3>For Experienced Authors</h3>
+                <p>
+                    Assistance with selected publishing tasks for
+                    authors who already understand the publishing
+                    process but need additional support.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES INCLUDED -->
+    <section class="section" style="background:var(--wmf-navy);">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Publishing Support</span>
+
+            <h2>
+                Explore the
+                <span class="gold-text">Publishing Stages</span>
+            </h2>
+
+            <p>
+                The following are possible areas of support.
+                Confirm the exact inclusions with WMF before ordering.
+            </p>
+
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>Manuscript Preparation</h3>
+                <p>
+                    Preparing the manuscript for the agreed
+                    publishing and formatting requirements.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Proofreading and Editing</h3>
+                <p>
+                    Language review and manuscript improvements
+                    where included in the selected package.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Book Cover Design</h3>
+                <p>
+                    Cover design support based on the book's
+                    subject, genre and creative direction.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Interior Formatting</h3>
+                <p>
+                    Arranging the book's interior layout according
+                    to the agreed publication format.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Publishing Platform Guidance</h3>
+                <p>
+                    Discussing suitable publishing platforms
+                    and their submission requirements.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Publication Preparation</h3>
+                <p>
+                    Preparing agreed files and information
+                    needed for the publishing process.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PUBLISHING FORMATS -->
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Publishing Formats</span>
+
+            <h2>
+                Consider Your
+                <span class="gold-text">Book Format</span>
+            </h2>
+
+            <p>
+                Different formats have different technical and
+                presentation requirements.
+            </p>
+
+        </div>
+
+        <div class="intro-grid">
+
+            <div class="detail-card">
+                <h3>eBook Preparation</h3>
+                <p>
+                    Digital book preparation and formatting
+                    for an agreed supported publishing platform.
+                </p>
+            </div>
+
+            <div class="detail-card">
+                <h3>Paperback Preparation</h3>
+                <p>
+                    Print interior and cover preparation according
+                    to the selected platform's specifications.
+                </p>
+            </div>
+
+            <div class="detail-card">
+                <h3>Hardcover Preparation</h3>
+                <p>
+                    Discussion of hardcover requirements and
+                    preparation where supported by the selected
+                    publishing platform.
+                </p>
+            </div>
+
+            <div class="detail-card">
+                <h3>Other Formats</h3>
+                <p>
+                    Contact WMF to discuss other publishing
+                    formats and their requirements.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PACKAGES -->
+    <section class="section" style="background:var(--wmf-navy);">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Publishing Packages</span>
+
+            <h2>
+                Choose Your
+                <span class="gold-text">Publishing Support</span>
+            </h2>
+
+            <p>
+                Select a starting option and discuss the final
+                project scope with WMF.
+            </p>
+
+        </div>
+
+        <div class="package-grid" id="packageContainer">
+
+            <!-- JavaScript displays packages here. -->
+
+        </div>
+
+        <div class="notice">
+            <strong>Important:</strong>
+            These package descriptions are placeholders, not confirmed
+            WMF package inclusions. Confirm the actual prices, services,
+            publishing platforms, delivery times and terms before
+            making this page public.
+        </div>
+
+    </section>
+
+
+    <!-- AUTHOR REQUIREMENTS -->
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Before You Begin</span>
+
+            <h2>
+                What We May Need
+                <span class="gold-text">From You</span>
+            </h2>
+
+        </div>
+
+        <div class="intro-grid">
+
+            <div class="detail-card">
+
+                <h3>Your Manuscript</h3>
+
+                <ul>
+                    <li>Completed manuscript or current draft</li>
+                    <li>Book title and author name</li>
+                    <li>Book description or synopsis</li>
+                    <li>Genre and intended audience</li>
+                </ul>
+
+            </div>
+
+            <div class="detail-card">
+
+                <h3>Your Publishing Goals</h3>
+
+                <ul>
+                    <li>Preferred publishing format</li>
+                    <li>Preferred publishing platform, if known</li>
+                    <li>Book cover ideas or references</li>
+                    <li>Any special publishing requirements</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+    <section class="section" style="background:var(--wmf-navy);">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Our Workflow</span>
+
+            <h2>
+                The Publishing
+                <span class="gold-text">Journey</span>
+            </h2>
+
+        </div>
+
+        <div class="process-container">
+
+            <div class="process-step">
+                <div class="step-number">01</div>
+                <div>
+                    <h3>Submit Your Book Details</h3>
+                    <p>
+                        Tell WMF about your manuscript and
+                        your publishing goals.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">02</div>
+                <div>
+                    <h3>Project Assessment</h3>
+                    <p>
+                        Your requirements are reviewed to
+                        identify the support needed.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">03</div>
+                <div>
+                    <h3>Scope and Quotation</h3>
+                    <p>
+                        WMF discusses the services, deliverables,
+                        price and expected schedule.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">04</div>
+                <div>
+                    <h3>Book Preparation</h3>
+                    <p>
+                        The agreed manuscript, design and
+                        formatting tasks are completed.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">05</div>
+                <div>
+                    <h3>Review and Handover</h3>
+                    <p>
+                        The agreed files and deliverables
+                        are reviewed and handed over.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- IMPORTANT PUBLISHING INFORMATION -->
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Important Information</span>
+
+            <h2>
+                Understand Your
+                <span class="gold-text">Publishing Responsibilities</span>
+            </h2>
+
+        </div>
+
+        <div class="detail-card">
+
+            <h3>Publishing Accounts and Ownership</h3>
+
+            <p>
+                Before beginning a publishing project, the author
+                and WMF should agree on account ownership, access
+                permissions, copyright responsibilities, ISBN
+                arrangements where applicable, platform fees,
+                royalties and any third-party charges.
+            </p>
+
+            <p>
+                Publishing approval and platform decisions may
+                depend on the publishing platform and its own
+                requirements. No publication date or platform
+                approval should be assumed until confirmed.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section" style="background:var(--wmf-navy);">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Frequently Asked Questions</span>
+
+            <h2>
+                Publishing
+                <span class="gold-text">FAQs</span>
+            </h2>
+
+        </div>
+
+        <div class="faq-container">
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    What does a full publishing package mean?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    It refers to a combination of publishing-related
+                    services. The exact inclusions should be confirmed
+                    in the WMF package description and project agreement.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do I need a completed manuscript?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    A completed manuscript is generally helpful.
+                    Contact WMF if your manuscript is still being
+                    developed so the available support can be discussed.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can I publish as an eBook and paperback?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Multiple formats can be discussed. Each format
+                    has its own preparation and platform requirements.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Will WMF publish my book on Amazon?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Amazon publishing support can be discussed as
+                    part of the project. The exact work, account
+                    arrangements and responsibilities must be agreed
+                    before the project begins.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    How much does the publishing package cost?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    The price depends on the selected services
+                    and project requirements. Contact WMF for
+                    an accurate quotation.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Will my book be guaranteed publication?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Publication decisions are subject to the
+                    relevant platform's requirements and review.
+                    No platform approval should be guaranteed.
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta-section">
+
+        <span class="eyebrow">Your Publishing Journey Starts Here</span>
+
+        <h2>
+            Let's Prepare Your Book
+            <span class="gold-text">For Publication</span>
+        </h2>
+
+        <p>
+            Tell WMF about your manuscript and publishing goals.
+            Discuss the support you need and receive information
+            about the next steps.
+        </p>
+
+        <a href="order.html?service=publishing-full-package"
+            class="gold-button">
+            Request Publishing Service
+        </a>
+
+        <a href="contact.html?service=publishing-full-package"
+            class="outline-button">
+            Contact WMF
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-column">
+            <h3>WISE MEDIA FREELANCE</h3>
+            <p>
+                Creative digital solutions and publishing support
+                for authors, businesses and brands.
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="book-services.html">Book Services</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Book Services</h3>
+            <a href="book-trailer-details.html">Book Trailer</a>
+            <a href="animated-series-details.html">Animated Book Series</a>
+            <a href="proofreading-details.html">Proofreading</a>
+            <a href="publishing-details.html">Publishing</a>
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT FILE CONNECTION -->
+    <script type="module" src="assets/css/js/publishing-details.js"></script>
+
+</body>
+</html>
