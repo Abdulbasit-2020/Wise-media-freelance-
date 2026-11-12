@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Improve your book listing presentation with Amazon metadata support, keyword research and A+ Content design from Wise Media Freelance.">
+
+    <title>Amazon Optimization & A+ Content | WMF</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        :root {
+            --navy: #0B1020;
+            --black: #080808;
+            --gold: #D6B46A;
+            --white: #FFFFFF;
+            --gray: #A8A8A8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--black);
+            color: var(--white);
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .gold-text {
+            color: var(--gold);
+        }
+
+        .amazon-hero {
+            min-height: 540px;
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(8, 8, 8, .97),
+                    rgba(11, 16, 32, .85)
+                ),
+                radial-gradient(
+                    circle at 80% 40%,
+                    #69522B,
+                    #0B1020 60%
+                );
+        }
+
+        .hero-content {
+            max-width: 780px;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .amazon-hero h1 {
+            font-size: clamp(36px, 6vw, 62px);
+            line-height: 1.15;
+            margin: 20px 0;
+        }
+
+        .amazon-hero p {
+            color: #D0D0D0;
+            font-size: 17px;
+            max-width: 680px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .wmf-button {
+            display: inline-block;
+            padding: 14px 25px;
+            background: var(--gold);
+            color: var(--black);
+            font-weight: bold;
+            border: 1px solid var(--gold);
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .wmf-button:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        .wmf-button.outline {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        .wmf-button.outline:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .section {
+            padding: 80px 8%;
+        }
+
+        .section-heading {
+            max-width: 760px;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            margin: 10px 0;
+        }
+
+        .section-heading p {
+            color: var(--gray);
+        }
+
+        .gold-line {
+            width: 65px;
+            height: 3px;
+            background: var(--gold);
+            margin: 15px 0;
+        }
+
+        .intro-section {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .intro-section p {
+            color: #555;
+            max-width: 900px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: #111827;
+            border: 1px solid #303746;
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        .service-card h3 {
+            color: var(--gold);
+            margin-top: 0;
+        }
+
+        .service-card p,
+        .service-card li {
+            color: #C5C5C5;
+        }
+
+        .service-card ul {
+            padding-left: 20px;
+        }
+
+        .service-card li {
+            margin-bottom: 10px;
+        }
+
+        .scope-section {
+            background: #101626;
+        }
+
+        .scope-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .scope-box {
+            background: #080D18;
+            padding: 30px;
+            border: 1px solid #303746;
+            border-radius: 8px;
+        }
+
+        .scope-box h3 {
+            color: var(--gold);
+        }
+
+        .scope-box ul {
+            color: #C5C5C5;
+            padding-left: 20px;
+        }
+
+        .scope-box li {
+            margin-bottom: 12px;
+        }
+
+        .package-section {
+            background: var(--black);
+        }
+
+        .package-card {
+            background: #111827;
+            border: 1px solid #343B4B;
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package-card.featured {
+            border-color: var(--gold);
+        }
+
+        .package-card h3 {
+            color: var(--gold);
+            font-size: 23px;
+        }
+
+        .package-price {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 12px 0;
+        }
+
+        .package-card p,
+        .package-card li {
+            color: #C5C5C5;
+        }
+
+        .package-card ul {
+            padding-left: 20px;
+            flex: 1;
+        }
+
+        .package-card li {
+            margin-bottom: 12px;
+        }
+
+        .package-note {
+            color: var(--gray);
+            font-size: 13px;
+            margin-top: 25px;
+        }
+
+        .requirements-section {
+            background: #101626;
+        }
+
+        .process-number {
+            font-size: 34px;
+            font-weight: bold;
+            color: var(--gold);
+        }
+
+        .notice {
+            background: #292317;
+            border-left: 4px solid var(--gold);
+            padding: 18px;
+            color: #E8D9B6;
+            margin-top: 25px;
+            font-size: 14px;
+        }
+
+        .faq-section {
+            background: var(--black);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #343434;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--white);
+            text-align: left;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .faq-question span {
+            color: var(--gold);
+            font-size: 22px;
+        }
+
+        .faq-answer {
+            display: none;
+            color: #BDBDBD;
+            padding-top: 12px;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        .final-cta {
+            text-align: center;
+            padding: 90px 8%;
+            background: linear-gradient(120deg, #101626, #252013);
+        }
+
+        .final-cta h2 {
+            font-size: clamp(28px, 4vw, 42px);
+        }
+
+        .final-cta p {
+            color: #D0D0D0;
+            max-width: 680px;
+            margin: 15px auto 30px;
+        }
+
+        @media (max-width: 900px) {
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .amazon-hero {
+                padding: 75px 6%;
+            }
+
+            .section {
+                padding: 60px 6%;
+            }
+
+            .service-grid,
+            .scope-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .wmf-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a href="index.html" class="logo">
+            WISE MEDIA <span class="gold-text">FREELANCE</span>
+        </a>
+
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="Open navigation"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <nav class="navigation" id="mainNavigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="book-services.html">Book Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="amazon-hero">
+
+        <div class="hero-content">
+
+            <span class="eyebrow">
+                Amazon Book Optimization
+            </span>
+
+            <h1>
+                Improve Your Book's
+                <span class="gold-text">Amazon Presentation</span>
+            </h1>
+
+            <p>
+                Improve the presentation of your book listing with
+                metadata support, keyword research and enhanced
+                A+ Content design where eligible.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="order.html?service=amazon-optimization"
+                    class="wmf-button"
+                >
+                    ORDER AMAZON OPTIMIZATION
+                </a>
+
+                <a
+                    href="contact.html?service=amazon-optimization"
+                    class="wmf-button outline"
+                >
+                    ASK A QUESTION
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="section intro-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">About This Service</span>
+
+            <h2>Make Your Book Listing More Informative and Engaging</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <p>
+            A book listing should clearly communicate what a book
+            offers and help the intended audience understand its
+            subject, genre and value.
+        </p>
+
+        <p>
+            WMF's Amazon Optimization & A+ Content service supports
+            authors with listing metadata guidance, keyword research
+            and enhanced A+ Content design where the book and account
+            are eligible.
+        </p>
+
+        <p>
+            The service focuses on improving presentation and
+            discoverability support. It does not guarantee sales,
+            rankings, reviews or advertising results.
+        </p>
+
+    </section>
+
+
+    <!-- SERVICE FEATURES -->
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">What We Do</span>
+
+            <h2>Optimization Support for Your Book</h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                The specific deliverables depend on the scope
+                approved for your project.
+            </p>
+
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+
+                <h3>Metadata Support</h3>
+
+                <p>
+                    Review and guidance for relevant book listing
+                    information so your book is presented clearly.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>Keyword Research</h3>
+
+                <p>
+                    Research relevant search terms that may help
+                    inform your book's listing and audience positioning.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>A+ Content Design</h3>
+
+                <p>
+                    Design support for enhanced book listing content
+                    where the relevant Amazon programme and account
+                    are eligible.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SCOPE -->
+    <section class="section scope-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Project Scope</span>
+
+            <h2>What's Included and What's Not</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <div class="scope-grid">
+
+            <div class="scope-box">
+
+                <h3>Potential Deliverables</h3>
+
+                <ul>
+                    <li>Book listing information review.</li>
+                    <li>Metadata support and recommendations.</li>
+                    <li>Relevant keyword research.</li>
+                    <li>Keyword recommendations for agreed listing fields.</li>
+                    <li>A+ Content design assets where eligible and selected.</li>
+                    <li>Final deliverables in agreed formats.</li>
+                </ul>
+
+            </div>
+
+            <div class="scope-box">
+
+                <h3>Not Automatically Included</h3>
+
+                <ul>
+                    <li>Guaranteed Amazon rankings or sales.</li>
+                    <li>Guaranteed reviews or customer engagement.</li>
+                    <li>Amazon advertising campaign management.</li>
+                    <li>Amazon account ownership or access.</li>
+                    <li>Third-party subscriptions or platform fees.</li>
+                    <li>Publishing or distribution services outside the agreed scope.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="notice">
+            A+ Content availability depends on Amazon's eligibility
+            rules and the author's account or publishing arrangement.
+            WMF cannot guarantee approval or publication of submitted
+            content by Amazon.
+        </div>
+
+    </section>
+
+
+    <!-- PACKAGES -->
+    <section class="section package-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Service Packages</span>
+
+            <h2>Choose Your Optimization Package</h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                Select the level of support you want to discuss
+                with WMF. Final deliverables will be confirmed
+                before payment.
+            </p>
+
+        </div>
+
+        <div class="service-grid" id="amazonPackages">
+
+            <!-- Package cards are created by JavaScript -->
+
+        </div>
+
+        <p class="package-note">
+            Package names and deliverables are provisional examples.
+            WMF must approve the final package scope, prices, currency,
+            delivery estimates and revision allowances.
+        </p>
+
+    </section>
+
+
+    <!-- REQUIREMENTS -->
+    <section class="section requirements-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Before We Begin</span>
+
+            <h2>What We Need From You</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <h3>Book Information</h3>
+                <p>
+                    Book title, subtitle, author name, genre and
+                    a clear description of the book.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Book Listing</h3>
+                <p>
+                    Your existing Amazon book listing link,
+                    if the book has already been published.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Target Audience</h3>
+                <p>
+                    Information about the readers you want
+                    the book to reach.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Book Cover</h3>
+                <p>
+                    A copy of your approved book cover or
+                    relevant design assets.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Publishing Details</h3>
+                <p>
+                    Relevant publishing platform, marketplace
+                    and book format information.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Creative Direction</h3>
+                <p>
+                    Your preferences, reference examples and
+                    any specific listing requirements.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="notice">
+            Do not send your Amazon password or other sensitive
+            account credentials through the order form. Any
+            account-related work must use an approved and secure
+            access method.
+        </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Our Workflow</span>
+
+            <h2>How the Process Works</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <div class="process-number">01</div>
+                <h3>Submit Your Request</h3>
+                <p>
+                    Tell WMF about your book and the optimization
+                    support you require.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="process-number">02</div>
+                <h3>Project Review</h3>
+                <p>
+                    WMF reviews your listing, requirements and
+                    requested deliverables.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="process-number">03</div>
+                <h3>Scope Confirmation</h3>
+                <p>
+                    The exact work, price, schedule and revision
+                    terms are confirmed with you.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="process-number">04</div>
+                <h3>Payment</h3>
+                <p>
+                    Production begins after approval and verification
+                    of the required upfront payment.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="process-number">05</div>
+                <h3>Optimization Work</h3>
+                <p>
+                    WMF completes the agreed research, metadata
+                    support and design deliverables.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="process-number">06</div>
+                <h3>Review and Delivery</h3>
+                <p>
+                    You review the work, request included revisions
+                    and receive the approved final deliverables.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section faq-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Questions and Answers</span>
+
+            <h2>Amazon Optimization FAQs</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <div id="amazonFaqs">
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    What is Amazon book optimization?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    It involves improving the information and
+                    presentation of a book listing through relevant
+                    metadata support, keyword research and other
+                    agreed listing improvements.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    What is A+ Content?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    A+ Content is enhanced product-page content
+                    available to eligible publishers and sellers.
+                    It can include designed images and other
+                    enhanced presentation elements.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Is A+ Content available for every author?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    No. Availability depends on Amazon's current
+                    eligibility requirements and the author's
+                    publishing or account arrangement.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Will optimization guarantee more book sales?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    No. Optimization can support the quality and
+                    discoverability of a listing, but sales,
+                    rankings and reader response cannot be guaranteed.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Do I need to provide my Amazon password?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    No. Never submit your password through the
+                    website order form. Any account-related work
+                    must follow an approved secure access process.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    How long will the service take?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    The estimated delivery time depends on the
+                    selected scope and project requirements.
+                    WMF will confirm the schedule before payment.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+
+        <span class="eyebrow">Improve Your Book Presentation</span>
+
+        <h2>
+            Ready to Strengthen Your
+            <span class="gold-text">Amazon Book Listing?</span>
+        </h2>
+
+        <p>
+            Tell WMF about your book and discover the optimization
+            support that fits your project.
+        </p>
+
+        <a
+            href="order.html?service=amazon-optimization"
+            class="wmf-button"
+        >
+            ORDER AMAZON OPTIMIZATION
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-column">
+
+            <h3>
+                WISE MEDIA <span class="gold-text">FREELANCE</span>
+            </h3>
+
+            <p>
+                Creative Solutions. Digital Excellence.
+                Measurable Growth.
+            </p>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="book-services.html">Book Services</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Book Services</h3>
+
+            <a href="book-trailer-details.html">Book Trailer</a>
+            <a href="animated-series-details.html">Animated Series</a>
+            <a href="proofreading-details.html">Proofreading</a>
+            <a href="publishing-details.html">Publishing Package</a>
+            <a href="book-design-details.html">Book Design</a>
+            <a href="amazon-optimization-details.html">Amazon Optimization</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Support</h3>
+
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT CONNECTION -->
+    <script type="module" src="assets/css/js/amazon-optimization-details.js"></script>
+
+</body>
+</html>
