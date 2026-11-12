@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Frequently Asked Questions | Wise Media Freelance</title>
+
+  <meta
+    name="description"
+    content="Find answers to common questions about Wise Media Freelance services, bookings, payments and communication."
+  >
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    .faq-hero {
+      background: linear-gradient(135deg, #0B1020, #080808);
+      color: #fff;
+      text-align: center;
+      padding: 95px 20px;
+    }
+
+    .faq-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      margin-bottom: 18px;
+    }
+
+    .gold-text {
+      color: #D6B46A;
+    }
+
+    .faq-hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #ddd;
+      line-height: 1.8;
+    }
+
+    .faq-section {
+      background: #F3F4F6;
+      padding: 80px 20px;
+    }
+
+    .faq-container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .faq-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .faq-heading h2 {
+      color: #0B1020;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 12px;
+    }
+
+    .faq-heading p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .faq-category {
+      margin-bottom: 40px;
+    }
+
+    .faq-category h3 {
+      color: #0B1020;
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #D6B46A;
+    }
+
+    .faq-item {
+      background: #fff;
+      margin-bottom: 14px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: #fff;
+      border: none;
+      padding: 21px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      text-align: left;
+      color: #0B1020;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .faq-question:hover {
+      color: #9B792F;
+    }
+
+    .faq-icon {
+      color: #B18B3C;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 21px 21px;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-bottom {
+      background: #0B1020;
+      color: #fff;
+      text-align: center;
+      padding: 75px 20px;
+    }
+
+    .faq-bottom h2 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      margin-bottom: 15px;
+    }
+
+    .faq-bottom p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: #ddd;
+      line-height: 1.8;
+    }
+
+    .faq-button {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #D6B46A;
+      color: #080808;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .faq-button:hover {
+      background: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .faq-hero {
+        padding: 70px 18px;
+      }
+
+      .faq-section {
+        padding: 55px 16px;
+      }
+
+      .faq-question {
+        padding: 18px;
+        font-size: 0.95rem;
+      }
+
+      .faq-answer {
+        padding: 0 18px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <a href="index.html" class="logo">
+      WISE MEDIA <span class="gold-text">FREELANCE</span>
+    </a>
+
+    <button
+      class="mobile-menu-button"
+      id="mobileMenuButton"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+    <nav class="navigation" id="mainNavigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="book-services.html">Book Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="faq-hero">
+
+    <h1>Frequently Asked <span class="gold-text">Questions</span></h1>
+
+    <p>
+      Find answers to common questions about our services,
+      project bookings, payments and working process.
+    </p>
+
+  </section>
+
+
+  <!-- FAQ CONTENT -->
+  <section class="faq-section">
+
+    <div class="faq-container">
+
+      <div class="faq-heading">
+
+        <h2>How Can We Help You?</h2>
+
+        <p>
+          Browse the questions below to learn more about working
+          with Wise Media Freelance.
+        </p>
+
+      </div>
+
+
+      <!-- GENERAL QUESTIONS -->
+      <div class="faq-category">
+
+        <h3>General Questions</h3>
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>What is Wise Media Freelance?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            Wise Media Freelance (WMF) provides creative and
+            professional services for authors, entrepreneurs
+            and businesses. Our services include book-related
+            creative solutions and other approved professional
+            services listed on our website.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>Who can use WMF services?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            Our services are intended for authors, aspiring writers,
+            entrepreneurs, businesses and other clients whose
+            requirements match the services WMF offers.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>What services do you offer?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            Our listed services include book trailers, animated
+            series, proofreading, publishing, book design,
+            Amazon optimization and book marketing. Additional
+            author services may also be introduced through WMF.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- BOOKING QUESTIONS -->
+      <div class="faq-category">
+
+        <h3>Bookings and Projects</h3>
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>How do I book a service?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            Visit the Book Services page, select the service
+            you are interested in and review its details.
+            Follow the booking instructions provided for that
+            service. You can also contact WMF with a written
+            enquiry before making a booking.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I request a custom package?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            Yes. You can send WMF a written description of your
+            requirements. Your request will be reviewed to determine
+            whether a suitable custom package can be offered.
+            Any proposed scope and price must be confirmed before
+            payment.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I change my project requirements after booking?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            Any requested change should be communicated in writing.
+            WMF must review the change and confirm whether it affects
+            the agreed project scope, price or delivery arrangements.
+            Do not assume that additional work is automatically
+            included in an existing package.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>When does work begin?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            Work begins only after the agreed project scope has been
+            approved, the required information has been provided,
+            and WMF has verified receipt of the full upfront payment.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- PAYMENT QUESTIONS -->
+      <div class="faq-category">
+
+        <h3>Payments and Pricing</h3>
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>How much do WMF services cost?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            Pricing depends on the selected service and agreed
+            project requirements. Contact WMF for confirmation
+            of the applicable price before making payment.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>Do I need to pay before work begins?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            Yes. WMF requires 100% upfront payment. Work will
+            not begin until the full payment has been received
+            and verified.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I pay before the project scope is confirmed?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            No. The client must first review and approve the
+            agreed service scope and price. Payment should only
+            be made after these details have been confirmed.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>Does sending payment proof mean my payment is confirmed?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            No. Payment evidence may be submitted for review,
+            but the payment is not considered confirmed until
+            WMF verifies that the funds have actually been received.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- COMMUNICATION QUESTIONS -->
+      <div class="faq-category">
+
+        <h3>Communication and Support</h3>
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>How does WMF communicate with clients?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            WMF uses written communication for enquiries,
+            project discussions, updates and support.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I schedule a phone or video consultation?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            WMF operates through written communication.
+            Phone calls, voice calls and video consultations
+            are not part of the communication process.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>How can I ask a question about my project?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            Use the Contact page to send a written enquiry.
+            For future client accounts, project-specific
+            communication will also be available through
+            the appropriate client portal features.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- EXPECTATIONS -->
+      <div class="faq-category">
+
+        <h3>Project Expectations</h3>
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>Does WMF guarantee book sales or publishing acceptance?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            No. WMF does not guarantee sales figures, publishing
+            acceptance, rankings, advertising performance or
+            other outcomes controlled by external platforms,
+            audiences or market conditions.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>How long will my project take?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            Delivery arrangements depend on the selected service
+            and agreed project scope. WMF will communicate the
+            applicable timeline before the project begins.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question" aria-expanded="false">
+            <span>Will I receive updates about my project?</span>
+            <span class="faq-icon">+</span>
+          </button>
+
+          <div class="faq-answer">
+            Project updates will be communicated through written
+            channels. Future client portal features will provide
+            a dedicated place to review project progress and
+            important updates.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT CTA -->
+  <section class="faq-bottom">
+
+    <h2>Still Have Questions?</h2>
+
+    <p>
+      If you cannot find the information you need, send us
+      a written enquiry. Our team will be happy to review it.
+    </p>
+
+    <a href="contact.html" class="faq-button">
+      Contact WMF
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-column">
+
+      <h3>WISE MEDIA <span class="gold-text">FREELANCE</span></h3>
+
+      <p>
+        Creative and professional services designed to help
+        authors and businesses bring their ideas to life.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Quick Links</h3>
+
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="testimonials.html">Testimonials</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Explore</h3>
+
+      <a href="book-services.html">Book Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQs</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Legal</h3>
+
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+
+    </div>
+
+
+    <p class="footer-bottom">
+      &copy; <span id="currentYear"></span>
+      Wise Media Freelance. All rights reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT CONNECTION -->
+  <script type="module" src="assets/css/js/faq.js"></script>
+
+</body>
+</html>
