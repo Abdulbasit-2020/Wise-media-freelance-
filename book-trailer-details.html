@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Trailer Video | Wise Media Freelance</title>
+
+    <meta name="description"
+        content="Discover professional book trailer video services from Wise Media Freelance. Give your book a compelling visual presentation.">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        :root {
+            --wmf-navy: #0B1020;
+            --wmf-black: #080808;
+            --wmf-gold: #D6B46A;
+            --wmf-white: #FFFFFF;
+            --wmf-gray: #B8BBC5;
+            --wmf-card: #111827;
+        }
+
+        body {
+            background: var(--wmf-black);
+            color: var(--wmf-white);
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .service-hero {
+            min-height: 440px;
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg, rgba(8,8,8,.96), rgba(11,16,32,.78)),
+                var(--wmf-navy);
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .eyebrow {
+            color: var(--wmf-gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .service-hero h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.1;
+            margin: 20px 0;
+        }
+
+        .service-hero p {
+            color: var(--wmf-gray);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .gold-button {
+            display: inline-block;
+            background: var(--wmf-gold);
+            color: var(--wmf-black);
+            padding: 15px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 12px 10px 0 0;
+            transition: .3s;
+        }
+
+        .gold-button:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .outline-button {
+            display: inline-block;
+            border: 1px solid var(--wmf-gold);
+            color: var(--wmf-gold);
+            padding: 14px 27px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 12px;
+        }
+
+        .section {
+            padding: 75px 8%;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 45px;
+        }
+
+        .section-heading h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .gold-text {
+            color: var(--wmf-gold);
+        }
+
+        .intro-grid,
+        .feature-grid,
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .detail-card {
+            background: var(--wmf-card);
+            padding: 30px;
+            border: 1px solid rgba(214,180,106,.15);
+            border-radius: 8px;
+        }
+
+        .detail-card h3 {
+            color: var(--wmf-gold);
+            margin-top: 0;
+        }
+
+        .detail-card p,
+        .detail-card li {
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .detail-card ul {
+            padding-left: 20px;
+        }
+
+        .feature-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .feature-item {
+            background: var(--wmf-card);
+            padding: 25px;
+            border-radius: 8px;
+            border-bottom: 2px solid var(--wmf-gold);
+        }
+
+        .feature-item h3 {
+            color: var(--wmf-gold);
+        }
+
+        .feature-item p {
+            color: var(--wmf-gray);
+            line-height: 1.7;
+        }
+
+        .package-card {
+            background: var(--wmf-card);
+            border: 1px solid rgba(214,180,106,.25);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .package-card h3 {
+            color: var(--wmf-gold);
+            font-size: 23px;
+        }
+
+        .package-price {
+            font-size: 25px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .package-card p,
+        .package-card li {
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .package-card ul {
+            padding-left: 20px;
+        }
+
+        .notice {
+            background: rgba(214,180,106,.08);
+            border-left: 3px solid var(--wmf-gold);
+            padding: 18px;
+            color: var(--wmf-gray);
+            line-height: 1.7;
+            margin-top: 25px;
+        }
+
+        .process-list {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 25px;
+            padding: 22px 0;
+            border-bottom: 1px solid rgba(255,255,255,.12);
+        }
+
+        .step-number {
+            min-width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--wmf-gold);
+            color: var(--wmf-black);
+            font-weight: bold;
+        }
+
+        .process-step h3 {
+            margin-top: 0;
+            color: var(--wmf-gold);
+        }
+
+        .process-step p {
+            color: var(--wmf-gray);
+            line-height: 1.7;
+        }
+
+        .faq-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .faq-item {
+            background: var(--wmf-card);
+            margin-bottom: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: transparent;
+            color: white;
+            border: none;
+            text-align: left;
+            padding: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 20px 20px;
+            color: var(--wmf-gray);
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-icon {
+            color: var(--wmf-gold);
+            transition: .3s;
+        }
+
+        .cta-section {
+            background: var(--wmf-navy);
+            text-align: center;
+            padding: 80px 8%;
+        }
+
+        .cta-section h2 {
+            font-size: 35px;
+        }
+
+        .cta-section p {
+            color: var(--wmf-gray);
+            line-height: 1.8;
+            max-width: 650px;
+            margin: 15px auto 25px;
+        }
+
+        @media(max-width: 800px) {
+            .intro-grid,
+            .feature-grid,
+            .package-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-hero {
+                padding: 75px 6%;
+            }
+
+            .section {
+                padding: 60px 6%;
+            }
+
+            .section-heading h2,
+            .cta-section h2 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="index.html" class="logo">
+            WISE MEDIA <span class="gold-text">FREELANCE</span>
+        </a>
+
+        <button class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="Open navigation"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="navigation" id="mainNavigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="book-services.html">Book Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="service-hero">
+        <div class="hero-content">
+
+            <span class="eyebrow">WMF Book Services</span>
+
+            <h1>
+                Professional <span class="gold-text">Book Trailer</span>
+                Video Production
+            </h1>
+
+            <p>
+                Bring your book to life through engaging visual storytelling.
+                A professionally produced book trailer can help introduce
+                your story, capture attention and give potential readers
+                another way to discover your work.
+            </p>
+
+            <a href="order.html?service=book-trailer"
+                class="gold-button">
+                Order This Service
+            </a>
+
+            <a href="contact.html?service=book-trailer"
+                class="outline-button">
+                Ask a Question
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="section">
+
+        <div class="section-heading">
+            <span class="eyebrow">About the Service</span>
+            <h2>Give Your Book a <span class="gold-text">Visual Identity</span></h2>
+
+            <p>
+                A book trailer is a short promotional video designed to
+                introduce a book and communicate its atmosphere, theme
+                or central message.
+            </p>
+        </div>
+
+        <div class="intro-grid">
+
+            <div class="detail-card">
+                <h3>What Is a Book Trailer?</h3>
+
+                <p>
+                    A book trailer is similar to a movie trailer. It uses
+                    visuals, text, sound and storytelling elements to
+                    introduce a book to potential readers.
+                </p>
+            </div>
+
+            <div class="detail-card">
+                <h3>Why Choose a Book Trailer?</h3>
+
+                <p>
+                    A trailer provides an additional promotional format
+                    that authors can use when presenting their books
+                    online, on social media and across suitable marketing
+                    channels.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- WHAT IS INCLUDED -->
+    <section class="section" style="background:var(--wmf-navy);">
+
+        <div class="section-heading">
+            <span class="eyebrow">Service Features</span>
+            <h2>What Can Be <span class="gold-text">Included?</span></h2>
+
+            <p>
+                The final deliverables will depend on the package
+                selected and the project requirements.
+            </p>
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="feature-item">
+                <h3>Visual Storytelling</h3>
+                <p>
+                    Visual elements arranged to introduce the book's
+                    subject, atmosphere or story.
+                </p>
+            </div>
+
+            <div class="feature-item">
+                <h3>Text Presentation</h3>
+                <p>
+                    Book title, author name and selected promotional
+                    text where applicable.
+                </p>
+            </div>
+
+            <div class="feature-item">
+                <h3>Audio Elements</h3>
+                <p>
+                    Suitable audio elements where included in the
+                    agreed project scope.
+                </p>
+            </div>
+
+            <div class="feature-item">
+                <h3>Video Editing</h3>
+                <p>
+                    Arrangement and editing of the approved visual
+                    and audio materials.
+                </p>
+            </div>
+
+            <div class="feature-item">
+                <h3>Book Branding</h3>
+                <p>
+                    Presentation of the book cover and author branding
+                    where required.
+                </p>
+            </div>
+
+            <div class="feature-item">
+                <h3>Final Delivery</h3>
+                <p>
+                    Delivery of the agreed final video format and
+                    specifications.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PACKAGES -->
+    <section class="section">
+
+        <div class="section-heading">
+            <span class="eyebrow">Choose Your Package</span>
+            <h2>Book Trailer <span class="gold-text">Packages</span></h2>
+
+            <p>
+                Select a package based on your promotional goals.
+                Final package details and prices will be confirmed
+                by WMF.
+            </p>
+        </div>
+
+        <div class="package-grid" id="packageContainer">
+
+            <!-- Packages are generated from book-trailer-details.js -->
+
+        </div>
+
+        <div class="notice">
+            <strong>Package information:</strong>
+            Pricing, turnaround time, revisions and exact deliverables
+            must be confirmed with WMF before an order is placed.
+        </div>
+
+    </section>
+
+
+    <!-- CLIENT REQUIREMENTS -->
+    <section class="section" style="background:var(--wmf-navy);">
+
+        <div class="section-heading">
+            <span class="eyebrow">Before You Order</span>
+            <h2>What We May Need <span class="gold-text">From You</span></h2>
+        </div>
+
+        <div class="intro-grid">
+
+            <div class="detail-card">
+                <h3>Book Information</h3>
+                <ul>
+                    <li>Book title and author name</li>
+                    <li>Book description or synopsis</li>
+                    <li>Genre and target audience</li>
+                    <li>Book cover image, if available</li>
+                </ul>
+            </div>
+
+            <div class="detail-card">
+                <h3>Creative Direction</h3>
+                <ul>
+                    <li>Preferred visual style</li>
+                    <li>Reference videos, if available</li>
+                    <li>Preferred promotional message</li>
+                    <li>Any relevant branding materials</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+    <section class="section">
+
+        <div class="section-heading">
+            <span class="eyebrow">Our Workflow</span>
+            <h2>How the <span class="gold-text">Process Works</span></h2>
+        </div>
+
+        <div class="process-list">
+
+            <div class="process-step">
+                <div class="step-number">01</div>
+                <div>
+                    <h3>Submit Your Request</h3>
+                    <p>
+                        Select the book trailer service and provide
+                        the necessary project information.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">02</div>
+                <div>
+                    <h3>Project Discussion</h3>
+                    <p>
+                        WMF reviews your requirements and confirms
+                        the scope, package and applicable price.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">03</div>
+                <div>
+                    <h3>Production</h3>
+                    <p>
+                        Work begins according to the agreed project
+                        requirements and production schedule.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">04</div>
+                <div>
+                    <h3>Review and Delivery</h3>
+                    <p>
+                        The completed work is presented for review
+                        and delivered according to the agreed terms.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section" style="background:var(--wmf-navy);">
+
+        <div class="section-heading">
+            <span class="eyebrow">Questions and Answers</span>
+            <h2>Frequently Asked <span class="gold-text">Questions</span></h2>
+        </div>
+
+        <div class="faq-container" id="faqContainer">
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    What is a book trailer?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    A book trailer is a short promotional video
+                    designed to introduce a book and attract
+                    the interest of potential readers.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do I need to provide my book cover?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Providing your book cover is helpful where
+                    available. The exact materials required will
+                    be confirmed during project discussion.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    How much does a book trailer cost?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    The price depends on the selected package and
+                    project requirements. Contact WMF for confirmed
+                    pricing before placing an order.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    How long does production take?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Delivery time will be confirmed by WMF after
+                    reviewing the project requirements and agreeing
+                    on the selected package.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can I request changes?
+                    <span class="faq-icon">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Revision arrangements depend on the selected
+                    package and the agreed project terms.
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="cta-section">
+
+        <span class="eyebrow">Start Your Project</span>
+
+        <h2>
+            Ready to Promote Your Book
+            <span class="gold-text">Visually?</span>
+        </h2>
+
+        <p>
+            Tell WMF about your book and your promotional goals.
+            The team can discuss the project requirements and
+            help you identify a suitable package.
+        </p>
+
+        <a href="order.html?service=book-trailer"
+            class="gold-button">
+            Order Book Trailer
+        </a>
+
+        <a href="contact.html?service=book-trailer"
+            class="outline-button">
+            Contact WMF
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-column">
+            <h3>WISE MEDIA FREELANCE</h3>
+            <p>
+                Creative digital solutions and publishing support
+                for authors, businesses and brands.
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="book-services.html">Book Services</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Book Services</h3>
+            <a href="book-trailer-details.html">Book Trailer</a>
+            <a href="animated-series-details.html">Animated Book Series</a>
+            <a href="publishing-details.html">Publishing</a>
+        </div>
+
+    </footer>
+
+
+    <!-- IMPORTANT: JAVASCRIPT FILE CONNECTION -->
+    <script type="module" src="assets/css/js/book-trailer-details.js"></script>
+
+</body>
+</html>
