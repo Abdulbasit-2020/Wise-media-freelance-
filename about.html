@@ -1,1 +1,714 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | Wise Media Freelance</title>
+
+    <meta name="description"
+        content="Discover Wise Media Freelance (WMF), our mission, vision and approach to creative, publishing and digital solutions.">
+
+    <!-- Main Website CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- About Page CSS -->
+    <style>
+
+        /* ABOUT PAGE */
+
+        .about-hero {
+            min-height: 480px;
+            background: linear-gradient(
+                120deg,
+                rgba(11, 16, 32, 0.97),
+                rgba(8, 8, 8, 0.91)
+            );
+            display: flex;
+            align-items: center;
+            padding: 100px 8%;
+            color: var(--white);
+        }
+
+        .about-hero-content {
+            max-width: 850px;
+        }
+
+        .about-label {
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(38px, 5vw, 65px);
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .about-hero h1 span {
+            color: var(--gold);
+        }
+
+        .about-hero p {
+            font-size: 17px;
+            line-height: 1.9;
+            color: #dddddd;
+            max-width: 700px;
+        }
+
+        .about-buttons {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+
+        .about-secondary-button {
+            display: inline-block;
+            padding: 14px 25px;
+            border: 1px solid var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .about-secondary-button:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+
+        /* INTRODUCTION */
+
+        .about-introduction {
+            padding: 100px 8%;
+            background: var(--white);
+        }
+
+        .about-introduction-container {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-introduction h2 {
+            font-size: 38px;
+            color: var(--navy);
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .about-introduction p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .about-highlight {
+            background: var(--navy);
+            padding: 45px;
+            color: var(--white);
+            border-bottom: 5px solid var(--gold);
+        }
+
+        .about-highlight h3 {
+            color: var(--gold);
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .about-highlight p {
+            color: #eeeeee;
+        }
+
+
+        /* MISSION AND VISION */
+
+        .mission-vision {
+            background: var(--grey);
+            padding: 100px 8%;
+        }
+
+        .about-section-heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .about-section-heading span {
+            color: #b58b3c;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .about-section-heading h2 {
+            color: var(--navy);
+            font-size: 38px;
+            margin-top: 15px;
+        }
+
+        .mission-vision-grid {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .mission-card {
+            background: var(--white);
+            padding: 45px;
+            border-top: 4px solid var(--gold);
+            transition: 0.3s;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .mission-card h3 {
+            font-size: 26px;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .mission-card p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+
+        /* OUR APPROACH */
+
+        .our-approach {
+            padding: 100px 8%;
+            background: var(--white);
+        }
+
+        .approach-container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .approach-heading {
+            max-width: 750px;
+            margin-bottom: 55px;
+        }
+
+        .approach-heading h2 {
+            font-size: 38px;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .approach-heading p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .approach-card {
+            padding: 35px;
+            background: #f8f8f8;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .approach-number {
+            font-size: 35px;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .approach-card h3 {
+            color: var(--navy);
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .approach-card p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+
+        /* FINAL CTA */
+
+        .about-cta {
+            background: var(--navy);
+            padding: 85px 8%;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .about-cta h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .about-cta p {
+            color: #ddd;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 850px) {
+
+            .about-introduction-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .approach-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .about-hero {
+                padding: 80px 6%;
+                min-height: 420px;
+            }
+
+            .about-hero h1 {
+                font-size: 38px;
+            }
+
+            .about-introduction,
+            .mission-vision,
+            .our-approach {
+                padding: 70px 6%;
+            }
+
+            .mission-vision-grid,
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mission-card,
+            .about-highlight {
+                padding: 30px;
+            }
+
+            .about-section-heading h2,
+            .approach-heading h2,
+            .about-cta h2 {
+                font-size: 30px;
+            }
+
+            .about-buttons {
+                flex-direction: column;
+            }
+
+            .about-buttons a {
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            <a href="index.html">
+                <h2>WMF</h2>
+                <span>WISE MEDIA FREELANCE</span>
+            </a>
+        </div>
+
+        <nav class="navigation">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html" class="active">About</a>
+
+            <a href="services.html">Services</a>
+
+            <a href="book-services.html">Book Services</a>
+
+            <a href="portfolio.html">Portfolio</a>
+
+            <a href="testimonials.html">Testimonials</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+        <div class="header-actions">
+
+            <a href="login.html">Login</a>
+
+            <a href="services.html" class="gold-button">
+                ORDER A SERVICE
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ABOUT HERO -->
+
+    <section class="about-hero">
+
+        <div class="about-hero-content">
+
+            <span class="about-label">
+                ABOUT WMF
+            </span>
+
+            <h1>
+                Creative Thinking.
+                Thoughtful Execution.
+                <span>Digital Solutions.</span>
+            </h1>
+
+            <p>
+                Discover Wise Media Freelance, a creative and digital
+                services brand committed to helping authors,
+                entrepreneurs and businesses bring their ideas to life.
+            </p>
+
+            <div class="about-buttons">
+
+                <a href="services.html" class="gold-button">
+                    EXPLORE SERVICES
+                </a>
+
+                <a href="contact.html" class="about-secondary-button">
+                    CONTACT WMF
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRODUCTION / OUR STORY -->
+
+    <section class="about-introduction">
+
+        <div class="about-introduction-container">
+
+            <div>
+
+                <span class="about-label">
+                    WHO WE ARE
+                </span>
+
+                <h2>
+                    About Wise Media Freelance.
+                </h2>
+
+                <p>
+                    Wise Media Freelance (WMF) is a creative and
+                    digital services brand focused on helping
+                    authors, entrepreneurs and businesses bring
+                    their ideas to life.
+                </p>
+
+                <p>
+                    We provide creative, publishing and digital
+                    solutions, combining thoughtful design,
+                    professional execution and a client-focused
+                    approach.
+                </p>
+
+                <p>
+                    Our goal is to make quality digital services
+                    accessible through a straightforward and
+                    organized experience, allowing clients to
+                    explore services, place orders and manage
+                    their projects with confidence.
+                </p>
+
+            </div>
+
+            <div class="about-highlight">
+
+                <h3>Our Story</h3>
+
+                <p>
+                    WMF is built around the idea that great ideas
+                    deserve thoughtful creative execution and
+                    professional digital support.
+                </p>
+
+                <p>
+                    We bring creative, publishing and digital
+                    services together in one organized experience
+                    designed to support different project needs.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MISSION AND VISION -->
+
+    <section class="mission-vision">
+
+        <div class="about-section-heading">
+
+            <span>OUR PURPOSE</span>
+
+            <h2>What Drives WMF</h2>
+
+        </div>
+
+        <div class="mission-vision-grid">
+
+            <div class="mission-card">
+
+                <h3>Our Mission</h3>
+
+                <p>
+                    To empower individuals, authors and businesses
+                    with creative and digital solutions that help
+                    them communicate their vision and strengthen
+                    their presence.
+                </p>
+
+            </div>
+
+
+            <div class="mission-card">
+
+                <h3>Our Vision</h3>
+
+                <p>
+                    To become a trusted creative and digital
+                    services brand recognized for quality,
+                    innovation and meaningful client relationships.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OUR APPROACH -->
+
+    <section class="our-approach">
+
+        <div class="approach-container">
+
+            <div class="approach-heading">
+
+                <span class="about-label">
+                    HOW WE WORK
+                </span>
+
+                <h2>
+                    A Thoughtful Approach to Every Project.
+                </h2>
+
+                <p>
+                    We believe that a good working relationship
+                    starts with understanding the project,
+                    organizing the process and maintaining
+                    clear communication.
+                </p>
+
+            </div>
+
+
+            <div class="approach-grid">
+
+                <div class="approach-card">
+
+                    <div class="approach-number">01</div>
+
+                    <h3>Understand</h3>
+
+                    <p>
+                        We begin by understanding your ideas,
+                        requirements and the objectives
+                        behind your project.
+                    </p>
+
+                </div>
+
+
+                <div class="approach-card">
+
+                    <div class="approach-number">02</div>
+
+                    <h3>Organize</h3>
+
+                    <p>
+                        We establish clear project requirements,
+                        agreed deliverables and an organized
+                        workflow before work begins.
+                    </p>
+
+                </div>
+
+
+                <div class="approach-card">
+
+                    <div class="approach-number">03</div>
+
+                    <h3>Execute</h3>
+
+                    <p>
+                        We approach each project with thoughtful
+                        design, professional execution and
+                        client-focused communication.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CALL TO ACTION -->
+
+    <section class="about-cta">
+
+        <h2>
+            Ready to Bring Your Ideas to Life?
+        </h2>
+
+        <p>
+            Explore our services, choose what you need and let
+            WMF help you take the next step.
+        </p>
+
+        <a href="services.html" class="gold-button">
+            EXPLORE SERVICES
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-column">
+
+            <h2>WMF</h2>
+
+            <h4>WISE MEDIA FREELANCE</h4>
+
+            <p>
+                Creative solutions and digital services
+                for authors, entrepreneurs and businesses.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About Us</a>
+
+            <a href="services.html">Services</a>
+
+            <a href="book-services.html">Book Services</a>
+
+            <a href="portfolio.html">Portfolio</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Client Support</h3>
+
+            <a href="contact.html">Contact</a>
+
+            <a href="faqs.html">FAQs</a>
+
+            <a href="order-tracking.html">Order Tracking</a>
+
+            <a href="terms.html">Terms & Conditions</a>
+
+            <a href="privacy.html">Privacy Policy</a>
+
+            <a href="refund-policy.html">Refund Policy</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Get Started</h3>
+
+            <p>
+                Have a project in mind?
+                Let's explore how WMF can help.
+            </p>
+
+            <a href="services.html" class="gold-button">
+                ORDER A SERVICE
+            </a>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="current-year"></span>
+                Wise Media Freelance. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ABOUT PAGE JAVASCRIPT -->
+
+    <script type="module" src="assets/js/about.js"></script>
+
+</body>
+
+</html>
