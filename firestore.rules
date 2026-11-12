@@ -1,0 +1,269 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // =====================================
+    // AUTHENTICATION HELPERS
+    // =====================================
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function verifiedUser() {
+      return signedIn()
+        && request.auth.token.email_verified == true;
+    }
+
+    function isAdmin() {
+      return verifiedUser()
+        && request.auth.token.admin == true;
+    }
+
+    function ownsRecord(userId) {
+      return verifiedUser()
+        && request.auth.uid == userId;
+    }
+
+
+    // =====================================
+    // USER ACCOUNTS
+    // =====================================
+
+    match /users/{userId} {
+
+      allow get: if ownsRecord(userId) || isAdmin();
+
+      allow list: if isAdmin();
+
+      // Clients can create only their own basic profile.
+      // They cannot assign themselves an administrator role.
+
+      allow create: if ownsRecord(userId)
+
+        && request.resource.data.keys().hasAll([
+          'uid',
+          'displayName',
+          'email',
+          'createdAt'
+        ])
+
+        && request.resource.data.keys().hasOnly([
+          'uid',
+          'displayName',
+          'email',
+          'createdAt'
+        ])
+
+        && request.resource.data.uid == request.auth.uid
+
+        && request.resource.data.email == request.auth.token.email
+
+        && request.resource.data.displayName is string
+
+        && request.resource.data.displayName.size() > 0
+
+        && request.resource.data.createdAt == request.time;
+
+      // Clients may update their display name only.
+      // Administrators may manage account profiles.
+
+      allow update: if isAdmin()
+
+        || (
+          ownsRecord(userId)
+
+          && request.resource.data.diff(resource.data)
+            .affectedKeys().hasOnly(['displayName'])
+
+          && request.resource.data.uid == resource.data.uid
+
+          && request.resource.data.email == resource.data.email
+
+          && request.resource.data.createdAt == resource.data.createdAt
+
+          && request.resource.data.displayName is string
+
+          && request.resource.data.displayName.size() > 0
+        );
+
+      allow delete: if isAdmin();
+    }
+
+
+    // =====================================
+    // ORDERS
+    // =====================================
+
+    match /orders/{orderId} {
+
+      allow read: if isAdmin()
+        || (
+          verifiedUser()
+          && resource.data.ownerUid == request.auth.uid
+        );
+
+      // Orders are created and managed by
+      // trusted backend operations.
+
+      allow create, update, delete: if isAdmin();
+    }
+
+
+    // =====================================
+    // INVOICES
+    // =====================================
+
+    match /invoices/{invoiceId} {
+
+      allow read: if isAdmin()
+        || (
+          verifiedUser()
+          && resource.data.ownerUid == request.auth.uid
+        );
+
+      allow write: if isAdmin();
+    }
+
+
+    // =====================================
+    // PROJECT UPDATES
+    // =====================================
+
+    match /projectUpdates/{updateId} {
+
+      allow read: if isAdmin()
+        || (
+          verifiedUser()
+          && resource.data.ownerUid == request.auth.uid
+        );
+
+      allow write: if isAdmin();
+    }
+
+
+    // =====================================
+    // CLIENT DOCUMENT RECORDS
+    // =====================================
+
+    match /documents/{documentId} {
+
+      allow read: if isAdmin()
+        || (
+          verifiedUser()
+          && resource.data.ownerUid == request.auth.uid
+        );
+
+      // Document metadata is managed by trusted
+      // backend operations or administrators.
+
+      allow write: if isAdmin();
+    }
+
+
+    // =====================================
+    // SUPPORT ENQUIRIES
+    // =====================================
+
+    match /supportEnquiries/{enquiryId} {
+
+      allow read: if isAdmin()
+        || (
+          verifiedUser()
+          && resource.data.ownerUid == request.auth.uid
+        );
+
+      allow create: if verifiedUser()
+
+        && request.resource.data.keys().hasAll([
+          'ownerUid',
+          'fullName',
+          'email',
+          'message',
+          'createdAt'
+        ])
+
+        && request.resource.data.keys().hasOnly([
+          'ownerUid',
+          'fullName',
+          'email',
+          'message',
+          'createdAt'
+        ])
+
+        && request.resource.data.ownerUid == request.auth.uid
+
+        && request.resource.data.email == request.auth.token.email
+
+        && request.resource.data.fullName is string
+
+        && request.resource.data.message is string
+
+        && request.resource.data.message.size() > 0
+
+        && request.resource.data.createdAt == request.time;
+
+      allow update, delete: if isAdmin();
+    }
+
+
+    // =====================================
+    // PUBLIC WEBSITE CONTENT
+    // =====================================
+
+    match /services/{serviceId} {
+
+      allow read: if isAdmin()
+        || resource.data.published == true;
+
+      allow write: if isAdmin();
+    }
+
+
+    match /otherAuthorServices/{serviceId} {
+
+      allow read: if isAdmin()
+        || resource.data.published == true;
+
+      allow write: if isAdmin();
+    }
+
+
+    match /portfolio/{projectId} {
+
+      allow read: if isAdmin()
+        || resource.data.published == true;
+
+      allow write: if isAdmin();
+    }
+
+
+    match /testimonials/{testimonialId} {
+
+      allow read: if isAdmin()
+        || resource.data.published == true;
+
+      allow write: if isAdmin();
+    }
+
+
+    match /faqs/{faqId} {
+
+      allow read: if isAdmin()
+        || resource.data.published == true;
+
+      allow write: if isAdmin();
+    }
+
+
+    // =====================================
+    // DEFAULT DENY
+    // =====================================
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+  }
+}
