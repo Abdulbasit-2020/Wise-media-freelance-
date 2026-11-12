@@ -1,0 +1,42 @@
+class Student {
+
+    constructor(name, age, department, balance) {
+
+        this.name = name;
+        this.age = age;
+        this.department = department;
+        this.balance = balance;
+
+    }
+
+    introduce() {
+
+        console.log(`My name is ${this.name}`)
+
+    }
+
+    deposit(amount) {
+
+       
+     return   balance += amount;
+        console.log(`${amount} deposited successfully`);
+
+    }
+
+    withdraw(amount) {
+if(balance < amount){
+    return "Insufficient funds"
+};
+       return balance -= amount;
+       console.log(`${amount} successfully withdrawn`)
+
+    }
+
+};
+
+const student1 = new Student("Jamiu",22,"Electrical",20000);
+console.log(student1);
+
+student1.introduce();
+student1.deposit(25000);
+student1.withdraw(100000);
