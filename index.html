@@ -1,42 +1,1161 @@
-class Student {
+<!DOCTYPE html>
+<html lang="en">
 
-    constructor(name, age, department, balance) {
+<head>
 
-        this.name = name;
-        this.age = age;
-        this.department = department;
-        this.balance = balance;
+    <meta charset="UTF-8">
 
-    }
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    introduce() {
+    <meta name="theme-color" content="#0B1020">
 
-        console.log(`My name is ${this.name}`)
+    <meta name="description"
+          content="Wise Media Freelance helps authors, entrepreneurs and businesses bring ideas to life through creative design, publishing support and professional digital solutions.">
 
-    }
+    <title>WMF | Wise Media Freelance</title>
 
-    deposit(amount) {
+    <!-- GOOGLE FONTS -->
 
-       
-     return   balance += amount;
-        console.log(`${amount} deposited successfully`);
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    }
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-    withdraw(amount) {
-if(balance < amount){
-    return "Insufficient funds"
-};
-       return balance -= amount;
-       console.log(`${amount} successfully withdrawn`)
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
 
-    }
+    <!-- MAIN CSS -->
 
-};
+    <link rel="stylesheet" href="assets/css/styles.css">
 
-const student1 = new Student("Jamiu",22,"Electrical",20000);
-console.log(student1);
+</head>
 
-student1.introduce();
-student1.deposit(25000);
-student1.withdraw(100000);
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <a href="index.html" class="logo">
+
+        <span class="logo-symbol">
+            W<span>M</span>F
+        </span>
+
+        <span class="logo-name">
+            WISE MEDIA
+            <small>FREELANCE</small>
+        </span>
+
+    </a>
+
+
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false">
+
+        ☰
+
+    </button>
+
+
+    <nav class="navigation" id="navigation">
+
+        <a href="index.html" class="active">HOME</a>
+
+        <a href="about.html">ABOUT</a>
+
+        <a href="services.html">SERVICES</a>
+
+        <a href="book-services.html">BOOK SERVICES</a>
+
+        <a href="portfolio.html">PORTFOLIO</a>
+
+        <a href="contact.html">CONTACT</a>
+
+        <a href="login.html" class="login-link">LOGIN</a>
+
+        <a href="book-services.html" class="nav-button">
+            ORDER A SERVICE
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO SLIDESHOW ================= -->
+
+<section class="hero" id="hero">
+
+    <div class="hero-overlay"></div>
+
+
+    <!-- SLIDE CONTENT -->
+
+    <div class="hero-content">
+
+        <span class="hero-label" id="heroLabel">
+            WISE MEDIA FREELANCE
+        </span>
+
+
+        <h1 id="heroTitle">
+
+            Transforming Ideas Into
+
+            <em>Powerful Digital Experiences.</em>
+
+        </h1>
+
+
+        <p id="heroDescription">
+
+            At Wise Media Freelance, we help authors,
+            entrepreneurs and businesses bring their ideas
+            to life through creative design, digital marketing,
+            publishing support and professional web solutions.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="services.html"
+               class="gold-button"
+               id="primaryButton">
+
+                EXPLORE OUR SERVICES
+
+                <span>↗</span>
+
+            </a>
+
+
+            <a href="portfolio.html"
+               class="outline-button"
+               id="secondaryButton">
+
+                VIEW OUR PORTFOLIO
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- PREVIOUS BUTTON -->
+
+    <button class="slide-arrow previous"
+            id="previousSlide"
+            aria-label="Previous slide">
+
+        &#10094;
+
+    </button>
+
+
+    <!-- NEXT BUTTON -->
+
+    <button class="slide-arrow next"
+            id="nextSlide"
+            aria-label="Next slide">
+
+        &#10095;
+
+    </button>
+
+
+    <!-- SLIDE INDICATORS -->
+
+    <div class="hero-bottom">
+
+        <div class="slide-indicators" id="slideIndicators">
+
+            <button class="indicator active"
+                    aria-label="Slide 1"></button>
+
+            <button class="indicator"
+                    aria-label="Slide 2"></button>
+
+            <button class="indicator"
+                    aria-label="Slide 3"></button>
+
+        </div>
+
+
+        <span class="slide-number" id="slideNumber">
+
+            01 / 03
+
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MAIN SERVICE CATEGORIES ================= -->
+
+<section class="category-section">
+
+    <div class="category-grid">
+
+
+        <!-- BOOK SERVICES -->
+
+        <a href="book-services.html" class="category-card">
+
+            <span class="category-number">01</span>
+
+            <span class="category-label">
+                FOR AUTHORS
+            </span>
+
+            <h2>Book Services</h2>
+
+            <p>
+
+                Trailers, animated book content,
+                editing and publishing support.
+
+            </p>
+
+            <span class="category-link">
+
+                EXPLORE BOOK SERVICES →
+
+            </span>
+
+        </a>
+
+
+
+        <!-- DIGITAL SERVICES -->
+
+        <a href="services.html" class="category-card">
+
+            <span class="category-number">02</span>
+
+            <span class="category-label">
+                FOR BUSINESSES
+            </span>
+
+            <h2>Digital Services</h2>
+
+            <p>
+
+                Websites, creative design and
+                digital marketing solutions.
+
+            </p>
+
+            <span class="category-link">
+
+                EXPLORE DIGITAL SERVICES →
+
+            </span>
+
+        </a>
+
+
+
+        <!-- PORTFOLIO -->
+
+        <a href="portfolio.html" class="category-card">
+
+            <span class="category-number">03</span>
+
+            <span class="category-label">
+                OUR CREATIVE WORK
+            </span>
+
+            <h2>Portfolio</h2>
+
+            <p>
+
+                Explore selected real projects
+                and creative work.
+
+            </p>
+
+            <span class="category-link">
+
+                VIEW PORTFOLIO →
+
+            </span>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT WMF ================= -->
+
+<section class="about-section section-padding" id="about">
+
+    <div class="section-label">
+        WELCOME TO WMF
+    </div>
+
+
+    <div class="about-content">
+
+        <div class="about-heading">
+
+            <h2>
+
+                More Than Creative Services.
+
+                <em>We're Your Digital Growth Partner.</em>
+
+            </h2>
+
+        </div>
+
+
+        <div class="about-description">
+
+            <p class="large-text">
+
+                Every brand has a story, every author
+                has a vision, and every business has a goal.
+
+            </p>
+
+
+            <p>
+
+                At WMF, we combine creativity, strategy
+                and digital expertise to help bring those
+                ambitions closer to reality.
+
+            </p>
+
+
+            <a href="about.html" class="text-link">
+
+                LEARN MORE ABOUT WMF
+
+                <span>→</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- THREE FEATURES -->
+
+    <div class="feature-grid">
+
+
+        <div class="feature-card">
+
+            <span class="feature-icon">✦</span>
+
+            <h3>Creative Excellence</h3>
+
+            <p>
+
+                We approach every project with creativity,
+                attention to detail and a commitment
+                to thoughtful presentation.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <span class="feature-icon">◇</span>
+
+            <h3>Professional Approach</h3>
+
+            <p>
+
+                We value clear communication,
+                organised processes and professional
+                project delivery.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <span class="feature-icon">◎</span>
+
+            <h3>Client-Focused Solutions</h3>
+
+            <p>
+
+                Our services are shaped around
+                your project requirements, goals
+                and creative vision.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FEATURED SERVICES ================= -->
+
+<section class="services-section section-padding" id="services">
+
+    <div class="section-label">
+        WHAT WE DO
+    </div>
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+
+                Explore What We
+
+                <em>Can Do for You.</em>
+
+            </h2>
+
+            <p>
+
+                Discover professional services designed
+                to support your publishing journey,
+                strengthen your brand and improve
+                your digital presence.
+
+            </p>
+
+        </div>
+
+
+        <a href="services.html" class="text-link">
+
+            VIEW ALL SERVICES →
+
+        </a>
+
+    </div>
+
+
+
+    <div class="services-grid">
+
+
+        <!-- SERVICE 1 -->
+
+        <article class="service-card">
+
+            <div class="service-image book-service-image">
+
+                <span>01</span>
+
+                <div class="service-symbol">▧</div>
+
+            </div>
+
+            <div class="service-info">
+
+                <span class="service-category">
+                    AUTHOR SERVICES
+                </span>
+
+                <h3>Book Services</h3>
+
+                <p>
+
+                    Creative, editorial and publishing
+                    support for authors.
+
+                </p>
+
+                <a href="book-services.html">
+
+                    EXPLORE SERVICE →
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- SERVICE 2 -->
+
+        <article class="service-card">
+
+            <div class="service-image trailer-image">
+
+                <span>02</span>
+
+                <div class="service-symbol">▶</div>
+
+            </div>
+
+            <div class="service-info">
+
+                <span class="service-category">
+                    VIDEO CREATION
+                </span>
+
+                <h3>Book Trailer Creation</h3>
+
+                <p>
+
+                    Give your book a compelling
+                    visual introduction.
+
+                </p>
+
+                <a href="book-services.html">
+
+                    EXPLORE SERVICE →
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- SERVICE 3 -->
+
+        <article class="service-card">
+
+            <div class="service-image editing-image">
+
+                <span>03</span>
+
+                <div class="service-symbol">✎</div>
+
+            </div>
+
+            <div class="service-info">
+
+                <span class="service-category">
+                    EDITORIAL SERVICES
+                </span>
+
+                <h3>Proofreading & Editing</h3>
+
+                <p>
+
+                    Improve manuscript clarity,
+                    grammar and consistency.
+
+                </p>
+
+                <a href="book-services.html">
+
+                    EXPLORE SERVICE →
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- SERVICE 4 -->
+
+        <article class="service-card">
+
+            <div class="service-image publishing-image">
+
+                <span>04</span>
+
+                <div class="service-symbol">▤</div>
+
+            </div>
+
+            <div class="service-info">
+
+                <span class="service-category">
+                    PUBLISHING
+                </span>
+
+                <h3>Publishing Support</h3>
+
+                <p>
+
+                    Coordinated assistance
+                    throughout your publishing journey.
+
+                </p>
+
+                <a href="book-services.html">
+
+                    EXPLORE SERVICE →
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- SERVICE 5 -->
+
+        <article class="service-card">
+
+            <div class="service-image website-image">
+
+                <span>05</span>
+
+                <div class="service-symbol">⌘</div>
+
+            </div>
+
+            <div class="service-info">
+
+                <span class="service-category">
+                    DIGITAL DESIGN
+                </span>
+
+                <h3>Website Design</h3>
+
+                <p>
+
+                    Professional digital experiences
+                    for growing businesses.
+
+                </p>
+
+                <a href="services.html">
+
+                    EXPLORE SERVICE →
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- SERVICE 6 -->
+
+        <article class="service-card">
+
+            <div class="service-image marketing-image">
+
+                <span>06</span>
+
+                <div class="service-symbol">↗</div>
+
+            </div>
+
+            <div class="service-info">
+
+                <span class="service-category">
+                    DIGITAL MARKETING
+                </span>
+
+                <h3>Digital Marketing</h3>
+
+                <p>
+
+                    Creative marketing support
+                    to strengthen your online presence.
+
+                </p>
+
+                <a href="services.html">
+
+                    EXPLORE SERVICE →
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+    <div class="services-footer">
+
+        <a href="services.html" class="gold-button">
+
+            VIEW ALL SERVICES →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= AUTHOR CENTRE ================= -->
+
+<section class="author-section">
+
+    <div class="author-content">
+
+        <span class="section-label gold-label">
+
+            THE WMF AUTHOR CENTRE
+
+        </span>
+
+
+        <h2>
+
+            Your Story Deserves to Be
+
+            <em>Seen, Heard and Remembered.</em>
+
+        </h2>
+
+
+        <p>
+
+            From cinematic book trailers and animated
+            book content to proofreading, publishing
+            support and promotional campaigns, we help
+            authors present their books professionally
+            and reach more readers.
+
+        </p>
+
+
+        <a href="book-services.html" class="gold-button">
+
+            EXPLORE BOOK SERVICES →
+
+        </a>
+
+    </div>
+
+
+    <div class="author-decoration">
+
+        <div class="author-circle circle-one"></div>
+
+        <div class="author-circle circle-two"></div>
+
+        <div class="author-circle circle-three"></div>
+
+        <span>
+
+            WMF<br>
+            AUTHOR<br>
+            CENTRE
+
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="process-section section-padding">
+
+    <div class="section-label">
+        OUR PROCESS
+    </div>
+
+
+    <h2>
+
+        Getting Started With WMF
+
+        <em>Is Simple.</em>
+
+    </h2>
+
+
+
+    <div class="process-grid">
+
+
+        <div class="process-card">
+
+            <span class="process-number">01</span>
+
+            <h3>Choose Your Service</h3>
+
+            <p>
+
+                Explore our services and select
+                the solution that matches your needs.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="process-card">
+
+            <span class="process-number">02</span>
+
+            <h3>Submit Your Project</h3>
+
+            <p>
+
+                Tell us about your project,
+                requirements and expectations.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="process-card">
+
+            <span class="process-number">03</span>
+
+            <h3>Complete Your Payment</h3>
+
+            <p>
+
+                Confirm your order and complete
+                the required upfront payment securely.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="process-card">
+
+            <span class="process-number">04</span>
+
+            <h3>Track Your Project</h3>
+
+            <p>
+
+                Follow your project progress
+                through your customer dashboard.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <a href="book-services.html" class="gold-button">
+
+        START YOUR ORDER →
+
+    </a>
+
+</section>
+
+
+
+<!-- ================= PORTFOLIO ================= -->
+
+<section class="portfolio-section section-padding">
+
+    <div class="section-label">
+        OUR CREATIVE WORK
+    </div>
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+
+                Creativity You Can See.
+
+                <em>Work You Can Explore.</em>
+
+            </h2>
+
+
+            <p>
+
+                Take a look at selected projects
+                that demonstrate our creative approach,
+                attention to detail and commitment to quality.
+
+            </p>
+
+        </div>
+
+
+        <a href="portfolio.html" class="text-link">
+
+            EXPLORE OUR PORTFOLIO →
+
+        </a>
+
+    </div>
+
+
+
+    <!-- Genuine approved portfolio projects will go here -->
+
+    <div class="portfolio-placeholder">
+
+        <span>WMF / SELECTED PROJECTS</span>
+
+        <h3>Our Creative Portfolio</h3>
+
+        <p>
+
+            Approved project showcases will appear here.
+
+        </p>
+
+        <small>
+
+            Only authentic work with appropriate
+            permission will be published.
+
+        </small>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section class="testimonial-section">
+
+    <div class="testimonial-content">
+
+        <span class="section-label">
+            CLIENT EXPERIENCES
+        </span>
+
+
+        <h2>
+
+            What Our
+
+            <em>Clients Say.</em>
+
+        </h2>
+
+
+        <div class="testimonial-placeholder">
+
+            <span class="quote-symbol">“</span>
+
+            <p>
+
+                Genuine customer feedback will be
+                displayed here with permission.
+
+            </p>
+
+            <a href="testimonials.html" class="text-link">
+
+                READ CLIENT FEEDBACK →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FINAL CALL TO ACTION ================= -->
+
+<section class="final-cta">
+
+    <div>
+
+        <span class="section-label gold-label">
+
+            YOUR NEXT IDEA STARTS HERE
+
+        </span>
+
+
+        <h2>
+
+            Ready to Bring Your
+
+            <em>Next Idea to Life?</em>
+
+        </h2>
+
+
+        <p>
+
+            Explore our services, choose what you need
+            and let WMF help you take the next step.
+
+        </p>
+
+    </div>
+
+
+    <div class="cta-buttons">
+
+        <a href="services.html" class="light-button">
+
+            EXPLORE SERVICES
+
+        </a>
+
+
+        <a href="book-services.html" class="gold-button">
+
+            ORDER A SERVICE →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+
+    <div class="footer-main">
+
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-symbol">
+                    W<span>M</span>F
+                </span>
+
+                <span class="logo-name">
+                    WISE MEDIA
+                    <small>FREELANCE</small>
+                </span>
+
+            </a>
+
+
+            <p>
+
+                Creative Solutions.<br>
+
+                Digital Excellence.<br>
+
+                Measurable Growth.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h4>QUICK LINKS</h4>
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="services.html">Services</a>
+
+            <a href="portfolio.html">Portfolio</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h4>AUTHOR CENTRE</h4>
+
+            <a href="book-services.html">Book Services</a>
+
+            <a href="book-services.html">Book Trailers</a>
+
+            <a href="book-services.html">Editing</a>
+
+            <a href="book-services.html">Publishing Support</a>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h4>CLIENT SUPPORT</h4>
+
+            <a href="faq.html">FAQs</a>
+
+            <a href="track-order.html">Order Tracking</a>
+
+            <a href="terms.html">Terms & Conditions</a>
+
+            <a href="privacy.html">Privacy Policy</a>
+
+            <a href="refund-policy.html">Refund Policy</a>
+
+            <a href="revision-policy.html">Revision Policy</a>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+        <p>
+
+            © <span id="currentYear"></span>
+
+            WMF — Wise Media Freelance.
+
+            All rights reserved.
+
+        </p>
+
+
+    
