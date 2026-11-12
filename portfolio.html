@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore selected creative, publishing and digital projects by Wise Media Freelance.">
+
+    <title>Our Portfolio | Wise Media Freelance</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        /* PORTFOLIO PAGE */
+
+        .portfolio-hero {
+            min-height: 430px;
+            padding: 100px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background:
+                linear-gradient(rgba(8, 8, 8, .85), rgba(11, 16, 32, .95));
+            color: #fff;
+        }
+
+        .portfolio-hero-content {
+            max-width: 850px;
+        }
+
+        .portfolio-label {
+            color: #D6B46A;
+            font-size: 13px;
+            letter-spacing: 4px;
+            font-weight: 700;
+        }
+
+        .portfolio-hero h1 {
+            font-size: clamp(36px, 6vw, 62px);
+            margin: 20px 0;
+        }
+
+        .portfolio-hero p {
+            color: #ddd;
+            line-height: 1.8;
+            font-size: 17px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .portfolio-button {
+            display: inline-block;
+            padding: 15px 28px;
+            background: #D6B46A;
+            color: #080808;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: .3s;
+        }
+
+        .portfolio-button:hover {
+            background: #fff;
+            transform: translateY(-3px);
+        }
+
+        .portfolio-section {
+            padding: 85px 7%;
+            background: #080808;
+            color: #fff;
+        }
+
+        .portfolio-intro {
+            max-width: 750px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .portfolio-intro h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 15px;
+        }
+
+        .portfolio-intro p {
+            color: #bbb;
+            line-height: 1.8;
+        }
+
+        .portfolio-controls {
+            max-width: 1000px;
+            margin: 0 auto 35px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .portfolio-search {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .portfolio-search input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background: #111827;
+            color: #fff;
+            outline: none;
+        }
+
+        .portfolio-search input:focus {
+            border-color: #D6B46A;
+        }
+
+        .portfolio-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .portfolio-filter {
+            padding: 12px 17px;
+            border: 1px solid #D6B46A;
+            background: transparent;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .portfolio-filter:hover,
+        .portfolio-filter.active {
+            background: #D6B46A;
+            color: #080808;
+        }
+
+        .portfolio-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(270px, 1fr)
+            );
+            gap: 25px;
+        }
+
+        .portfolio-card {
+            background: #111827;
+            border: 1px solid rgba(214, 180, 106, .25);
+            border-radius: 9px;
+            overflow: hidden;
+            transition: .3s;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            border-color: #D6B46A;
+        }
+
+        .portfolio-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .portfolio-card-content {
+            padding: 22px;
+        }
+
+        .portfolio-category {
+            display: inline-block;
+            color: #D6B46A;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-card h3 {
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .portfolio-card p {
+            color: #c7c7c7;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .portfolio-card a {
+            display: inline-block;
+            margin-top: 18px;
+            color: #D6B46A;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .portfolio-empty {
+            max-width: 750px;
+            margin: 30px auto;
+            padding: 55px 25px;
+            text-align: center;
+            background: #111827;
+            border: 1px solid rgba(214, 180, 106, .3);
+            border-radius: 10px;
+        }
+
+        .portfolio-empty h3 {
+            color: #D6B46A;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-empty p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .portfolio-cta {
+            padding: 80px 7%;
+            background: #0B1020;
+            text-align: center;
+            color: #fff;
+        }
+
+        .portfolio-cta h2 {
+            font-size: clamp(27px, 4vw, 40px);
+            margin-bottom: 15px;
+        }
+
+        .portfolio-cta p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 650px) {
+            .portfolio-hero {
+                padding: 75px 5%;
+            }
+
+            .portfolio-section {
+                padding: 60px 5%;
+            }
+
+            .portfolio-controls {
+                flex-direction: column;
+            }
+
+            .portfolio-filters {
+                justify-content: center;
+            }
+
+            .portfolio-filter {
+                font-size: 12px;
+                padding: 10px 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a href="index.html" class="logo">
+            WISE MEDIA <span class="gold-text">FREELANCE</span>
+        </a>
+
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="Open navigation"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <nav class="navigation" id="mainNavigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="book-services.html">Book Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="portfolio-hero">
+
+        <div class="portfolio-hero-content">
+
+            <span class="portfolio-label">
+                OUR PORTFOLIO
+            </span>
+
+            <h1>
+                Work That Brings Ideas to Life
+            </h1>
+
+            <p>
+                Explore selected creative, publishing and digital
+                projects that demonstrate the WMF approach to
+                thoughtful design, professional execution and
+                meaningful digital experiences.
+            </p>
+
+            <a href="contact.html" class="portfolio-button">
+                START A PROJECT
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- PORTFOLIO PROJECTS -->
+    <section class="portfolio-section">
+
+        <div class="portfolio-intro">
+
+            <span class="portfolio-label">
+                SELECTED PROJECTS
+            </span>
+
+            <h2>Creativity You Can Explore</h2>
+
+            <p>
+                Discover selected examples of work completed by
+                Wise Media Freelance. Each published project should
+                include authentic visuals, a clear description and
+                the services delivered.
+            </p>
+
+        </div>
+
+
+        <!-- SEARCH AND FILTERS -->
+        <div class="portfolio-controls">
+
+            <div class="portfolio-search">
+
+                <input
+                    type="search"
+                    id="portfolioSearch"
+                    placeholder="Search portfolio projects..."
+                    aria-label="Search portfolio projects"
+                >
+
+            </div>
+
+
+            <div class="portfolio-filters">
+
+                <button
+                    class="portfolio-filter active"
+                    data-category="all"
+                >
+                    All Projects
+                </button>
+
+                <button
+                    class="portfolio-filter"
+                    data-category="book-trailer"
+                >
+                    Book Trailers
+                </button>
+
+                <button
+                    class="portfolio-filter"
+                    data-category="book-design"
+                >
+                    Book Design
+                </button>
+
+                <button
+                    class="portfolio-filter"
+                    data-category="web-design"
+                >
+                    Web Design
+                </button>
+
+                <button
+                    class="portfolio-filter"
+                    data-category="marketing"
+                >
+                    Marketing
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECTS WILL LOAD HERE -->
+        <div
+            class="portfolio-grid"
+            id="portfolioGrid"
+        ></div>
+
+
+        <!-- EMPTY STATE -->
+        <div class="portfolio-empty" id="portfolioEmpty">
+
+            <h3>Our Portfolio Is Growing</h3>
+
+            <p>
+                We are preparing selected project examples for
+                this space. Please check back as more genuine
+                WMF work is added.
+            </p>
+
+            <a href="contact.html" class="portfolio-button">
+                DISCUSS YOUR PROJECT
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CALL TO ACTION -->
+    <section class="portfolio-cta">
+
+        <span class="portfolio-label">
+            YOUR IDEA, OUR CREATIVITY
+        </span>
+
+        <h2>Have a Project in Mind?</h2>
+
+        <p>
+            Whether you are an author, entrepreneur or growing
+            business, WMF is ready to help you explore your
+            next creative or digital project.
+        </p>
+
+        <a href="services.html" class="portfolio-button">
+            EXPLORE OUR SERVICES
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-column">
+
+            <h3>
+                WISE MEDIA <span class="gold-text">FREELANCE</span>
+            </h3>
+
+            <p>
+                Creative, publishing and digital solutions
+                designed to help ideas grow.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="book-services.html">Book Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Information</h3>
+
+            <a href="faq.html">FAQs</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="contact.html">Support</a>
+
+        </div>
+
+        <p class="copyright">
+            &copy; <span id="currentYear"></span>
+            Wise Media Freelance. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT CONNECTION -->
+    <script type="module" src="assets/css/js/portfolio.js"></script>
+
+</body>
+</html>
