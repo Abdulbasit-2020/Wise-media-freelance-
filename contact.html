@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us | Wise Media Freelance</title>
+
+  <meta
+    name="description"
+    content="Contact Wise Media Freelance for service enquiries, project discussions and custom requests."
+  >
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    .contact-hero {
+      background: linear-gradient(135deg, #0B1020, #080808);
+      color: #fff;
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .contact-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin-bottom: 18px;
+    }
+
+    .gold-text {
+      color: #D6B46A;
+    }
+
+    .contact-hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #ddd;
+      line-height: 1.8;
+    }
+
+    .contact-section {
+      background: #F3F4F6;
+      padding: 80px 20px;
+    }
+
+    .contact-container {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .contact-information h2,
+    .contact-form-container h2 {
+      color: #0B1020;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .contact-information > p,
+    .contact-form-container > p {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .contact-info-card {
+      background: #0B1020;
+      color: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+    }
+
+    .contact-info-card h3 {
+      color: #D6B46A;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .contact-info-card p {
+      color: #ddd;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .contact-form-container {
+      background: #fff;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      color: #0B1020;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      background: #fff;
+      color: #222;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #D6B46A;
+      box-shadow: 0 0 0 2px rgba(214, 180, 106, 0.15);
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .contact-submit-button {
+      background: #D6B46A;
+      color: #080808;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-submit-button:hover {
+      background: #0B1020;
+      color: #fff;
+    }
+
+    .contact-submit-button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .form-message {
+      display: none;
+      padding: 14px;
+      border-radius: 6px;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .form-message.success {
+      display: block;
+      background: #e8f7ed;
+      color: #176b35;
+    }
+
+    .form-message.error {
+      display: block;
+      background: #fdeaea;
+      color: #a32121;
+    }
+
+    .contact-note {
+      color: #777;
+      font-size: 0.85rem;
+      line-height: 1.7;
+      margin-top: 15px;
+    }
+
+    .contact-bottom {
+      background: #0B1020;
+      color: #fff;
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    .contact-bottom h2 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      margin-bottom: 15px;
+    }
+
+    .contact-bottom p {
+      max-width: 650px;
+      margin: auto;
+      color: #ddd;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 800px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-section {
+        padding: 55px 18px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .contact-form-container {
+        padding: 23px 18px;
+      }
+
+      .contact-hero {
+        padding: 70px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <a href="index.html" class="logo">
+      WISE MEDIA <span class="gold-text">FREELANCE</span>
+    </a>
+
+    <button
+      class="mobile-menu-button"
+      id="mobileMenuButton"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+    <nav class="navigation" id="mainNavigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="book-services.html">Book Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="contact-hero">
+
+    <h1>Let's <span class="gold-text">Talk About Your Project</span></h1>
+
+    <p>
+      Have a question, a project idea or a custom request?
+      Send us a written enquiry. Our team will review your message
+      and respond through written communication.
+    </p>
+
+  </section>
+
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+
+    <div class="contact-container">
+
+      <!-- CONTACT INFORMATION -->
+      <div class="contact-information">
+
+        <h2>Get in Touch</h2>
+
+        <p>
+          We welcome enquiries from authors, entrepreneurs,
+          businesses and creative professionals.
+        </p>
+
+        <div class="contact-info-card">
+          <h3>Written Communication</h3>
+
+          <p>
+            Use the enquiry form to send your questions and project
+            details. WMF communicates with clients through written
+            channels.
+          </p>
+        </div>
+
+        <div class="contact-info-card">
+          <h3>Service Enquiries</h3>
+
+          <p>
+            Ask us about our available services, project requirements,
+            custom packages and booking process.
+          </p>
+        </div>
+
+        <div class="contact-info-card">
+          <h3>Business Hours</h3>
+
+          <p>
+            Enquiries will be reviewed and answered according to
+            WMF's confirmed business hours.
+          </p>
+        </div>
+
+      </div>
+
+
+      <!-- CONTACT FORM -->
+      <div class="contact-form-container">
+
+        <h2>Send an Enquiry</h2>
+
+        <p>
+          Complete the form below with accurate information.
+        </p>
+
+        <form id="contactForm" class="contact-form">
+
+          <div class="form-group">
+            <label for="fullName">Full Name *</label>
+
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter your full name"
+              maxlength="100"
+              autocomplete="name"
+              required
+            >
+          </div>
+
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              maxlength="150"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+
+          <div class="form-group">
+            <label for="service">What is your enquiry about? *</label>
+
+            <select id="service" name="service" required>
+
+              <option value="">Select an enquiry category</option>
+
+              <option value="Book Trailer">
+                Book Trailer
+              </option>
+
+              <option value="Animated Series">
+                Animated Series
+              </option>
+
+              <option value="Proofreading">
+                Proofreading
+              </option>
+
+              <option value="Publishing">
+                Publishing
+              </option>
+
+              <option value="Book Design">
+                Book Design
+              </option>
+
+              <option value="Amazon Optimization">
+                Amazon Optimization
+              </option>
+
+              <option value="Book Marketing">
+                Book Marketing
+              </option>
+
+              <option value="Other Author Services">
+                Other Author Services
+              </option>
+
+              <option value="Custom Project">
+                Custom Project
+              </option>
+
+              <option value="General Enquiry">
+                General Enquiry
+              </option>
+
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Enter your enquiry subject"
+              maxlength="150"
+              required
+            >
+          </div>
+
+
+          <div class="form-group">
+            <label for="message">Your Message *</label>
+
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell us about your enquiry or project..."
+              maxlength="5000"
+              required
+            ></textarea>
+          </div>
+
+
+          <button
+            type="submit"
+            class="contact-submit-button"
+            id="contactSubmitButton"
+          >
+            Submit Enquiry
+          </button>
+
+          <div
+            id="formMessage"
+            class="form-message"
+            role="status"
+            aria-live="polite"
+          ></div>
+
+        </form>
+
+        <p class="contact-note">
+          Please do not include passwords, payment card details or
+          other sensitive financial information in your message.
+          This form is a frontend demonstration and is not yet
+          connected to a live submission service.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BOTTOM SECTION -->
+  <section class="contact-bottom">
+
+    <h2>Your Next Project Starts with a Conversation</h2>
+
+    <p>
+      Share your ideas with WMF and let us explore how our services
+      may support your creative or business goals.
+    </p>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-column">
+
+      <h3>WISE MEDIA <span class="gold-text">FREELANCE</span></h3>
+
+      <p>
+        Creative and professional services designed to help
+        authors and businesses bring their ideas to life.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Quick Links</h3>
+
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="testimonials.html">Testimonials</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Explore</h3>
+
+      <a href="book-services.html">Book Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQs</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Legal</h3>
+
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+
+    </div>
+
+
+    <p class="footer-bottom">
+      &copy; <span id="currentYear"></span>
+      Wise Media Freelance. All rights reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT CONNECTION -->
+  <script type="module" src="assets/css/js/contact.js"></script>
+
+</body>
+</html>
