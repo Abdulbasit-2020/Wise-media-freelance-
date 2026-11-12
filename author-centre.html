@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Author Centre | Wise Media Freelance</title>
+
+    <meta name="description"
+        content="Access the Wise Media Freelance Author Centre to manage orders, projects, invoices and documents.">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+
+        /* =================================
+           AUTHOR CENTRE HERO
+        ================================= */
+
+        .author-hero {
+            background: linear-gradient(135deg, #0B1020, #080808);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 90px 20px 65px;
+        }
+
+        .author-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 15px;
+        }
+
+        .author-hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #D1D5DB;
+            line-height: 1.8;
+        }
+
+
+        /* =================================
+           MAIN CONTAINER
+        ================================= */
+
+        .author-container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 65px 20px;
+        }
+
+
+        /* =================================
+           DEVELOPMENT NOTICE
+        ================================= */
+
+        .author-notice {
+            background: #FFF8E8;
+            border-left: 5px solid #D6B46A;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 40px;
+            color: #664D16;
+            line-height: 1.8;
+        }
+
+        .author-notice strong {
+            color: #8A6423;
+        }
+
+
+        /* =================================
+           AUTH LAYOUT
+        ================================= */
+
+        .auth-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: start;
+        }
+
+        .auth-card {
+            background: #FFFFFF;
+            border: 1px solid #EEEEEE;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .auth-card h2 {
+            color: #0B1020;
+            font-size: 1.7rem;
+            margin-bottom: 10px;
+        }
+
+        .auth-description {
+            color: #666666;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+
+        /* =================================
+           AUTH TABS
+        ================================= */
+
+        .auth-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #EEEEEE;
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 13px 10px;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: #777777;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .auth-tab.active {
+            color: #0B1020;
+            border-bottom-color: #D6B46A;
+        }
+
+
+        /* =================================
+           FORMS
+        ================================= */
+
+        .auth-form {
+            display: none;
+        }
+
+        .auth-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #0B1020;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+            background: #FFFFFF;
+        }
+
+        .form-group input:focus {
+            border-color: #D6B46A;
+            box-shadow: 0 0 0 3px rgba(214, 180, 106, 0.15);
+        }
+
+        .form-help {
+            color: #777777;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-top: 7px;
+        }
+
+
+        /* =================================
+           PASSWORD TOGGLE
+        ================================= */
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            padding-right: 75px;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: transparent;
+            color: #8A6423;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+
+        /* =================================
+           AUTH BUTTONS
+        ================================= */
+
+        .auth-submit {
+            width: 100%;
+            background: #0B1020;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 6px;
+            padding: 15px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 8px;
+        }
+
+        .auth-submit:hover {
+            background: #D6B46A;
+            color: #080808;
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: right;
+            margin-top: 15px;
+            color: #8A6423;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =================================
+           FORM MESSAGES
+        ================================= */
+
+        .auth-message {
+            display: none;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 6px;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .auth-message.info {
+            display: block;
+            background: #FFF8E8;
+            color: #664D16;
+            border-left: 4px solid #D6B46A;
+        }
+
+        .auth-message.error {
+            display: block;
+            background: #FEECEC;
+            color: #991B1B;
+            border-left: 4px solid #DC2626;
+        }
+
+
+        /* =================================
+           AUTH SIDE INFORMATION
+        ================================= */
+
+        .author-info {
+            background: #0B1020;
+            color: #FFFFFF;
+            padding: 35px;
+            border-radius: 12px;
+        }
+
+        .author-info h2 {
+            margin-bottom: 15px;
+            font-size: 1.7rem;
+        }
+
+        .author-info > p {
+            color: #D1D5DB;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .author-benefit {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 23px;
+            align-items: flex-start;
+        }
+
+        .benefit-icon {
+            min-width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(214, 180, 106, 0.15);
+            color: #D6B46A;
+            border-radius: 8px;
+            font-size: 1.2rem;
+        }
+
+        .author-benefit h3 {
+            color: #FFFFFF;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .author-benefit p {
+            color: #D1D5DB;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+
+        /* =================================
+           DASHBOARD PREVIEW
+        ================================= */
+
+        .dashboard-preview {
+            margin-top: 75px;
+        }
+
+        .dashboard-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .dashboard-heading h2 {
+            color: #0B1020;
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            margin-bottom: 12px;
+        }
+
+        .dashboard-heading p {
+            color: #666666;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .dashboard-feature {
+            background: #F3F4F6;
+            border: 1px solid #EEEEEE;
+            padding: 25px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .dashboard-feature:hover {
+            transform: translateY(-4px);
+            border-color: #D6B46A;
+        }
+
+        .feature-icon {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .dashboard-feature h3 {
+            color: #0B1020;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .dashboard-feature p {
+            color: #666666;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            margin-top: 15px;
+            background: #FFF8E8;
+            color: #8A6423;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+
+        /* =================================
+           SECURITY INFORMATION
+        ================================= */
+
+        .security-section {
+            margin-top: 60px;
+            padding: 30px;
+            background: #F3F4F6;
+            border-radius: 10px;
+        }
+
+        .security-section h2 {
+            color: #0B1020;
+            margin-bottom: 12px;
+        }
+
+        .security-section p {
+            color: #555555;
+            line-height: 1.8;
+        }
+
+        .legal-links {
+            margin-top: 15px;
+        }
+
+        .legal-links a {
+            color: #8A6423;
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 15px;
+        }
+
+        .legal-links a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =================================
+           CONTACT CTA
+        ================================= */
+
+        .author-contact {
+            background: #0B1020;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 40px 25px;
+            margin-top: 45px;
+            border-radius: 10px;
+        }
+
+        .author-contact h2 {
+            margin-bottom: 12px;
+        }
+
+        .author-contact p {
+            color: #D1D5DB;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .author-contact a {
+            display: inline-block;
+            background: #D6B46A;
+            color: #080808;
+            padding: 13px 28px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .author-contact a:hover {
+            background: #FFFFFF;
+        }
+
+
+        /* =================================
+           RESPONSIVE DESIGN
+        ================================= */
+
+        @media (max-width: 850px) {
+
+            .auth-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .author-hero {
+                padding: 75px 18px 55px;
+            }
+
+            .author-container {
+                padding: 45px 18px;
+            }
+
+            .auth-card,
+            .author-info {
+                padding: 25px 20px;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .security-section {
+                padding: 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         HEADER
+    ================================= -->
+
+    <header class="header">
+
+        <a href="index.html" class="logo">
+            WISE MEDIA <span class="gold-text">FREELANCE</span>
+        </a>
+
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="Open navigation"
+            aria-expanded="false">
+
+            ☰
+
+        </button>
+
+        <nav class="navigation" id="mainNavigation">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="services.html">Services</a>
+
+            <a href="book-services.html">Book Services</a>
+
+            <a href="portfolio.html">Portfolio</a>
+
+            <a href="testimonials.html">Testimonials</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =================================
+         HERO
+    ================================= -->
+
+    <section class="author-hero">
+
+        <h1>Welcome to the Author Centre</h1>
+
+        <p>
+            Your dedicated space for managing your projects,
+            orders, documents and communication with
+            Wise Media Freelance.
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================
+         MAIN CONTENT
+    ================================= -->
+
+    <main class="author-container">
+
+
+        <!-- DEVELOPMENT NOTICE -->
+
+        <div class="author-notice">
+
+            <strong>Account system under development:</strong>
+
+            The Author Centre interface is being prepared.
+            Account registration, sign-in, password recovery
+            and private dashboard features will become available
+            after secure Firebase integration.
+
+            Do not enter real account passwords on this
+            development version.
+
+        </div>
+
+
+
+        <!-- =================================
+             AUTHENTICATION AREA
+        ================================= -->
+
+        <section class="auth-layout">
+
+
+            <!-- AUTH CARD -->
+
+            <div class="auth-card">
+
+                <div class="auth-tabs">
+
+                    <button
+                        type="button"
+                        class="auth-tab active"
+                        id="loginTab">
+
+                        Sign In
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="auth-tab"
+                        id="registerTab">
+
+                        Create Account
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- SIGN IN FORM -->
+
+                <form
+                    id="loginForm"
+                    class="auth-form active">
+
+                    <h2>Welcome Back</h2>
+
+                    <p class="auth-description">
+                        Sign in to access your WMF author account.
+                    </p>
+
+
+                    <div class="form-group">
+
+                        <label for="loginEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            name="email"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required>
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-password-target="loginPassword">
+
+                                Show
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="auth-submit">
+
+                        Sign In
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="forgot-password"
+                        id="forgotPasswordButton">
+
+                        Forgot your password?
+
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- CREATE ACCOUNT FORM -->
+
+                <form
+                    id="registerForm"
+                    class="auth-form">
+
+                    <h2>Create Your Account</h2>
+
+                    <p class="auth-description">
+                        Create an account to manage your future
+                        WMF orders and projects.
+                    </p>
+
+
+                    <div class="form-group">
+
+                        <label for="registerName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="registerName"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="registerEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            name="email"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="registerPassword">
+                            Create Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="registerPassword"
+                                name="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                required>
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-password-target="registerPassword">
+
+                                Show
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Enter your password again"
+                                autocomplete="new-password"
+                                required>
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-password-target="confirmPassword">
+
+                                Show
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="auth-submit">
+
+                        Create Account
+
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- AUTH MESSAGE -->
+
+                <div
+                    id="authMessage"
+                    class="auth-message"
+                    role="status"
+                    aria-live="polite">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- AUTHOR INFORMATION -->
+
+            <aside class="author-info">
+
+                <h2>Your Projects, Organised</h2>
+
+                <p>
+                    The WMF Author Centre is being designed
+                    to give clients a convenient place to
+                    access important project information.
+                </p>
+
+
+                <div class="author-benefit">
+
+                    <div class="benefit-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>Order Management</h3>
+
+                        <p>
+                            View your submitted orders and
+                            access relevant order information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="author-benefit">
+
+                    <div class="benefit-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>Project Updates</h3>
+
+                        <p>
+                            Follow the recorded progress of
+                            your approved projects.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="author-benefit">
+
+                    <div class="benefit-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>Private Documents</h3>
+
+                        <p>
+                            Upload and access project documents
+                            through a secure client area.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="author-benefit">
+
+                    <div class="benefit-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>Invoices and Receipts</h3>
+
+                        <p>
+                            Access your available payment
+                            records and project invoices.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="author-benefit">
+
+                    <div class="benefit-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>Account Management</h3>
+
+                        <p>
+                            Manage your registered details
+                            and account preferences.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+
+        <!-- =================================
+             DASHBOARD PREVIEW
+        ================================= -->
+
+        <section class="dashboard-preview">
+
+            <div class="dashboard-heading">
+
+                <h2>Inside Your Author Dashboard</h2>
+
+                <p>
+                    These are the main features planned
+                    for the WMF client dashboard.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+
+                <!-- ORDERS -->
+
+                <div class="dashboard-feature">
+
+                    <div class="feature-icon">📦</div>
+
+                    <h3>My Orders</h3>
+
+                    <p>
+                        View your service orders, order references,
+                        approved packages and order details.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+
+
+                <!-- PROJECT PROGRESS -->
+
+                <div class="dashboard-feature">
+
+                    <div class="feature-icon">📊</div>
+
+                    <h3>Project Progress</h3>
+
+                    <p>
+                        Follow project stages and view
+                        progress updates from WMF.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+
+
+                <!-- INVOICES -->
+
+                <div class="dashboard-feature">
+
+                    <div class="feature-icon">🧾</div>
+
+                    <h3>Invoices & Receipts</h3>
+
+                    <p>
+                        Access available invoices, payment
+                        confirmations and receipts.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+
+
+                <!-- DOCUMENTS -->
+
+                <div class="dashboard-feature">
+
+                    <div class="feature-icon">📁</div>
+
+                    <h3>Project Documents</h3>
+
+                    <p>
+                        Upload manuscripts, images,
+                        reference materials and other
+                        approved project files.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+
+
+                <!-- UPDATES -->
+
+                <div class="dashboard-feature">
+
+                    <div class="feature-icon">🔔</div>
+
+                    <h3>Project Notifications</h3>
+
+                    <p>
+                        Receive relevant notifications
+                        about project updates and important
+                        order information.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+
+
+                <!-- ACCOUNT -->
+
+                <div class="dashboard-feature">
+
+                    <div class="feature-icon">👤</div>
+
+                    <h3>My Account</h3>
+
+                    <p>
+                        Manage your registered name,
+                        email address and other available
+                        account information.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             SECURITY SECTION
+        ================================= -->
+
+        <section class="security-section">
+
+            <h2>Your Account Security Matters</h2>
+
+            <p>
+                The completed Author Centre will use Firebase
+                Authentication and protected database and file
+                access rules. Each client will only be permitted
+                to access their own authorised orders, invoices,
+                project updates and documents.
+            </p>
+
+            <p>
+                Passwords will be handled through the
+                authentication provider rather than stored
+                as plain text in the website database.
+            </p>
+
+            <div class="legal-links">
+
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="terms.html">
+                    Terms & Conditions
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             CONTACT SECTION
+        ================================= -->
+
+        <section class="author-contact">
+
+            <h2>Need Assistance?</h2>
+
+            <p>
+                If you have an existing order or a question
+                about WMF services, contact our team through
+                the official written communication channel.
+            </p>
+
+            <a href="contact.html">
+                Contact WMF
+
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         FOOTER
+    ================================= -->
+
+    <footer class="footer">
+
+        <div class="footer-column">
+
+            <h3>WISE MEDIA FREELANCE</h3>
+
+            <p>
+                Creative and professional services designed
+                to support authors and businesses.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="services.html">Services</a>
+
+            <a href="book-services.html">Book Services</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Information</h3>
+
+            <a href="faq.html">FAQs</a>
+
+            <a href="privacy.html">Privacy Policy</a>
+
+            <a href="terms.html">Terms & Conditions</a>
+
+            <a href="refund-policy.html">Refund Policy</a>
+
+            <a href="support-policy.html">Support Policy</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Client Area</h3>
+
+            <a href="author-centre.html">Author Centre</a>
+
+            <a href="order-tracking.html">Track Order</a>
+
+            <a href="contact.html">Contact Support</a>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy;
+                <span id="currentYear"></span>
+                Wise Media Freelance. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT CONNECTION -->
+
+    <script type="module" src="assets/css/js/author-centre.js"></script>
+
+
+</body>
+
+</html>
