@@ -6,6 +6,13 @@
 
 
 import { auth, db } from "./firebase.js";
+
+import {
+    doc,
+    getDoc,
+    setDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/13.2.0/firebase-firestore.js";
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
@@ -221,7 +228,51 @@ function getFriendlyError(error) {
 
 }
 
+// ============================================
+// CREATE OR CHECK CLIENT FIRESTORE PROFILE
+// ============================================
 
+async function createClientProfile(user) {
+
+    if (!user || !user.uid) {
+        throw new Error("Authenticated user not found.");
+    }
+
+    if (!user.emailVerified) {
+        throw new Error("Email verification is required.");
+    }
+
+    const userRef = doc(db, "users", user.uid);
+
+    const userSnapshot = await getDoc(userRef);
+
+    // Existing profile: do not overwrite it.
+    if (userSnapshot.exists()) {
+
+        return userSnapshot.data();
+
+    }
+
+    // Create a new profile for this verified user.
+    const profile = {
+
+        uid: user.uid,
+
+        displayName:
+            user.displayName ||
+            user.email.split("@")[0],
+
+        email: user.email,
+
+        createdAt: serverTimestamp()
+
+    };
+
+    await setDoc(userRef, profile);
+
+    return profile;
+
+}
 // ============================================
 // REGISTRATION
 // ============================================
