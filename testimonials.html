@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Client Testimonials | Wise Media Freelance</title>
+
+  <meta
+    name="description"
+    content="Discover what clients say about working with Wise Media Freelance."
+  >
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    .testimonials-hero {
+      background: linear-gradient(135deg, #0B1020, #080808);
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .testimonials-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin-bottom: 20px;
+    }
+
+    .testimonials-hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #e0e0e0;
+      line-height: 1.8;
+    }
+
+    .gold-text {
+      color: #D6B46A;
+    }
+
+    .testimonials-section {
+      padding: 80px 20px;
+      background: #F3F4F6;
+      min-height: 450px;
+    }
+
+    .testimonials-container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: #0B1020;
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .testimonial-quote {
+      font-size: 2rem;
+      color: #D6B46A;
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-message {
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .testimonial-client {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+    }
+
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #0B1020;
+    }
+
+    .testimonial-client h3 {
+      color: #0B1020;
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .testimonial-client span {
+      color: #777;
+      font-size: 0.85rem;
+    }
+
+    .empty-testimonials {
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 55px 25px;
+      text-align: center;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .empty-testimonials .empty-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .empty-testimonials h3 {
+      color: #0B1020;
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .empty-testimonials p {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    .testimonials-cta {
+      background: #0B1020;
+      color: #fff;
+      text-align: center;
+      padding: 75px 20px;
+    }
+
+    .testimonials-cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 15px;
+    }
+
+    .testimonials-cta p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: #ddd;
+      line-height: 1.8;
+    }
+
+    .testimonial-button {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #D6B46A;
+      color: #080808;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .testimonial-button:hover {
+      background: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .testimonials-hero {
+        padding: 75px 18px;
+      }
+
+      .testimonials-section {
+        padding: 55px 18px;
+      }
+
+      .testimonial-card {
+        padding: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      WISE MEDIA <span class="gold-text">FREELANCE</span>
+    </a>
+
+    <button
+      class="mobile-menu-button"
+      id="mobileMenuButton"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+    <nav class="navigation" id="mainNavigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="book-services.html">Book Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO SECTION -->
+  <section class="testimonials-hero">
+    <h1>Our Clients, <span class="gold-text">Their Stories</span></h1>
+
+    <p>
+      Every project is an opportunity to build trust, create value,
+      and help bring an idea to life. Discover feedback from clients
+      who have experienced working with Wise Media Freelance.
+    </p>
+  </section>
+
+
+  <!-- TESTIMONIALS SECTION -->
+  <section class="testimonials-section">
+
+    <div class="testimonials-container">
+
+      <div class="section-heading">
+        <h2>Client Feedback</h2>
+
+        <p>
+          Genuine experiences and feedback from clients who have
+          worked with our team.
+        </p>
+      </div>
+
+      <div
+        class="testimonials-grid"
+        id="testimonialsGrid"
+      ></div>
+
+      <div
+        class="empty-testimonials"
+        id="testimonialsEmpty"
+      >
+        <div class="empty-icon">💬</div>
+
+        <h3>Client Stories Coming Soon</h3>
+
+        <p>
+          We are building a collection of authentic client experiences.
+          Once feedback has been received and approved for publication,
+          you will find it here.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA SECTION -->
+  <section class="testimonials-cta">
+
+    <h2>Ready to Start Your Project?</h2>
+
+    <p>
+      Whether you are an author, entrepreneur, or creative professional,
+      WMF is ready to discuss how we can support your next project.
+    </p>
+
+    <a href="book-services.html" class="testimonial-button">
+      Explore Our Services
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-column">
+      <h3>WISE MEDIA <span class="gold-text">FREELANCE</span></h3>
+
+      <p>
+        Creative and professional services designed to help
+        authors and businesses bring their ideas to life.
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="testimonials.html">Testimonials</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Explore</h3>
+
+      <a href="book-services.html">Book Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQs</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Legal</h3>
+
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+    </div>
+
+    <p class="footer-bottom">
+      &copy; <span id="currentYear"></span>
+      Wise Media Freelance. All rights reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT CONNECTION -->
+  <script type="module" src="assets/css/js/testimonials.js"></script>
+
+</body>
+</html>
