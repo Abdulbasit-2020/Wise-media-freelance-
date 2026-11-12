@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Wise Media Freelance</title>
+
+    <meta name="description"
+        content="Wise Media Freelance administration dashboard.">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+
+        /* =====================================
+           ADMIN HERO
+        ===================================== */
+
+        .admin-hero {
+            background: linear-gradient(135deg, #0B1020, #080808);
+            color: #FFFFFF;
+            padding: 65px 20px;
+        }
+
+        .admin-hero-content {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .admin-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 12px;
+        }
+
+        .admin-hero p {
+            color: #D1D5DB;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================
+           ADMIN CONTAINER
+        ===================================== */
+
+        .admin-container {
+            max-width: 1250px;
+            margin: auto;
+            padding: 45px 20px 70px;
+        }
+
+
+        /* =====================================
+           DEVELOPMENT NOTICE
+        ===================================== */
+
+        .admin-notice {
+            background: #FFF8E8;
+            border-left: 5px solid #D6B46A;
+            color: #664D16;
+            padding: 20px;
+            border-radius: 6px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .admin-notice strong {
+            color: #8A6423;
+        }
+
+
+        /* =====================================
+           DASHBOARD TOP BAR
+        ===================================== */
+
+        .admin-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .admin-topbar h2 {
+            color: #0B1020;
+            font-size: 1.7rem;
+        }
+
+        .admin-topbar p {
+            color: #777777;
+            margin-top: 5px;
+        }
+
+        .admin-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #FFF8E8;
+            color: #8A6423;
+            padding: 9px 13px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .status-dot {
+            width: 9px;
+            height: 9px;
+            background: #D6B46A;
+            border-radius: 50%;
+        }
+
+
+        /* =====================================
+           OVERVIEW CARDS
+        ===================================== */
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 45px;
+        }
+
+        .overview-card {
+            background: #FFFFFF;
+            border: 1px solid #EEEEEE;
+            padding: 23px;
+            border-radius: 10px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+        }
+
+        .overview-icon {
+            font-size: 1.7rem;
+            margin-bottom: 15px;
+        }
+
+        .overview-card h3 {
+            color: #666666;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .overview-value {
+            color: #0B1020;
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .overview-caption {
+            color: #999999;
+            font-size: 0.8rem;
+            margin-top: 8px;
+        }
+
+
+        /* =====================================
+           SECTION HEADINGS
+        ===================================== */
+
+        .admin-section {
+            margin-bottom: 45px;
+        }
+
+        .admin-section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .admin-section-heading h2 {
+            color: #0B1020;
+            font-size: 1.5rem;
+        }
+
+        .admin-section-heading p {
+            color: #777777;
+            font-size: 0.9rem;
+        }
+
+
+        /* =====================================
+           MANAGEMENT GRID
+        ===================================== */
+
+        .management-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .management-card {
+            background: #FFFFFF;
+            border: 1px solid #EEEEEE;
+            border-radius: 10px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .management-card:hover {
+            transform: translateY(-3px);
+            border-color: #D6B46A;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .management-icon {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .management-card h3 {
+            color: #0B1020;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .management-card p {
+            color: #666666;
+            line-height: 1.7;
+            font-size: 0.92rem;
+            margin-bottom: 17px;
+        }
+
+        .management-button {
+            display: inline-block;
+            background: #0B1020;
+            color: #FFFFFF;
+            padding: 10px 17px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .management-button:hover {
+            background: #D6B46A;
+            color: #080808;
+        }
+
+        .management-button.disabled {
+            background: #E5E7EB;
+            color: #777777;
+            cursor: not-allowed;
+        }
+
+
+        /* =====================================
+           ACTIVITY PANEL
+        ===================================== */
+
+        .activity-panel {
+            background: #FFFFFF;
+            border: 1px solid #EEEEEE;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .activity-empty {
+            text-align: center;
+            padding: 35px 15px;
+            color: #777777;
+            line-height: 1.8;
+        }
+
+        .activity-empty strong {
+            display: block;
+            color: #0B1020;
+            margin-bottom: 8px;
+        }
+
+
+        /* =====================================
+           ADMIN INFORMATION
+        ===================================== */
+
+        .admin-info-panel {
+            background: #F3F4F6;
+            padding: 28px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .admin-info-panel h2 {
+            color: #0B1020;
+            margin-bottom: 13px;
+        }
+
+        .admin-info-panel p,
+        .admin-info-panel li {
+            color: #555555;
+            line-height: 1.8;
+        }
+
+        .admin-info-panel ul {
+            padding-left: 22px;
+            margin-top: 12px;
+        }
+
+
+        /* =====================================
+           ADMIN MESSAGE
+        ===================================== */
+
+        .admin-message {
+            display: none;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .admin-message.info {
+            display: block;
+            background: #FFF8E8;
+            color: #664D16;
+            border-left: 4px solid #D6B46A;
+        }
+
+
+        /* =====================================
+           RESPONSIVE DESIGN
+        ===================================== */
+
+        @media (max-width: 1000px) {
+
+            .overview-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .management-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .admin-hero {
+                padding: 55px 18px;
+            }
+
+            .admin-container {
+                padding: 35px 18px 55px;
+            }
+
+            .admin-topbar {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .overview-grid,
+            .management-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-section-heading {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         HEADER
+    ===================================== -->
+
+    <header class="header">
+
+        <a href="index.html" class="logo">
+            WISE MEDIA <span class="gold-text">FREELANCE</span>
+        </a>
+
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="Open navigation"
+            aria-expanded="false">
+
+            ☰
+
+        </button>
+
+        <nav class="navigation" id="mainNavigation">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="services.html">Services</a>
+
+            <a href="book-services.html">Book Services</a>
+
+            <a href="portfolio.html">Portfolio</a>
+
+            <a href="testimonials.html">Testimonials</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================
+         HERO
+    ===================================== -->
+
+    <section class="admin-hero">
+
+        <div class="admin-hero-content">
+
+            <h1>WMF Administration</h1>
+
+            <p>
+                Manage your business operations,
+                client orders, services and project activities
+                from one central dashboard.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         MAIN DASHBOARD
+    ===================================== -->
+
+    <main class="admin-container">
+
+
+        <!-- SECURITY NOTICE -->
+
+        <div class="admin-notice">
+
+            <strong>Development version — not secured:</strong>
+
+            This is a visual dashboard prototype.
+            Administrator authentication, database access,
+            payment verification and management operations
+            are not connected yet.
+
+            Do not use this page to manage real customer
+            information or payment records.
+
+        </div>
+
+
+
+        <!-- DASHBOARD MESSAGE -->
+
+        <div
+            id="adminMessage"
+            class="admin-message"
+            role="status"
+            aria-live="polite">
+        </div>
+
+
+
+        <!-- =================================
+             DASHBOARD OVERVIEW
+        ================================= -->
+
+        <section class="admin-section">
+
+            <div class="admin-topbar">
+
+                <div>
+
+                    <h2>Dashboard Overview</h2>
+
+                    <p>
+                        Your WMF business administration centre.
+                    </p>
+
+                </div>
+
+
+                <div class="admin-status">
+
+                    <span class="status-dot"></span>
+
+                    Frontend Preview
+
+                </div>
+
+            </div>
+
+
+
+            <div class="overview-grid">
+
+
+                <div class="overview-card">
+
+                    <div class="overview-icon">👥</div>
+
+                    <h3>Total Clients</h3>
+
+                    <div class="overview-value">—</div>
+
+                    <div class="overview-caption">
+                        Awaiting database connection
+                    </div>
+
+                </div>
+
+
+
+                <div class="overview-card">
+
+                    <div class="overview-icon">📦</div>
+
+                    <h3>Total Orders</h3>
+
+                    <div class="overview-value">—</div>
+
+                    <div class="overview-caption">
+                        Awaiting database connection
+                    </div>
+
+                </div>
+
+
+
+                <div class="overview-card">
+
+                    <div class="overview-icon">💳</div>
+
+                    <h3>Payments to Review</h3>
+
+                    <div class="overview-value">—</div>
+
+                    <div class="overview-caption">
+                        Awaiting secure payment integration
+                    </div>
+
+                </div>
+
+
+
+                <div class="overview-card">
+
+                    <div class="overview-icon">🛠️</div>
+
+                    <h3>Active Projects</h3>
+
+                    <div class="overview-value">—</div>
+
+                    <div class="overview-caption">
+                        Awaiting project database
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             CLIENT MANAGEMENT
+        ================================= -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-heading">
+
+                <div>
+
+                    <h2>Client Management</h2>
+
+                    <p>
+                        Manage registered WMF clients.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="management-grid">
+
+
+                <div class="management-card">
+
+                    <div class="management-icon">👥</div>
+
+                    <h3>Client Accounts</h3>
+
+                    <p>
+                        View authorised client profiles,
+                        account information and account status.
+                    </p>
+
+                    <button
+                        class="management-button disabled"
+                        type="button"
+                        data-feature="Client account management">
+
+                        Coming Soon
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="management-card">
+
+                    <div class="management-icon">📩</div>
+
+                    <h3>Support Enquiries</h3>
+
+                    <p>
+                        Review client enquiries, complaints
+                        and written support requests.
+                    </p>
+
+                    <button
+                        class="management-button disabled"
+                        type="button"
+                        data-feature="Support enquiry management">
+
+                        Coming Soon
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="management-card">
+
+                    <div class="management-icon">🔐</div>
+
+                    <h3>Admin Accounts</h3>
+
+                    <p>
+                        Manage authorised administrators
+                        and their assigned permissions.
+                    </p>
+
+                    <button
+                        class="management-button disabled"
+                        type="button"
+                        data-feature="Administrator account management">
+
+                        Coming Soon
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             ORDER MANAGEMENT
+        ================================= -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-heading">
+
+                <div>
+
+                    <h2>Order & Project Management</h2>
+
+                    <p>
+                        Monitor client orders and project activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="management-grid">
+
+
+                <div class="management-card">
+
+                    <div class="management-icon">📦</div>
+
+                    <h3>All Orders</h3>
+
+                    <p>
+                        Review submitted orders, approved
+                        service packages and order references.
+                    </p>
+
+                    <button
+                        class="management-button disabled"
+                        type="button"
+                        data-feature="Order management">
+
+                        Coming Soon
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="management-card">
+
+                    <div class="management-icon">💰</div>
+
+                    <h3>Payment Verification</h3>
+
+                    <p>
+                        Review payment status and manage
+                        verified transactions through
+                        secure payment integrations.
+                    </p>
+
+                    <button
+                        class="management-button disabled"
+                        type="button"
+                        data-feature="Payment verification">
+
+                        Coming Soon
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="management-card">
+
+                    <div class="management-icon">📊</div>
+
+                    <h3>Project Progress</h3>
+
+                    <p>
+                        Update project stages, timelines,
+                        deliverables and client progress records.
+                    </p>
+
+                    <button
+                        class="management-button disabled"
+                        type="button"
+                        data-feature="Project progress management">
+
+                        Coming Soon
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="management-card">
+
+                    <div class="management-icon">🧾</div>
+
+                    <h3>Invoices & Receipts</h3>
+
+                    <p>
+                        Create and manage client invoices,
+                        receipts and payment records.
+                    </p>
+
+                    <button
+                        class="management-button disabled"
+                        type="button"
+                        data-feature="Invoice management">
+
+                        Coming Soon
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="management-card">
+
+                    <div class="management-icon">📁</div>
+
+                    <h3>Client Documents</h3>
+
+                    <p>
+                        Manage authorised project documents
+                        and client file submissions.
+                    </p>
+
+                    <button
+                        class="management-button disabled"
+                        type="button"
+                        data-feature="Client document management">
+
+                        Coming Soon
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="management-card">
+
+                    <div class="management-icon">🔔</div>
+
+                    <h3>Project Updates</h3>
+
+                    <p>
+                        Prepare written project updates
+                        and notifications for clients.
+                    </p>
+
+                    <button
+                        class="management-button disabled"
+                        type="button"
+                        data-feature="Project notifications">
+
+                        Coming Soon
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             WEBSITE CONTENT MANAGEMENT
+        ================================= -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-heading">
+
+                <div>
+
+                    <h2>Website Content Management</h2>
+
+                    <p>
+                        Manage the content displayed on the
+                        public WMF website.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="management-grid">
+
+
+                <div class="management-card">
+
+                    <div class="management-icon">🛠️</div>
+
+                    <h3>Services & Packages</h3>
+
+                    <p>
+                        Add, edit, hide and reorder services,
+                        descriptions, prices and package details.
+                    </p>
+
+                    <button
+                        class="management-button disabled"
+                        type="button"
+                        data-feature="Service and package management">
+
+                        Coming Soon
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="management-card">
+
+                    <div class="management-icon">📚</div>
+
+                    <h3>Other Author Services</h3>
+
+                    <p>
+                        Manage additional author services
+                        displayed in the expandable Book Services
+                        section.
+                    </p>
+
+                    <button
+                        class="management-button disabled"
+                        type="button"
+                        data-feature="Other Author Services management">
+
+                        Coming Soon
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="management-card">
+
+                    <div class="management-icon">🖼️</div>
+
+                    <h3>Portfolio</h3>
+
+                    <p>
+                        Add and manage authentic portfolio
+                        projects and approved project visuals.
+                    </p>
+
+                    <button
+                        class="management-button disabled"
+                        type="button"
+                        data-feature="Portfolio management">
+
+                        Coming Soon
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="management-card">
+
+                    <div class="management-icon">💬</div>
+
+                    <h3>Testimonials</h3>
+
+                    <p>
+                        Review, approve, edit and feature
+                        authentic client testimonials.
+                    </p>
+
+                    <button
+                        class="management-button disabled"
+                        type="button"
+                        data-feature="Testimonial management">
+
+                        Coming Soon
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="management-card">
+
+                    <div class="management-icon">❓</div>
+
+                    <h3>FAQs</h3>
+
+                    <p>
+                        Manage frequently asked questions
+                        and their approved answers.
+                    </p>
+
+                    <button
+                        class="management-button disabled"
+                        type="button"
+                        data-feature="FAQ management">
+
+                        Coming Soon
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="management-card">
+
+                    <div class="management-icon">📄</div>
+
+                    <h3>Policy Pages</h3>
+
+                    <p>
+                        Maintain approved policy information
+                        and website documentation.
+                    </p>
+
+                    <button
+                        class="management-button disabled"
+                        type="button"
+                        data-feature="Policy management">
+
+                        Coming Soon
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             RECENT ACTIVITY
+        ================================= -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-heading">
+
+                <div>
+
+                    <h2>Recent Activity</h2>
+
+                    <p>
+                        Recent administrative and project events.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="activity-panel">
+
+                <div class="activity-empty">
+
+                    <strong>No activity available</strong>
+
+                    Activity records will appear here after
+                    the dashboard is connected to Firebase.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             SECURITY INFORMATION
+        ================================= -->
+
+        <section class="admin-info-panel">
+
+            <h2>Administrator Security</h2>
+
+            <p>
+                The production WMF administration system
+                must be protected by authenticated administrator
+                accounts and server-side permission checks.
+            </p>
+
+            <ul>
+
+                <li>
+                    Only authorised administrators may
+                    access administrative information.
+                </li>
+
+                <li>
+                    Client records must be protected from
+                    unauthorised access.
+                </li>
+
+                <li>
+                    Payment verification must be performed
+                    through trusted server-side processes.
+                </li>
+
+                <li>
+                    Important administrative activities
+                    should be recorded in an audit log.
+                </li>
+
+                <li>
+                    Administrator access should support
+                    strong authentication and appropriate
+                    permission levels.
+                </li>
+
+                <li>
+                    Backups and recovery procedures must
+                    be established before production launch.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ===================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-column">
+
+            <h3>WISE MEDIA FREELANCE</h3>
+
+            <p>
+                Creative and professional services designed
+                to support authors and businesses.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="services.html">Services</a>
+
+            <a href="book-services.html">Book Services</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Information</h3>
+
+            <a href="faq.html">FAQs</a>
+
+            <a href="privacy.html">Privacy Policy</a>
+
+            <a href="terms.html">Terms & Conditions</a>
+
+            <a href="refund-policy.html">Refund Policy</a>
+
+            <a href="support-policy.html">Support Policy</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Administration</h3>
+
+            <a href="admin-dashboard.html">Admin Dashboard</a>
+
+            <a href="author-centre.html">Author Centre</a>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy;
+                <span id="currentYear"></span>
+                Wise Media Freelance. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT CONNECTION -->
+
+    <script type="module" src="assets/css/js/admin-dashboard.js"></script>
+
+
+</body>
+
+</html>
