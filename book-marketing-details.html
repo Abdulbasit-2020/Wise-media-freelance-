@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Promote your book with social media creative, Goodreads campaign support, YouTube promotion and Meta advertising management from Wise Media Freelance.">
+
+    <title>Book Marketing & Promotion | WMF</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        :root {
+            --navy: #0B1020;
+            --black: #080808;
+            --gold: #D6B46A;
+            --white: #FFFFFF;
+            --gray: #A8A8A8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--black);
+            color: var(--white);
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .gold-text {
+            color: var(--gold);
+        }
+
+        .marketing-hero {
+            min-height: 540px;
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(8, 8, 8, .97),
+                    rgba(11, 16, 32, .85)
+                ),
+                radial-gradient(
+                    circle at 80% 40%,
+                    #69522B,
+                    #0B1020 60%
+                );
+        }
+
+        .hero-content {
+            max-width: 780px;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .marketing-hero h1 {
+            font-size: clamp(36px, 6vw, 62px);
+            line-height: 1.15;
+            margin: 20px 0;
+        }
+
+        .marketing-hero p {
+            color: #D0D0D0;
+            font-size: 17px;
+            max-width: 680px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .wmf-button {
+            display: inline-block;
+            padding: 14px 25px;
+            background: var(--gold);
+            color: var(--black);
+            font-weight: bold;
+            border: 1px solid var(--gold);
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .wmf-button:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        .wmf-button.outline {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        .wmf-button.outline:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .section {
+            padding: 80px 8%;
+        }
+
+        .section-heading {
+            max-width: 760px;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            margin: 10px 0;
+        }
+
+        .section-heading p {
+            color: var(--gray);
+        }
+
+        .gold-line {
+            width: 65px;
+            height: 3px;
+            background: var(--gold);
+            margin: 15px 0;
+        }
+
+        .intro-section {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .intro-section p {
+            color: #555;
+            max-width: 900px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: #111827;
+            border: 1px solid #303746;
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        .service-card h3 {
+            color: var(--gold);
+            margin-top: 0;
+        }
+
+        .service-card p,
+        .service-card li {
+            color: #C5C5C5;
+        }
+
+        .service-card ul {
+            padding-left: 20px;
+        }
+
+        .service-card li {
+            margin-bottom: 10px;
+        }
+
+        .scope-section {
+            background: #101626;
+        }
+
+        .scope-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .scope-box {
+            background: #080D18;
+            padding: 30px;
+            border: 1px solid #303746;
+            border-radius: 8px;
+        }
+
+        .scope-box h3 {
+            color: var(--gold);
+        }
+
+        .scope-box ul {
+            color: #C5C5C5;
+            padding-left: 20px;
+        }
+
+        .scope-box li {
+            margin-bottom: 12px;
+        }
+
+        .package-section {
+            background: var(--black);
+        }
+
+        .package-card {
+            background: #111827;
+            border: 1px solid #343B4B;
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package-card.featured {
+            border-color: var(--gold);
+        }
+
+        .package-card h3 {
+            color: var(--gold);
+            font-size: 23px;
+        }
+
+        .package-price {
+            font-size: 23px;
+            font-weight: bold;
+            margin: 12px 0;
+        }
+
+        .package-card p,
+        .package-card li {
+            color: #C5C5C5;
+        }
+
+        .package-card ul {
+            padding-left: 20px;
+            flex: 1;
+        }
+
+        .package-card li {
+            margin-bottom: 12px;
+        }
+
+        .package-note {
+            color: var(--gray);
+            font-size: 13px;
+            margin-top: 25px;
+        }
+
+        .requirements-section {
+            background: #101626;
+        }
+
+        .process-number {
+            font-size: 34px;
+            font-weight: bold;
+            color: var(--gold);
+        }
+
+        .notice {
+            background: #292317;
+            border-left: 4px solid var(--gold);
+            padding: 18px;
+            color: #E8D9B6;
+            margin-top: 25px;
+            font-size: 14px;
+        }
+
+        .faq-section {
+            background: var(--black);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #343434;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--white);
+            text-align: left;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .faq-question span {
+            color: var(--gold);
+            font-size: 22px;
+        }
+
+        .faq-answer {
+            display: none;
+            color: #BDBDBD;
+            padding-top: 12px;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        .final-cta {
+            text-align: center;
+            padding: 90px 8%;
+            background: linear-gradient(120deg, #101626, #252013);
+        }
+
+        .final-cta h2 {
+            font-size: clamp(28px, 4vw, 42px);
+        }
+
+        .final-cta p {
+            color: #D0D0D0;
+            max-width: 680px;
+            margin: 15px auto 30px;
+        }
+
+        @media (max-width: 900px) {
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .marketing-hero {
+                padding: 75px 6%;
+            }
+
+            .section {
+                padding: 60px 6%;
+            }
+
+            .service-grid,
+            .scope-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .wmf-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a href="index.html" class="logo">
+            WISE MEDIA <span class="gold-text">FREELANCE</span>
+        </a>
+
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="Open navigation"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <nav class="navigation" id="mainNavigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="book-services.html">Book Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="marketing-hero">
+
+        <div class="hero-content">
+
+            <span class="eyebrow">
+                WMF Book Marketing Services
+            </span>
+
+            <h1>
+                Help More Readers
+                <span class="gold-text">Discover Your Book</span>
+            </h1>
+
+            <p>
+                Explore promotional support such as social media
+                creative, Goodreads campaign support, YouTube
+                promotion and Meta advertising management.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="order.html?service=book-marketing-promotion"
+                    class="wmf-button"
+                >
+                    ORDER BOOK PROMOTION
+                </a>
+
+                <a
+                    href="contact.html?service=book-marketing-promotion"
+                    class="wmf-button outline"
+                >
+                    ASK A QUESTION
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="section intro-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">About This Service</span>
+
+            <h2>Give Your Book a Stronger Promotional Presence</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <p>
+            Publishing a book is an important milestone, but
+            reaching readers also requires thoughtful promotion.
+            WMF offers book marketing and promotional support
+            designed to help authors present their books across
+            selected digital channels.
+        </p>
+
+        <p>
+            Depending on the agreed project scope, support may
+            include social media creative, Goodreads campaign
+            support, YouTube promotion and Meta advertising
+            management.
+        </p>
+
+        <p>
+            Every campaign must have a clearly defined scope,
+            budget and delivery plan. Marketing services do not
+            guarantee sales, views, followers or advertising results.
+        </p>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Promotion Channels</span>
+
+            <h2>Ways We Can Support Your Book Promotion</h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                Select the promotional activities relevant to
+                your audience and campaign objectives.
+            </p>
+
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+
+                <h3>Social Media Creative</h3>
+
+                <p>
+                    Promotional graphics and creative assets
+                    designed to present your book on selected
+                    social media platforms.
+                </p>
+
+                <ul>
+                    <li>Book promotional graphics.</li>
+                    <li>Campaign visual concepts.</li>
+                    <li>Creative assets in agreed formats.</li>
+                </ul>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>Goodreads Campaign Support</h3>
+
+                <p>
+                    Promotional planning and support for
+                    suitable Goodreads-related book campaigns.
+                </p>
+
+                <ul>
+                    <li>Campaign planning support.</li>
+                    <li>Book promotion guidance.</li>
+                    <li>Agreed promotional materials.</li>
+                </ul>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>YouTube Promotion</h3>
+
+                <p>
+                    Promotional support for introducing your
+                    book through selected YouTube content
+                    or promotional activities.
+                </p>
+
+                <ul>
+                    <li>Video promotion planning.</li>
+                    <li>Creative direction.</li>
+                    <li>Agreed promotional assets.</li>
+                </ul>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>Meta Advertising Management</h3>
+
+                <p>
+                    Campaign setup and management support
+                    for selected advertising activities on
+                    Facebook and Instagram.
+                </p>
+
+                <ul>
+                    <li>Campaign planning.</li>
+                    <li>Ad creative coordination.</li>
+                    <li>Management scope to be agreed.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SCOPE -->
+    <section class="section scope-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Project Scope</span>
+
+            <h2>What's Included and What's Not</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <div class="scope-grid">
+
+            <div class="scope-box">
+
+                <h3>Potential Deliverables</h3>
+
+                <ul>
+                    <li>Promotional strategy discussion.</li>
+                    <li>Social media creative, where selected.</li>
+                    <li>Goodreads campaign support, where selected.</li>
+                    <li>YouTube promotional support, where selected.</li>
+                    <li>Meta advertising management, where selected.</li>
+                    <li>Campaign updates or reports, if included in the agreed scope.</li>
+                </ul>
+
+            </div>
+
+            <div class="scope-box">
+
+                <h3>Not Automatically Included</h3>
+
+                <ul>
+                    <li>Advertising platform spend.</li>
+                    <li>Third-party influencer or creator fees.</li>
+                    <li>Paid subscriptions or external platform fees.</li>
+                    <li>Unlimited promotional content.</li>
+                    <li>Guaranteed book sales, views or followers.</li>
+                    <li>Services not listed in the approved project scope.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="notice">
+            IMPORTANT: Advertising spend is separate from WMF's
+            service fee. The client must be shown the WMF service
+            fee and the proposed advertising budget as separate
+            amounts before approving the campaign.
+        </div>
+
+    </section>
+
+
+    <!-- ADVERTISING BUDGET -->
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Advertising Transparency</span>
+
+            <h2>Understand Your Campaign Costs</h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                Advertising budgets must never be hidden inside
+                WMF's service fee.
+            </p>
+
+        </div>
+
+        <div class="scope-grid">
+
+            <div class="service-card">
+
+                <h3>WMF Service Fee</h3>
+
+                <p>
+                    This is the amount charged by Wise Media
+                    Freelance for the agreed marketing work,
+                    campaign management or creative services.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>Advertising Spend</h3>
+
+                <p>
+                    This is the separate budget allocated to
+                    advertising platforms. The amount and
+                    payment arrangement must be agreed before
+                    a campaign starts.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="notice">
+            Example only: If WMF charges a service fee and the
+            client also approves an advertising budget, both
+            amounts must appear as separate line items on the
+            order summary. No example amount is being presented
+            as an actual WMF price.
+        </div>
+
+    </section>
+
+
+    <!-- PACKAGES -->
+    <section class="section package-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Marketing Packages</span>
+
+            <h2>Choose Your Book Promotion Package</h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                Package scope will be customized and confirmed
+                according to the selected promotional channels.
+            </p>
+
+        </div>
+
+        <div class="service-grid" id="marketingPackages">
+
+            <!-- JavaScript creates package cards here -->
+
+        </div>
+
+        <p class="package-note">
+            Package names and inclusions below are provisional
+            examples. WMF must approve all service fees, deliverables,
+            campaign duration, advertising budgets and reporting
+            arrangements before launch.
+        </p>
+
+    </section>
+
+
+    <!-- REQUIREMENTS -->
+    <section class="section requirements-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Before We Begin</span>
+
+            <h2>What We Need From You</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <h3>Book Information</h3>
+                <p>
+                    Book title, author name, genre and a short
+                    description of your book.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Book Cover and Images</h3>
+                <p>
+                    Approved book cover artwork and any other
+                    promotional images you want considered.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Target Audience</h3>
+                <p>
+                    Information about your intended readers,
+                    preferred locations and audience interests.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Campaign Goals</h3>
+                <p>
+                    Tell WMF whether your priority is awareness,
+                    engagement, traffic or another agreed objective.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Preferred Platforms</h3>
+                <p>
+                    Identify whether you are interested in
+                    social media, Goodreads, YouTube or Meta
+                    advertising support.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Advertising Budget</h3>
+                <p>
+                    If paid advertising is requested, provide
+                    your proposed budget separately from the
+                    WMF service fee.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="notice">
+            Never send account passwords through the order form.
+            Any account access required for campaign management
+            must use an approved secure access method.
+        </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Our Workflow</span>
+
+            <h2>How Your Marketing Project Works</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <div class="process-number">01</div>
+                <h3>Submit Your Request</h3>
+                <p>
+                    Tell WMF about your book, audience and
+                    promotional goals.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="process-number">02</div>
+                <h3>Campaign Review</h3>
+                <p>
+                    WMF reviews the requested platforms,
+                    creative needs and campaign requirements.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="process-number">03</div>
+                <h3>Cost Confirmation</h3>
+                <p>
+                    WMF confirms its service fee separately
+                    from any advertising budget or external fees.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="process-number">04</div>
+                <h3>Approval and Payment</h3>
+                <p>
+                    You approve the scope and costs. Work
+                    begins after the required payment is verified.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="process-number">05</div>
+                <h3>Campaign Execution</h3>
+                <p>
+                    WMF carries out the agreed creative and
+                    promotional activities.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="process-number">06</div>
+                <h3>Review and Updates</h3>
+                <p>
+                    You receive the agreed deliverables and
+                    campaign updates or reports, if included.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section faq-section">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">Questions and Answers</span>
+
+            <h2>Book Marketing FAQs</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <div id="marketingFaqs">
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    What book marketing services does WMF offer?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Promotional support may include social media
+                    creative, Goodreads campaign support, YouTube
+                    promotion and Meta advertising management.
+                    The exact services depend on your approved scope.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Is advertising spend included in the WMF fee?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    No. Advertising spend must be shown separately
+                    from WMF's service fee. Both amounts will be
+                    disclosed before campaign approval.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Can WMF guarantee book sales?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    No. Marketing activities can support promotion
+                    and visibility, but sales, views, engagement
+                    and advertising performance cannot be guaranteed.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Can I select only one promotional platform?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Yes. You can request a specific promotional
+                    activity. WMF will confirm whether the requested
+                    service is available and define its scope.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Do I need to provide account passwords?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Never send passwords through the order form.
+                    Any access required for campaign management
+                    must use an approved secure method.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    How long does a campaign take?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    The campaign duration depends on the selected
+                    platforms, activities and approved schedule.
+                    WMF will confirm the expected timeline before
+                    payment.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+
+        <span class="eyebrow">Promote Your Book</span>
+
+        <h2>
+            Ready to Give Your Book
+            <span class="gold-text">More Visibility?</span>
+        </h2>
+
+        <p>
+            Tell WMF about your book and the promotional support
+            you need. Your service fee and any advertising budget
+            will be clearly explained before approval.
+        </p>
+
+        <a
+            href="order.html?service=book-marketing-promotion"
+            class="wmf-button"
+        >
+            ORDER BOOK PROMOTION
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-column">
+
+            <h3>
+                WISE MEDIA <span class="gold-text">FREELANCE</span>
+            </h3>
+
+            <p>
+                Creative Solutions. Digital Excellence.
+                Measurable Growth.
+            </p>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="book-services.html">Book Services</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Book Services</h3>
+
+            <a href="book-trailer-details.html">Book Trailer</a>
+            <a href="animated-series-details.html">Animated Series</a>
+            <a href="proofreading-details.html">Proofreading</a>
+            <a href="publishing-details.html">Publishing Package</a>
+            <a href="book-design-details.html">Book Design</a>
+            <a href="amazon-optimization-details.html">Amazon Optimization</a>
+            <a href="book-marketing-details.html">Book Marketing</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Support</h3>
+
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT CONNECTION -->
+    <script type="module" src="assets/css/js/book-marketing-details.js"></script>
+
+</body>
+</html>
