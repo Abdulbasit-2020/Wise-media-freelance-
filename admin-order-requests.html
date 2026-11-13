@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Requests | WMF Admin</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        .admin-page {
+            min-height: 100vh;
+            background: #f3f4f6;
+            padding-bottom: 50px;
+        }
+
+        .admin-header {
+            background: #0B1020;
+            color: white;
+            padding: 22px 6%;
+        }
+
+        .admin-header-inner {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .admin-logo {
+            color: white;
+            font-weight: 800;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .admin-logo span {
+            color: #D6B46A;
+        }
+
+        .admin-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .admin-heading {
+            margin-bottom: 25px;
+        }
+
+        .admin-heading h1 {
+            color: #0B1020;
+            margin-bottom: 8px;
+        }
+
+        .admin-heading p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .admin-toolbar {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .admin-toolbar select,
+        .admin-toolbar input {
+            padding: 11px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        .admin-button {
+            border: none;
+            padding: 11px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .refresh-button {
+            background: #0B1020;
+            color: white;
+        }
+
+        .logout-button {
+            background: #D6B46A;
+            color: #080808;
+        }
+
+        .request-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .request-card h2 {
+            color: #0B1020;
+            font-size: 21px;
+            margin-bottom: 12px;
+            overflow-wrap: anywhere;
+        }
+
+        .request-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            background: #e5e7eb;
+            color: #374151;
+        }
+
+        .status-submitted {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .status-approved {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status-rejected {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .request-card p {
+            margin: 9px 0;
+            color: #555;
+            line-height: 1.6;
+            overflow-wrap: anywhere;
+        }
+
+        .request-details {
+            border-top: 1px solid #eee;
+            margin-top: 18px;
+            padding-top: 18px;
+        }
+
+        .request-details h3 {
+            color: #0B1020;
+            margin: 18px 0 10px;
+        }
+
+        .admin-notes {
+            width: 100%;
+            min-height: 100px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font: inherit;
+        }
+
+        .request-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .approve-button {
+            background: #166534;
+            color: white;
+        }
+
+        .reject-button {
+            background: #991b1b;
+            color: white;
+        }
+
+        .save-button {
+            background: #0B1020;
+            color: white;
+        }
+
+        .request-actions button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .admin-message {
+            display: none;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 7px;
+            line-height: 1.6;
+        }
+
+        .admin-message.info {
+            display: block;
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .admin-message.error {
+            display: block;
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .admin-message.success {
+            display: block;
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .empty-state {
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            text-align: center;
+            color: #666;
+        }
+
+        .admin-footer {
+            text-align: center;
+            padding: 25px;
+            color: #777;
+        }
+
+        @media(max-width: 600px) {
+            .request-card {
+                padding: 18px;
+            }
+
+            .admin-toolbar {
+                align-items: stretch;
+            }
+
+            .admin-toolbar input,
+            .admin-toolbar select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="admin-page">
+
+    <header class="admin-header">
+
+        <div class="admin-header-inner">
+
+            <a href="admin-dashboard.html" class="admin-logo">
+                WMF <span>ADMIN</span>
+            </a>
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="admin-button logout-button">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main class="admin-container">
+
+        <section class="admin-heading">
+
+            <h1>Client Order Requests</h1>
+
+            <p>
+                Review incoming client requests and manage
+                their approval status.
+            </p>
+
+        </section>
+
+
+        <div
+            id="adminMessage"
+            class="admin-message">
+        </div>
+
+
+        <section class="admin-toolbar">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search client or book title..."
+            >
+
+            <select id="statusFilter">
+
+                <option value="all">All Requests</option>
+
+                <option value="submitted">Submitted</option>
+
+                <option value="approved">Approved</option>
+
+                <option value="rejected">Rejected</option>
+
+            </select>
+
+            <button
+                type="button"
+                id="refreshButton"
+                class="admin-button refresh-button">
+                Refresh Requests
+            </button>
+
+        </section>
+
+
+        <section id="requestsContainer">
+
+            <div class="empty-state">
+                Checking administrator access...
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="admin-footer">
+
+        <p>
+            &copy; <span id="currentYear"></span>
+            Wise Media Freelance.
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script type="module" src="assets/css/js/admin-order-requests.js"></script>
+
+</body>
+</html>
