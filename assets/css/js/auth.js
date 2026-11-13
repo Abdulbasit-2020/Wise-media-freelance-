@@ -425,9 +425,13 @@ loginForm?.addEventListener("submit", async (event) => {
           // Create or retrieve the author's Firestore profile
 await createClientProfile(user);
         showMessage(
-            "Login successful! Your account is authenticated. The secure Author Dashboard will be connected in the next stage.",
-            "success"
-        );
+    "Login successful! Opening your Author Dashboard...",
+    "success"
+);
+
+loginForm.reset();
+
+window.location.replace("author-dashboard.html");
 
         loginForm.reset();
 
