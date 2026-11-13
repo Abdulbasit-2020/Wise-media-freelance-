@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Author Dashboard | Wise Media Freelance</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        .dashboard-page {
+            min-height: 100vh;
+            background: #f3f4f6;
+            padding-bottom: 60px;
+        }
+
+        .dashboard-header {
+            background: #0B1020;
+            color: white;
+            padding: 25px 6%;
+        }
+
+        .dashboard-header-inner {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .dashboard-logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+        }
+
+        .dashboard-logo span {
+            color: #D6B46A;
+        }
+
+        .logout-button {
+            background: #D6B46A;
+            color: #080808;
+            border: none;
+            padding: 11px 22px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .welcome-card {
+            background: #0B1020;
+            color: white;
+            padding: 35px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .welcome-card h1 {
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .welcome-card p {
+            color: #d1d5db;
+            line-height: 1.7;
+        }
+
+        .gold-text {
+            color: #D6B46A;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .summary-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .summary-card h3 {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .summary-card strong {
+            font-size: 30px;
+            color: #0B1020;
+        }
+
+        .dashboard-section {
+            background: white;
+            padding: 28px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .dashboard-section h2 {
+            color: #0B1020;
+            margin-bottom: 20px;
+            font-size: 21px;
+        }
+
+        .record-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 18px;
+            margin-bottom: 14px;
+        }
+
+        .record-card h3 {
+            color: #0B1020;
+            margin-bottom: 12px;
+            overflow-wrap: anywhere;
+        }
+
+        .record-card p {
+            color: #555;
+            margin: 7px 0;
+            overflow-wrap: anywhere;
+        }
+
+        .empty-state {
+            padding: 25px;
+            text-align: center;
+            background: #f9fafb;
+            border-radius: 8px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .loading-message {
+            padding: 30px;
+            text-align: center;
+            color: #555;
+        }
+
+        .dashboard-message {
+            display: none;
+            padding: 15px;
+            border-radius: 7px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .dashboard-message.error {
+            display: block;
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .dashboard-message.info {
+            display: block;
+            background: #e0f2fe;
+            color: #075985;
+        }
+
+        .document-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #8a682a;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        .dashboard-footer {
+            text-align: center;
+            padding: 25px;
+            color: #777;
+        }
+
+        @media (max-width: 800px) {
+            .dashboard-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome-card {
+                padding: 25px 20px;
+            }
+
+            .welcome-card h1 {
+                font-size: 24px;
+            }
+
+            .dashboard-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="dashboard-page">
+
+    <!-- HEADER -->
+
+    <header class="dashboard-header">
+
+        <div class="dashboard-header-inner">
+
+            <a href="index.html" class="dashboard-logo">
+                WISE MEDIA <span>FREELANCE</span>
+            </a>
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main class="dashboard-container">
+
+        <!-- MESSAGE -->
+
+        <div
+            id="dashboardMessage"
+            class="dashboard-message">
+        </div>
+
+
+        <!-- WELCOME -->
+
+        <section class="welcome-card">
+
+            <h1>
+                Welcome back,
+                <span class="gold-text" id="authorName">
+                    Author
+                </span>
+            </h1>
+
+            <p>
+                Welcome to your personal WMF Author Dashboard.
+                Here you can view your orders, monitor your
+                projects, access invoices and receive updates
+                from Wise Media Freelance.
+            </p>
+
+            <p>
+                Account email:
+                <strong id="authorEmail">Loading...</strong>
+            </p>
+
+        </section>
+
+
+        <!-- SUMMARY -->
+
+        <section class="dashboard-grid">
+
+            <div class="summary-card">
+                <h3>MY ORDERS</h3>
+                <strong id="ordersCount">—</strong>
+            </div>
+
+            <div class="summary-card">
+                <h3>PROJECT UPDATES</h3>
+                <strong id="updatesCount">—</strong>
+            </div>
+
+            <div class="summary-card">
+                <h3>MY DOCUMENTS</h3>
+                <strong id="documentsCount">—</strong>
+            </div>
+
+        </section>
+
+
+        <!-- ORDERS -->
+
+        <section class="dashboard-section">
+
+            <h2>My Orders</h2>
+
+            <div id="ordersContainer">
+                <div class="loading-message">
+                    Loading your orders...
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- PROJECT PROGRESS -->
+
+        <section class="dashboard-section">
+
+            <h2>Project Progress</h2>
+
+            <div id="progressContainer">
+                <div class="loading-message">
+                    Loading project progress...
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- INVOICES -->
+
+        <section class="dashboard-section">
+
+            <h2>Invoices & Payments</h2>
+
+            <div id="invoicesContainer">
+                <div class="loading-message">
+                    Loading invoices...
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- DOCUMENTS -->
+
+        <section class="dashboard-section">
+
+            <h2>My Documents</h2>
+
+            <div id="documentsContainer">
+                <div class="loading-message">
+                    Loading documents...
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- UPDATES -->
+
+        <section class="dashboard-section">
+
+            <h2>Project Updates</h2>
+
+            <div id="updatesContainer">
+                <div class="loading-message">
+                    Loading project updates...
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="dashboard-footer">
+
+        <p>
+            &copy; <span id="currentYear"></span>
+            Wise Media Freelance.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+</div>
+
+
+<!-- FIREBASE DASHBOARD CONNECTION -->
+
+<script
+    type="module"
+    src="assets/css/js/author-dashboard.js">
+</script>
+
+</body>
+</html>
