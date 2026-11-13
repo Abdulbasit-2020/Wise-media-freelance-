@@ -485,7 +485,10 @@ if (loginForm) {
 
       loginForm.reset();
 
-      window.location.replace("author-dashboard.html");
+        window.location.href = new URL(
+  "author-dashboard.html",
+  window.location.href
+).href;  ;
 
     } catch (error) {
 
