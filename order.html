@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Place an Order | Wise Media Freelance</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        .order-page {
+            background: #f3f4f6;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+
+        .order-header {
+            background: #0B1020;
+            padding: 25px 6%;
+        }
+
+        .order-header-inner {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .order-logo {
+            color: white;
+            font-size: 20px;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .order-logo span {
+            color: #D6B46A;
+        }
+
+        .order-header a.back-link {
+            color: #D6B46A;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .order-container {
+            max-width: 850px;
+            margin: 45px auto;
+            padding: 0 20px;
+        }
+
+        .order-intro {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .order-intro h1 {
+            color: #0B1020;
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .order-intro p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .order-form-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.04);
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section h2 {
+            font-size: 20px;
+            color: #0B1020;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e5e7eb;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #222;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font: inherit;
+            background: white;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: 2px solid #D6B46A;
+            border-color: #D6B46A;
+        }
+
+        .form-note {
+            font-size: 13px;
+            color: #777;
+            margin-top: 7px;
+            line-height: 1.6;
+        }
+
+        .order-notice {
+            background: #fff8e8;
+            border-left: 4px solid #D6B46A;
+            padding: 17px;
+            border-radius: 5px;
+            margin-bottom: 25px;
+            color: #514321;
+            line-height: 1.7;
+        }
+
+        .order-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 22px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .order-checkbox input {
+            margin-top: 5px;
+        }
+
+        .submit-order-button {
+            width: 100%;
+            background: #0B1020;
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .submit-order-button:hover {
+            background: #18213b;
+        }
+
+        .submit-order-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .order-message {
+            display: none;
+            padding: 15px;
+            margin-bottom: 22px;
+            border-radius: 6px;
+            line-height: 1.6;
+        }
+
+        .order-message.success {
+            display: block;
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .order-message.error {
+            display: block;
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .order-footer {
+            text-align: center;
+            color: #777;
+            padding: 25px;
+        }
+
+        @media(max-width: 600px) {
+            .order-form-card {
+                padding: 22px 17px;
+            }
+
+            .order-intro h1 {
+                font-size: 27px;
+            }
+
+            .order-header-inner {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="order-page">
+
+    <header class="order-header">
+
+        <div class="order-header-inner">
+
+            <a href="index.html" class="order-logo">
+                WISE MEDIA <span>FREELANCE</span>
+            </a>
+
+            <a href="services.html" class="back-link">
+                Back to Services
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="order-container">
+
+        <div class="order-intro">
+
+            <h1>Place Your Order</h1>
+
+            <p>
+                Tell us about your book and the services you need.
+                Our team will review your request and confirm the
+                project scope before payment.
+            </p>
+
+        </div>
+
+
+        <div id="orderMessage" class="order-message"></div>
+
+
+        <form id="orderForm" class="order-form-card">
+
+            <!-- CLIENT INFORMATION -->
+
+            <section class="form-section">
+
+                <h2>Client Information</h2>
+
+                <div class="form-group">
+
+                    <label for="clientName">Full Name *</label>
+
+                    <input
+                        type="text"
+                        id="clientName"
+                        maxlength="100"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="clientEmail">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="clientEmail"
+                        readonly
+                    >
+
+                    <p class="form-note">
+                        This is the email connected to your WMF account.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- SERVICE INFORMATION -->
+
+            <section class="form-section">
+
+                <h2>Service Information</h2>
+
+                <div class="form-group">
+
+                    <label for="serviceName">Select a Service *</label>
+
+                    <select id="serviceName" required>
+
+                        <option value="">Choose a service</option>
+
+                        <option value="Book Trailer Production">
+                            Book Trailer Production
+                        </option>
+
+                        <option value="Animated Book Series">
+                            Animated Book Series
+                        </option>
+
+                        <option value="Proofreading and Editing">
+                            Proofreading and Editing
+                        </option>
+
+                        <option value="Publishing Assistance">
+                            Publishing Assistance
+                        </option>
+
+                        <option value="Book Cover and Interior Design">
+                            Book Cover and Interior Design
+                        </option>
+
+                        <option value="Amazon Book Optimization">
+                            Amazon Book Optimization
+                        </option>
+
+                        <option value="Book Marketing">
+                            Book Marketing
+                        </option>
+
+                        <option value="Other Author Services">
+                            Other Author Services
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="bookTitle">Book Title *</label>
+
+                    <input
+                        type="text"
+                        id="bookTitle"
+                        maxlength="200"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="bookGenre">Book Genre</label>
+
+                    <input
+                        type="text"
+                        id="bookGenre"
+                        maxlength="100"
+                        placeholder="e.g. Romance, Fantasy, Business"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="wordCount">Approximate Word Count</label>
+
+                    <input
+                        type="number"
+                        id="wordCount"
+                        min="0"
+                        max="1000000"
+                        placeholder="Enter approximate word count"
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- PROJECT REQUIREMENTS -->
+
+            <section class="form-section">
+
+                <h2>Project Requirements</h2>
+
+                <div class="form-group">
+
+                    <label for="projectDescription">
+                        Describe the Work You Need *
+                    </label>
+
+                    <textarea
+                        id="projectDescription"
+                        maxlength="5000"
+                        required
+                        placeholder="Describe your project, expectations and specific requirements..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="preferredDeadline">
+                        Preferred Completion Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="preferredDeadline"
+                    >
+
+                    <p class="form-note">
+                        This is your preferred date, not a confirmed
+                        delivery commitment.
+                    </p>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="additionalRequirements">
+                        Additional Information
+                    </label>
+
+                    <textarea
+                        id="additionalRequirements"
+                        maxlength="3000"
+                        placeholder="Add any other information that may help us understand your project."
+                    ></textarea>
+
+                </div>
+
+            </section>
+
+
+            <!-- IMPORTANT NOTICE -->
+
+            <div class="order-notice">
+
+                <strong>Important:</strong>
+
+                Submitting this form does not confirm your order
+                or begin work.
+
+                WMF will review your requirements, confirm the
+                project scope and provide payment instructions.
+
+                Full upfront payment is required and must be
+                verified before work begins.
+
+            </div>
+
+
+            <label class="order-checkbox">
+
+                <input
+                    type="checkbox"
+                    id="scopeAgreement"
+                    required
+                >
+
+                <span>
+                    I confirm that the information provided is
+                    accurate and understand that my request must
+                    be reviewed and approved by WMF before payment.
+                </span>
+
+            </label>
+
+
+            <button
+                type="submit"
+                id="submitOrderButton"
+                class="submit-order-button">
+
+                Submit Order Request
+
+            </button>
+
+        </form>
+
+    </main>
+
+
+    <footer class="order-footer">
+
+        <p>
+            &copy; <span id="currentYear"></span>
+            Wise Media Freelance. All rights reserved.
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script type="module" src="assets/css/js/order.js"></script>
+
+</body>
+</html>
