@@ -241,8 +241,11 @@ async function loadAuthorProfile(user) {
         }
 
     } catch (error) {
-
-        console.error("Profile loading error:", error);
+            alert(
+  "Profile Error Code: " + (error.code || "Unknown") +
+  "\nError Details: " + (error.message || "No details available")
+);
+        
 
         // Authentication can still provide the email.
         authorEmail.textContent =
