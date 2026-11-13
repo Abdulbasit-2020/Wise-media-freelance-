@@ -1990,3 +1990,69 @@ h2 em {
     }
 
 }
+
+
+.order-requests-list {
+    display: grid;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.order-request-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+.request-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.request-card-header h3 {
+    color: #0B1020;
+    margin: 0;
+}
+
+.request-status {
+    background: #f3f4f6;
+    color: #0B1020;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.order-request-card p {
+    color: #4b5563;
+    line-height: 1.7;
+    margin: 8px 0;
+    overflow-wrap: anywhere;
+}
+
+.order-request-card strong {
+    color: #0B1020;
+}
+
+.admin-feedback {
+    background: #f9f6ef;
+    border-left: 4px solid #D6B46A;
+    padding: 14px;
+    margin-top: 18px;
+    border-radius: 5px;
+}
+
+.admin-feedback p {
+    margin-bottom: 0;
+}
+
+.dashboard-message {
+    margin-top: 15px;
+    color: #6b7280;
+    line-height: 1.6;
+}
