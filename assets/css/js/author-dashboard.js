@@ -241,9 +241,7 @@ async function loadAuthorProfile(user) {
         }
 
     } catch (error) {
-            alert(
-  "Profile Error Code: " + (error.code || "Unknown") +
-  "\nError Details: " + (error.message || "No details available")
+          console.error("Profile loading error:", error);  
 );
         
 
@@ -255,9 +253,10 @@ async function loadAuthorProfile(user) {
             user.displayName || "Author";
 
         showDashboardMessage(
-            "Your account is authenticated, but your profile information could not be retrieved.",
-            "error"
-        );
+            alert(
+  "Profile Error Code: " + (error.code || "Unknown") +
+  "\nError Details: " + (error.message || "No details available")
+);
 
     }
 
