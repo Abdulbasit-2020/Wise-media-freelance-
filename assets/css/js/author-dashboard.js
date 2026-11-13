@@ -199,30 +199,66 @@ function createRecordCard(title, data) {
 // LOAD AUTHOR PROFILE
 // ============================================
 
+
+// ============================================
+// LOAD AUTHOR PROFILE
+// ============================================
+
 async function loadAuthorProfile(user) {
 
-    const profileRef = doc(db, "users", user.uid);
+    // Display the authenticated email immediately.
+    authorEmail.textContent = user.email || "Email unavailable";
 
-    const profileSnapshot = await getDoc(profileRef);
+    // Display a temporary name while retrieving the profile.
+    authorName.textContent = user.displayName || "Author";
 
-    if (!profileSnapshot.exists()) {
+    try {
 
-        throw new Error(
-            "Your author profile could not be found. Please contact WMF support."
+        const profileRef = doc(db, "users", user.uid);
+
+        const profileSnapshot = await getDoc(profileRef);
+
+        if (profileSnapshot.exists()) {
+
+            const profile = profileSnapshot.data();
+
+            authorName.textContent =
+                profile.displayName ||
+                user.displayName ||
+                "Author";
+
+            // Use the authenticated email as the reliable source.
+            authorEmail.textContent =
+                user.email || profile.email || "Email unavailable";
+
+        } else {
+
+            console.warn("Author profile document does not exist.");
+
+            authorEmail.textContent =
+                user.email || "Email unavailable";
+
+        }
+
+    } catch (error) {
+
+        console.error("Profile loading error:", error);
+
+        // Authentication can still provide the email.
+        authorEmail.textContent =
+            user.email || "Email unavailable";
+
+        authorName.textContent =
+            user.displayName || "Author";
+
+        showDashboardMessage(
+            "Your account is authenticated, but your profile information could not be retrieved.",
+            "error"
         );
 
     }
 
-    const profile = profileSnapshot.data();
-
-    authorName.textContent =
-        profile.displayName || "Author";
-
-    authorEmail.textContent =
-        user.email || profile.email || "";
-
 }
-
 
 // ============================================
 // LOAD ORDERS
