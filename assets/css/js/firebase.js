@@ -27,7 +27,7 @@ const firebaseConfig = {
 
     authDomain: "wise-media-freelance.firebaseapp.com",
 
-    projectId: " wise-media-freelance",
+    projectId: "wise-media-freelance",
 
     storageBucket: "wise-media-freelance.firebasestorage.app",
 
