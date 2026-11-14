@@ -1,0 +1,866 @@
+/* =========================================================
+   WISE MEDIA FREELANCE — SERVICES PAGE STYLES
+   Load this file AFTER assets/css/styles.css.
+========================================================= */
+
+:root {
+    --services-navy: #0B1020;
+    --services-black: #080808;
+    --services-gold: #D6B46A;
+    --services-white: #FFFFFF;
+    --services-grey: #F3F4F6;
+    --services-text: #20232B;
+    --services-muted: #666666;
+    --services-border: #E7E8EC;
+}
+
+
+/* ACCESSIBILITY */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.services-header {
+    width: 100%;
+    min-height: 88px;
+    height: auto;
+    padding: 12px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #FFFFFF;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+}
+
+.services-logo {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.services-logo a {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-decoration: none;
+}
+
+.services-logo h2 {
+    margin: 0;
+    color: var(--services-navy);
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.services-logo span {
+    display: block;
+    margin-top: 5px;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+.services-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(10px, 1.5vw, 22px);
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.services-navigation a {
+    color: var(--services-navy);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.services-navigation a:hover,
+.services-navigation a.active {
+    color: #A17B36;
+}
+
+.services-header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 13px;
+    flex: 0 0 auto;
+}
+
+.services-header-actions .login-link {
+    color: var(--services-navy);
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.services-header-actions .header-order-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 17px;
+    background: var(--services-gold);
+    color: var(--services-black);
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.services-menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    background: #FFFFFF;
+    color: var(--services-navy);
+    font-size: 23px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.services-hero .gold-button,
+.custom-service .gold-button,
+.services-footer .gold-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 14px 24px;
+    border: 1px solid var(--services-gold);
+    background: var(--services-gold);
+    color: var(--services-black);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.services-hero .gold-button:hover,
+.custom-service .gold-button:hover,
+.services-footer .gold-button:hover {
+    background: #E8CA88;
+    transform: translateY(-2px);
+}
+
+.services-hero .outline-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 14px 24px;
+    border: 1px solid var(--services-gold);
+    background: transparent;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.services-hero .outline-button:hover {
+    background: var(--services-gold);
+    color: var(--services-black);
+}
+
+
+/* =========================================================
+   SERVICES HERO
+========================================================= */
+
+.services-hero {
+    padding: 105px 8% 110px;
+    background: linear-gradient(120deg, #0B1020, #080808);
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.services-label {
+    display: inline-block;
+    color: var(--services-gold);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.services-hero h1 {
+    max-width: 900px;
+    margin: 25px auto;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: clamp(35px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.services-hero h1 span {
+    color: var(--services-gold);
+}
+
+.services-hero > p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #DDDDDD;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.services-hero-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 38px;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.services-intro {
+    padding: 80px 8%;
+    background: #FFFFFF;
+    text-align: center;
+}
+
+.services-intro h2 {
+    margin: 0 0 20px;
+    color: var(--services-navy);
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.services-intro p {
+    max-width: 750px;
+    margin: 0 auto;
+    color: var(--services-muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.services-search-section {
+    padding: 30px 8%;
+    background: var(--services-grey);
+}
+
+.services-search {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    background: #FFFFFF;
+}
+
+.services-search input {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 16px 17px;
+    border: 0;
+    outline: 0;
+    background: #FFFFFF;
+    color: var(--services-text);
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.services-search button {
+    flex: 0 0 auto;
+    padding: 16px 25px;
+    border: 0;
+    background: var(--services-gold);
+    color: var(--services-black);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SERVICE DIRECTORY AND FILTERS
+========================================================= */
+
+.services-container {
+    padding: 70px 8%;
+    background: var(--services-grey);
+}
+
+.services-filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 auto 45px;
+}
+
+.filter-btn {
+    padding: 12px 22px;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    background: #FFFFFF;
+    color: var(--services-navy);
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    border-color: var(--services-gold);
+    background: var(--services-navy);
+    color: #FFFFFF;
+}
+
+
+/* =========================================================
+   SERVICE CARDS
+========================================================= */
+
+.services-container .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.services-container .service-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 0;
+    border-bottom: 3px solid var(--services-gold);
+    border-radius: 5px;
+    background: #FFFFFF;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.services-container .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.services-container .service-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 190px;
+    min-height: 190px;
+    background: linear-gradient(135deg, #0B1020, #242D42);
+    color: var(--services-gold);
+    font-size: 45px;
+}
+
+.services-container .service-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 28px;
+}
+
+.services-container .service-category {
+    margin-bottom: 15px;
+    color: #A27A32;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.services-container .service-content h3 {
+    margin: 0 0 15px;
+    color: var(--services-navy);
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.services-container .service-content p {
+    margin: 0 0 20px;
+    color: var(--services-muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.services-container .service-meta {
+    margin-top: auto;
+    padding-top: 17px;
+    border-top: 1px solid #EEEEEE;
+}
+
+.services-container .service-meta p {
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.services-container .service-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.services-container .service-actions a {
+    display: inline-flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: 12px 8px;
+    border: 1px solid var(--services-navy);
+    color: var(--services-navy);
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.services-container .service-actions a:hover {
+    background: var(--services-navy);
+    color: #FFFFFF;
+}
+
+.services-container .service-actions .order-btn {
+    border-color: var(--services-gold);
+    background: var(--services-gold);
+    color: var(--services-black);
+}
+
+.services-container .service-actions .order-btn:hover {
+    border-color: var(--services-navy);
+    background: var(--services-navy);
+    color: #FFFFFF;
+}
+
+.no-results {
+    display: none;
+    padding: 50px 15px;
+    color: #555555;
+    text-align: center;
+}
+
+.no-results h3 {
+    margin-bottom: 8px;
+    color: var(--services-navy);
+}
+
+
+/* =========================================================
+   CUSTOM SERVICE CTA
+========================================================= */
+
+.custom-service {
+    padding: 85px 8%;
+    background: var(--services-navy);
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.custom-service h2 {
+    margin: 0 0 20px;
+    color: #FFFFFF;
+    font-family: Georgia, serif;
+    font-size: clamp(29px, 4vw, 38px);
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.custom-service p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #DDDDDD;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.services-footer {
+    padding: 65px 8% 20px;
+    background: #070A12;
+    color: #FFFFFF;
+}
+
+.services-footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
+    gap: 35px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-bottom: 45px;
+}
+
+.services-footer .footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.services-footer .footer-column h3 {
+    margin: 0 0 8px;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.services-footer .footer-column h4 {
+    margin: 0;
+    color: var(--services-gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.services-footer .footer-brand-title {
+    margin: 0;
+    color: #FFFFFF;
+    font-family: Georgia, serif;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.services-footer .footer-column p {
+    margin: 5px 0 10px;
+    color: #AEB3BF;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.services-footer .footer-column a:not(.gold-button) {
+    color: #BFC3CC;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.services-footer .footer-column a:not(.gold-button):hover {
+    color: var(--services-gold);
+}
+
+.services-footer .footer-order-button {
+    margin-top: 5px;
+}
+
+.services-footer .footer-bottom {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #272B36;
+}
+
+.services-footer .footer-bottom p {
+    margin: 0;
+    color: #8D93A0;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   TABLET RESPONSIVENESS
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .services-header {
+        gap: 14px;
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+
+    .services-navigation {
+        gap: 10px;
+    }
+
+    .services-navigation a {
+        font-size: 9px;
+    }
+
+    .services-logo h2 {
+        font-size: 31px;
+    }
+
+    .services-logo span {
+        font-size: 8px;
+    }
+
+    .services-header-actions {
+        gap: 9px;
+    }
+
+    .services-header-actions .header-order-button {
+        padding: 11px 12px;
+        font-size: 10px;
+    }
+
+    .services-container .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .services-footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE HEADER AND PAGE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .services-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-rows: auto auto;
+        gap: 10px 12px;
+        min-height: 0;
+        height: auto;
+        padding: 12px 5%;
+    }
+
+    .services-logo {
+        grid-column: 1;
+        grid-row: 1;
+        min-width: 0;
+    }
+
+    .services-logo h2 {
+        font-size: 30px;
+    }
+
+    .services-logo span {
+        font-size: 8px;
+        letter-spacing: 0.8px;
+    }
+
+    .services-menu-toggle {
+        display: inline-flex;
+        grid-column: 2;
+        grid-row: 1;
+        align-items: center;
+        justify-content: center;
+        justify-self: end;
+    }
+
+    .services-header-actions {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .services-header-actions .login-link {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+    .services-header-actions .header-order-button {
+        min-height: 38px;
+        padding: 10px 16px;
+        font-size: 10px;
+    }
+
+    .services-navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+        padding: 18px 6% 22px;
+        border-top: 1px solid #EEEEEE;
+        background: #FFFFFF;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0;
+    }
+
+    .services-navigation.open {
+        display: flex;
+    }
+
+    .services-navigation a {
+        display: block;
+        width: 100%;
+        padding: 11px 0;
+        font-size: 13px;
+        white-space: normal;
+    }
+
+    .services-hero {
+        padding: 75px 6%;
+    }
+
+    .services-hero h1 {
+        margin: 22px auto;
+        font-size: clamp(32px, 8vw, 40px);
+    }
+
+    .services-hero > p {
+        font-size: 15px;
+    }
+
+    .services-hero-buttons {
+        gap: 12px;
+        margin-top: 30px;
+    }
+
+    .services-hero .gold-button,
+    .services-hero .outline-button {
+        width: 100%;
+        max-width: 330px;
+    }
+
+    .services-intro,
+    .services-container {
+        padding: 60px 6%;
+    }
+
+    .services-search-section {
+        padding: 25px 6%;
+    }
+
+    .services-filters {
+        justify-content: flex-start;
+        margin-bottom: 30px;
+    }
+
+    .filter-btn {
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+
+    .services-container .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .custom-service {
+        padding: 70px 6%;
+    }
+
+    .services-footer {
+        padding: 55px 6% 20px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE DEVICES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .services-header {
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+
+    .services-logo h2 {
+        font-size: 27px;
+    }
+
+    .services-logo span {
+        font-size: 7px;
+        letter-spacing: 0.6px;
+    }
+
+    .services-menu-toggle {
+        width: 39px;
+        height: 39px;
+    }
+
+    .services-header-actions {
+        gap: 7px;
+    }
+
+    .services-hero {
+        padding: 65px 5%;
+    }
+
+    .services-hero h1 {
+        font-size: 32px;
+    }
+
+    .services-hero > p {
+        font-size: 14px;
+    }
+
+    .services-search button {
+        padding-right: 13px;
+        padding-left: 13px;
+    }
+
+    .services-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+}
