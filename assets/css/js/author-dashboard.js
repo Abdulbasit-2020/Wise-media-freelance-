@@ -485,8 +485,8 @@ async function loadProjectUpdates(user) {
 // AUTHOR LOGOUT
 // ========================================
 
-const logoutButton = getElement("logout-btn");
 
+const logoutButton = getElement("logoutButton");
 if (logoutButton) {
 
     logoutButton.addEventListener("click", async () => {
